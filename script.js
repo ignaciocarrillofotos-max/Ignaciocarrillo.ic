@@ -1,9 +1,9 @@
 function toggleMenu(){
-   document.getElementById("menu")
+    let menu = document.getElementById("menu");
     menu.classList.toggle("show");
 }
     
-}
+
 
 function openImg(src){
 
