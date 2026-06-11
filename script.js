@@ -1,6 +1,7 @@
 function toggleMenu(){
 
     let menu = document.getElementById("menu");
+        menu.classList.toggle("show");
     let visible = window.getComputedStyle(menu).display;
 
     if(visible === "flex"){
