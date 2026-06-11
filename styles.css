@@ -82,6 +82,16 @@ margin-top:20px;
 opacity:.8;
 }
 
+.firma{
+    letter-spacing:4px;
+    text-transform:uppercase;
+    opacity:.8;
+    margin-bottom:15px;
+}
+
+
+
+
 /* BOTONES */
 
 .btn{
