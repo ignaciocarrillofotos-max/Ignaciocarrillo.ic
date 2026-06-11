@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Galería | Nakas Photography</title>
+<link rel="stylesheet" href="galeria.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<header class="header">
+    <a href="index.html" class="volver">← Volver</a>
+    <h1>Galería</h1>
+</header>
+
+<section class="albums">
+
+    <div class="album-card" onclick="openFolder('deportes')">
+        <img src="FOTOSVIDEOS/DEPORTES/DSC03669.JPG">
+        <div class="overlay">
+            <h2>Deportes</h2>
+        </div>
+    </div>
+
+    <div class="album-card" onclick="openFolder('fauna')">
+        <img src="FOTOSVIDEOS/fauna/cover.jpg">
+        <div class="overlay">
+            <h2>Fauna</h2>
+        </div>
+    </div>
+
+    <div class="album-card" onclick="openFolder('paisajes')">
+        <img src="FOTOSVIDEOS/paisajes/cover.jpg">
+        <div class="overlay">
+            <h2>Paisajes</h2>
+        </div>
+    </div>
+
+</section>
+
+<script src="galeria.js"></script>
+</body>
+</html>
