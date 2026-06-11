@@ -1,8 +1,9 @@
 function toggleMenu(){
 
     let menu = document.getElementById("menu");
+    let visible = window.getComputedStyle(menu).display;
 
-    if(menu.style.display == "flex"){
+    if(visible === "flex"){
         menu.style.display = "none";
     }else{
         menu.style.display = "flex";
