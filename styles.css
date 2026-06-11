@@ -548,6 +548,10 @@ cursor:pointer;
 
 nav{
     display:none;
+}
+
+nav.show{
+    display:flex;
     flex-direction:column;
     background:black;
     position:absolute;
@@ -558,9 +562,6 @@ nav{
     z-index:9999;
 }
 
-/* IMPORTANTE */
-nav.show{
-    display:flex;
 }
 
 }
