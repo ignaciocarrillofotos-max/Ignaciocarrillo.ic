@@ -1,14 +1,8 @@
 function toggleMenu(){
-
     let menu = document.getElementById("menu");
-        menu.classList.toggle("show");
-
-    if(visible === "flex"){
-        menu.style.display = "none";
-    }else{
-        menu.style.display = "flex";
-    }
-
+    menu.classList.toggle("show");
+}
+    
 }
 
 function openImg(src){
