@@ -547,16 +547,15 @@ cursor:pointer;
 
 ```
 nav{
-    display:flex;
+    display:none;
     flex-direction:column;
     background:black;
-
     position:absolute;
-    top:80px;
-    right:0;
-
-    width:200px;
-    padding:20px;
+    top:90px;
+    right:20px;
+    width:220px;
+    padding:15px;
+    z-index:9999;
 }
 
 nav a{
