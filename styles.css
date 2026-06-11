@@ -543,9 +543,9 @@ font-size:30px;
 cursor:pointer;
 }
 
+
 @media(max-width:768px){
 
-```
 nav{
     display:none;
     flex-direction:column;
@@ -556,6 +556,13 @@ nav{
     width:220px;
     padding:15px;
     z-index:9999;
+}
+
+/* IMPORTANTE */
+nav.show{
+    display:flex;
+}
+
 }
 
 nav a{
