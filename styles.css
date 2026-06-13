@@ -116,7 +116,7 @@ padding:90px 10%;
 text-align:center;
 }
 
-/* EQUIPO */
+/* Colaboracion tarjetas */
 
 .team-grid{
 display:grid;
@@ -134,6 +134,40 @@ border-radius:10px;
 width:100%;
 border-radius:10px;
 }
+
+
+/* SOBRE MÍ */
+
+.perfil{
+    max-width:700px;
+    margin:auto;
+}
+
+.firma-logo{
+    width:180px !important;
+    display:block;
+    margin:25px auto;
+}
+
+/* COLABORACIONES */
+
+.logo-cliente{
+    width:170px !important;
+    display:block;
+    margin:20px auto;
+}
+
+.colaboracion{
+    transition:.35s;
+}
+
+.colaboracion:hover{
+    transform:translateY(-8px);
+}
+
+
+
+
 
 /* PACKS */
 
