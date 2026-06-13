@@ -116,25 +116,25 @@ padding:90px 10%;
 text-align:center;
 }
 
-/* Colaboracion tarjetas */
+
+/* TEAM / SOBRE MÍ / COLABORACIONES */
 
 .team-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:40px;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:40px;
 }
 
 .card{
-background:#1a1a1a;
-padding:20px;
-border-radius:10px;
+    background:#1a1a1a;
+    padding:20px;
+    border-radius:10px;
 }
 
 .card img{
-width:100%;
-border-radius:10px;
+    width:100%;
+    border-radius:10px;
 }
-
 
 /* SOBRE MÍ */
 
@@ -143,29 +143,41 @@ border-radius:10px;
     margin:auto;
 }
 
+.foto-perfil{
+    width:100%;
+    border-radius:15px;
+}
+
 .firma-logo{
-    width:180px !important;
+    width:180px;
+    height:auto;
     display:block;
     margin:25px auto;
 }
 
 /* COLABORACIONES */
 
-.logo-cliente{
-    width:170px !important;
-    display:block;
-    margin:20px auto;
-}
-
 .colaboracion{
-    transition:.35s;
+    transition:.35s ease;
 }
 
 .colaboracion:hover{
     transform:translateY(-8px);
 }
 
+.foto-trabajo{
+    width:100%;
+    height:260px;
+    object-fit:cover;
+    border-radius:12px;
+}
 
+.logo-cliente{
+    width:180px;
+    height:auto;
+    display:block;
+    margin:20px auto;
+}
 
 
 
