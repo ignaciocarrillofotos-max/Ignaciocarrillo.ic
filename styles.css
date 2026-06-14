@@ -250,6 +250,24 @@ section{
     background:#11740e;
 }
 
+
+.boton-expandible{
+    position:relative;
+    display:inline-block;
+}
+
+.contenido-expandido{
+    position:absolute;
+    top:100%;
+    left:0;
+    width:150px;
+    background:#111;
+    border-radius:10px;
+    display:none;
+    flex-direction:column;
+    overflow:hidden;
+    z-index:10;
+}
 /* =========================
    WHATSAPP
 ========================= */
