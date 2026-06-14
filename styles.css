@@ -287,23 +287,26 @@ section{
     border-radius:12px;
     overflow:hidden;
 
-    display:none;
     flex-direction:column;
 
     z-index:50;
 
     box-shadow:0 15px 40px rgba(0,0,0,.5);
 
-    transform:translateY(-5px);
+    transform:translateY(-10px);
     opacity:0;
 
     transition:all .25s ease;
+
+    pointer-events:none;
+    display:flex; /* siempre flex */
 }
 
 .contenido-expandido.show{
     display:flex;
     opacity:1;
     transform:translateY(0);
+    pointer-events:auto;
 }
 
 .contenido-expandido a{
