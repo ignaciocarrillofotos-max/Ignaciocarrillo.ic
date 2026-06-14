@@ -20,21 +20,24 @@ function closeImg(){
 
 }
 
-function toggleExpand(btn){
 
+function toggleExpand(btn){
     const menu = btn.parentElement.querySelector(".contenido-expandido");
 
-    const abierto = menu.style.display === "flex";
+    const isOpen = menu.style.display === "flex";
 
-    document.querySelectorAll(".contenido-expandido").forEach(m=>{
+    // cerrar todos
+    document.querySelectorAll(".contenido-expandido").forEach(m => {
         m.style.display = "none";
     });
 
-    if(!abierto){
+    // abrir si estaba cerrado
+    if(!isOpen){
         menu.style.display = "flex";
     }
-
 }
+
+
 
 document.addEventListener("click", function(e){
 
