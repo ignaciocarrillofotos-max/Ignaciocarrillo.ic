@@ -17,6 +17,10 @@ body{
     position:relative;
     height:60vh;
     overflow:hidden;
+
+    display:flex;              /* 👈 IMPORTANTE */
+    align-items:center;
+    justify-content:center;
 }
 
 .hero-video{
@@ -26,11 +30,10 @@ body{
     width:100%;
     height:100%;
     object-fit:cover;
-
     z-index:0;
 }
 
-.hero::before{
+.hero::after{
     content:"";
     position:absolute;
     inset:0;
@@ -48,7 +51,6 @@ body{
     text-align:center;
     color:white;
 }
-
 
 .hero-overlay h1{
     font-size:4rem;
