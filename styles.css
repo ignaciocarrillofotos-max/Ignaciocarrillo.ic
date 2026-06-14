@@ -307,14 +307,14 @@ section{
 }
 
 .contenido-expandido a{
-    padding:10px;
+    padding:12px;
     color:white;
     text-decoration:none;
     transition:.2s;
 }
 
 .contenido-expandido a:hover{
-    background:#222;
+    background:rgba(255,255,255,.08);
 }
 
 
