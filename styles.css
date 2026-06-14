@@ -1,22 +1,23 @@
+/* =========================
+   RESET
+========================= */
+
 html, body{
     margin:0;
     padding:0;
     overflow-x:hidden;
-}
-
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
     font-family:Poppins, sans-serif;
-}
-
-body{
     background:#0f0f0f;
     color:white;
 }
 
-/* ================= HERO ================= */
+*{
+    box-sizing:border-box;
+}
+
+/* =========================
+   HEADER HERO
+========================= */
 
 header{
     position:relative;
@@ -32,7 +33,7 @@ header{
     height:100%;
     object-fit:cover;
     z-index:0;
-    filter:brightness(0.55) contrast(1.1);
+    filter:brightness(0.5);
 }
 
 .hero-overlay{
@@ -47,39 +48,58 @@ header{
 
     text-align:center;
     padding:20px;
-    color:white;
 }
 
 .hero h1{
-    font-size:clamp(2.5rem,5vw,4.5rem);
-    margin-bottom:15px;
-    text-shadow:0 5px 20px rgba(0,0,0,.6);
+    font-size:clamp(2.2rem,5vw,4rem);
+    margin:10px 0;
 }
 
 .hero p{
-    font-size:clamp(1rem,1.5vw,1.2rem);
     opacity:.85;
     max-width:600px;
 }
 
-nav, .navbar{
-    position:relative;
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar{
+    position:absolute;
+    top:0;
+    width:100%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 8%;
     z-index:10;
 }
 
-
-.firma{
-    letter-spacing:6px;
-    text-transform:uppercase;
-    opacity:.6;
-    font-size:12px;
+.logo img{
+    height:90px;
 }
 
-/* ================= BOTONES ================= */
+nav a{
+    color:white;
+    text-decoration:none;
+    margin:0 10px;
+}
+
+.hamburger{
+    display:none;
+    font-size:28px;
+    cursor:pointer;
+    color:white;
+}
+
+/* =========================
+   BOTONES
+========================= */
 
 .btn{
     display:inline-block;
-    padding:12px 30px;
+    margin-top:20px;
+    padding:12px 28px;
     background:#07751e;
     color:white;
     border-radius:30px;
@@ -91,34 +111,69 @@ nav, .navbar{
     transform:scale(1.05);
 }
 
-/* ================= SECCIONES ================= */
+/* =========================
+   SECCIONES
+========================= */
 
 section{
     padding:90px 10%;
     text-align:center;
 }
 
-/* ================= GALERÍA INDEX ================= */
+/* =========================
+   TEAM / COLABORACIONES
+========================= */
 
-.album-preview{
+.team-grid{
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:40px;
+}
+
+.card{
+    background:#1a1a1a;
+    padding:20px;
+    border-radius:10px;
+}
+
+.card img{
+    width:100%;
+    border-radius:10px;
+}
+
+.colaboracion{
+    transition:.3s;
+}
+
+.colaboracion:hover{
+    transform:translateY(-8px);
+}
+
+/* =========================
+   GALERÍA INDEX
+========================= */
+
+.albums{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
     gap:30px;
 }
 
 .album-card{
     position:relative;
-    height:280px;
+    height:300px;
     border-radius:15px;
     overflow:hidden;
     display:block;
+    text-decoration:none;
+    color:white;
 }
 
 .album-card img{
     width:100%;
     height:100%;
     object-fit:cover;
-    transition:.5s;
+    transition:.4s;
 }
 
 .album-card:hover img{
@@ -132,69 +187,39 @@ section{
     background:linear-gradient(to top, rgba(0,0,0,.7), transparent);
 }
 
-.album-card h3{
+.overlay{
     position:absolute;
-    bottom:15px;
-    left:15px;
+    bottom:20px;
+    left:20px;
     z-index:2;
 }
 
-/* ================= GALERÍA INTERNA ================= */
-
-.gallery{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:15px;
-}
-
-.gallery img{
-    width:100%;
-    border-radius:10px;
-    cursor:pointer;
-    transition:.3s;
-    aspect-ratio:4/3;
-    object-fit:cover;
-}
-
-.gallery img:hover{
-    transform:scale(1.05);
-}
-
-/* LIGHTBOX */
-
-#lightbox{
-    position:fixed;
-    inset:0;
-    background:rgba(0,0,0,.9);
-    display:none;
-    align-items:center;
-    justify-content:center;
-}
-
-#lightbox img{
-    max-width:90%;
-    max-height:90%;
-}
-
-/* ================= SERVICIOS ================= */
+/* =========================
+   SERVICIOS
+========================= */
 
 .services{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-    gap:25px;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:20px;
 }
 
 .service-card{
     position:relative;
     height:220px;
     overflow:hidden;
-    border-radius:18px;
+    border-radius:15px;
 }
 
 .service-card img{
     width:100%;
     height:100%;
     object-fit:cover;
+    transition:.4s;
+}
+
+.service-card:hover img{
+    transform:scale(1.1);
 }
 
 .service-card span{
@@ -203,32 +228,74 @@ section{
     left:50%;
     transform:translate(-50%,-50%);
     color:white;
-    font-size:1.5rem;
-    font-weight:600;
+    font-weight:bold;
+    text-shadow:0 0 10px black;
 }
 
+/* =========================
+   PACKS
+========================= */
 
-/* =======================
-   AJUSTES MÓVIL (FIX REAL)
-======================= */
+.pricing{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:30px;
+}
 
-@media (max-width:768px){
+.price-card{
+    background:#1a1a1a;
+    padding:30px;
+    border-radius:10px;
+}
 
-    /* HERO texto visible */
-    .hero-overlay{
-        padding:20px;
-    }
+.featured{
+    background:#11740e;
+}
 
-    .hero h1{
-        font-size:2.3rem;
-    }
+/* =========================
+   WHATSAPP
+========================= */
 
-    .hero p{
-        font-size:1rem;
-        padding:0 10px;
-    }
+.whatsapp{
+    position:fixed;
+    bottom:25px;
+    right:25px;
+    width:60px;
+    height:60px;
+    background:#25d366;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:28px;
+    color:white;
+    text-decoration:none;
+}
 
-    /* menú móvil (si existe) */
+/* =========================
+   LIGHTBOX
+========================= */
+
+#lightbox{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.9);
+    display:none;
+    justify-content:center;
+    align-items:center;
+}
+
+#lightbox img{
+    max-width:90%;
+    max-height:90%;
+}
+
+/* =========================
+   MÓVIL
+========================= */
+
+@media(max-width:768px){
+
     nav{
         display:none;
     }
@@ -237,19 +304,19 @@ section{
         display:block;
     }
 
-    /* GALERÍA INDEX (evita imágenes enormes) */
+    .hero h1{
+        font-size:2rem;
+    }
+
+    .hero p{
+        font-size:1rem;
+    }
+
     .album-card{
         height:220px;
     }
 
-    /* GALERÍA INTERNA */
-    .gallery img{
-        height:auto;
-    }
-
-    /* SERVICIOS */
     .service-card{
         height:180px;
     }
-
 }
