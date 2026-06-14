@@ -298,17 +298,17 @@ section{
         display:none;
     }
 
-    nav.show{
-        display:flex;
-        flex-direction:column;
-        position:absolute;
-        top:80px;
-        right:20px;
-        background:black;
-        padding:15px;
-        border-radius:10px;
-        z-index:9999;
-    }
+nav.show{
+    display:flex;
+    flex-direction:column;
+    position:absolute;
+    top:90px;
+    right:20px;
+    background:black;
+    padding:15px;
+    width:220px;
+    z-index:9999;
+}
 
    
     .hamburger{
