@@ -1,6 +1,5 @@
 function toggleMenu(){
-    let menu = document.getElementById("menu");
-    menu.classList.toggle("show");
+    document.getElementById("menu").classList.toggle("show");
 }
     
 
