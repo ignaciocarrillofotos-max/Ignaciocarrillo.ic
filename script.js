@@ -51,15 +51,3 @@ document.addEventListener("click", function(e){
 
 
 
-const elements = document.querySelectorAll(".reveal");
-
-window.addEventListener("scroll", () => {
-    elements.forEach(el => {
-        const top = el.getBoundingClientRect().top;
-        const height = window.innerHeight;
-
-        if(top < height - 100){
-            el.classList.add("active");
-        }
-    });
-});
