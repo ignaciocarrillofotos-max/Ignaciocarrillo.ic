@@ -199,17 +199,19 @@ section{
 }
 
 
+/* =======================
+   AJUSTES MÓVIL (FIX REAL)
+======================= */
 
 @media (max-width:768px){
 
-    /* HERO más usable en móvil */
+    /* HERO texto visible */
     .hero-overlay{
         padding:20px;
     }
 
     .hero h1{
-        font-size:2.2rem;
-        line-height:1.2;
+        font-size:2.3rem;
     }
 
     .hero p{
@@ -217,16 +219,28 @@ section{
         padding:0 10px;
     }
 
-    /* si tienes navbar */
-    .navbar{
-        padding:20px;
-    }
-
+    /* menú móvil (si existe) */
     nav{
-        display:none; /* si aún no tienes menú hamburguesa */
+        display:none;
     }
 
     .hamburger{
         display:block;
     }
+
+    /* GALERÍA INDEX (evita imágenes enormes) */
+    .album-card{
+        height:220px;
+    }
+
+    /* GALERÍA INTERNA */
+    .gallery img{
+        height:auto;
+    }
+
+    /* SERVICIOS */
+    .service-card{
+        height:180px;
+    }
+
 }
