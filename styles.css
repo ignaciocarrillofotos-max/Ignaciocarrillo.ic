@@ -197,3 +197,36 @@ section{
     font-size:1.5rem;
     font-weight:600;
 }
+
+
+
+@media (max-width:768px){
+
+    /* HERO más usable en móvil */
+    .hero-overlay{
+        padding:20px;
+    }
+
+    .hero h1{
+        font-size:2.2rem;
+        line-height:1.2;
+    }
+
+    .hero p{
+        font-size:1rem;
+        padding:0 10px;
+    }
+
+    /* si tienes navbar */
+    .navbar{
+        padding:20px;
+    }
+
+    nav{
+        display:none; /* si aún no tienes menú hamburguesa */
+    }
+
+    .hamburger{
+        display:block;
+    }
+}
