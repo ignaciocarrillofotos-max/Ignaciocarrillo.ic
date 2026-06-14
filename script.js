@@ -22,18 +22,19 @@ function closeImg(){
 
 
 function toggleExpand(btn){
+
     const menu = btn.parentElement.querySelector(".contenido-expandido");
 
-    const isOpen = menu.style.display === "flex";
+    const isOpen = menu.classList.contains("show");
 
     // cerrar todos
     document.querySelectorAll(".contenido-expandido").forEach(m => {
-        m.style.display = "none";
+        m.classList.remove("show");
     });
 
-    // abrir si estaba cerrado
+    // abrir si no estaba abierto
     if(!isOpen){
-        menu.style.display = "flex";
+        menu.classList.add("show");
     }
 }
 
