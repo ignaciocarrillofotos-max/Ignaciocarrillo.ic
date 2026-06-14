@@ -45,7 +45,7 @@ document.addEventListener("click", function(e){
     if(!e.target.closest(".boton-expandible")){
 
         document.querySelectorAll(".contenido-expandido").forEach(m=>{
-            m.style.display = "none";
+            m.classList.remove("show");
         });
 
     }
