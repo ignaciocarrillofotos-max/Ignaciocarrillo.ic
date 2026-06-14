@@ -256,18 +256,36 @@ section{
     display:inline-block;
 }
 
+
 .contenido-expandido{
     position:absolute;
     top:100%;
     left:0;
-    width:150px;
+    width:160px;
     background:#111;
-    border-radius:10px;
+    border-radius:12px;
     display:none;
     flex-direction:column;
     overflow:hidden;
     z-index:10;
+    box-shadow:0 10px 25px rgba(0,0,0,.4);
 }
+
+.contenido-expandido a{
+    padding:10px;
+    color:white;
+    text-decoration:none;
+    transition:.2s;
+}
+
+.contenido-expandido a:hover{
+    background:#222;
+}
+
+
+
+
+
 /* =========================
    WHATSAPP
 ========================= */
