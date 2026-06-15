@@ -449,3 +449,13 @@ nav.show{
 }
 
 
+
+
+.firma{
+    font-size:.75rem;
+    letter-spacing:8px;
+    text-transform:uppercase;
+    color:rgba(255,255,255,.75);
+    font-weight:300;
+    margin-bottom:14px;
+}
