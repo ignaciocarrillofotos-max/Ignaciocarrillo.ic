@@ -202,7 +202,8 @@ section{
 }
 
 .colaboracion:hover{
-    transform:translateY(-8px);
+    transform:translateY(-12px);
+    box-shadow:0 30px 70px rgba(0,0,0,.45);
 }
 
 /* =========================
@@ -247,6 +248,20 @@ section{
     bottom:20px;
     left:20px;
     z-index:2;
+}
+
+
+
+.foto-trabajo{
+
+    width:100%;
+
+    height:260px;
+
+    object-fit:cover;
+
+    display:block;
+
 }
 
 /* =========================
@@ -570,5 +585,53 @@ nav.show{
 .historia p{
 
     margin-bottom:28px;
+
+}
+
+.logo-cliente{
+
+    width:140px;
+
+    margin:25px auto;
+
+    display:block;
+
+}
+
+.colaboracion p{
+
+    font-size:1.05rem;
+
+    color:#d6d6d6;
+
+    margin-bottom:25px;
+
+}
+
+.colaboracion a{
+
+    display:inline-block;
+
+    color:white;
+
+    text-decoration:none;
+
+    padding:10px 20px;
+
+    border:1px solid rgba(255,255,255,.15);
+
+    border-radius:30px;
+
+    margin-bottom:25px;
+
+    transition:.3s;
+
+}
+
+.colaboracion a:hover{
+
+    background:white;
+
+    color:#111;
 
 }
