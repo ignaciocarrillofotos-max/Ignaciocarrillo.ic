@@ -206,6 +206,58 @@ section{
     box-shadow:0 30px 70px rgba(0,0,0,.45);
 }
 
+
+
+.logo-cliente{
+
+    width:140px;
+
+    margin:25px auto;
+
+    display:block;
+
+}
+
+.colaboracion p{
+
+    font-size:1.05rem;
+
+    color:#d6d6d6;
+
+    margin-bottom:25px;
+
+}
+
+.colaboracion a{
+
+    display:inline-block;
+
+    color:white;
+
+    text-decoration:none;
+
+    padding:10px 20px;
+
+    border:1px solid rgba(255,255,255,.15);
+
+    border-radius:30px;
+
+    margin-bottom:25px;
+
+    transition:.3s;
+
+}
+
+.colaboracion a:hover{
+
+    background:white;
+
+    color:#111;
+
+}
+
+
+
 /* =========================
    GALERÍA INDEX
 ========================= */
@@ -628,40 +680,3 @@ nav.show{
 
 }
 
-.colaboracion p{
-
-    font-size:1.05rem;
-
-    color:#d6d6d6;
-
-    margin-bottom:25px;
-
-}
-
-.colaboracion a{
-
-    display:inline-block;
-
-    color:white;
-
-    text-decoration:none;
-
-    padding:10px 20px;
-
-    border:1px solid rgba(255,255,255,.15);
-
-    border-radius:30px;
-
-    margin-bottom:25px;
-
-    transition:.3s;
-
-}
-
-.colaboracion a:hover{
-
-    background:white;
-
-    color:#111;
-
-}
