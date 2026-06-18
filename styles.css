@@ -415,21 +415,37 @@ section{
 }
 
 .price-card{
-    background:#1a1a1a;
+    background: linear-gradient(145deg, #1a1a1a, #141414);
     padding:40px;
-    border-radius:12px;
-    transition:0.3s;
+    border-radius:18px;
+    transition:0.35s ease;
     display:flex;
     flex-direction:column;
-    gap:10px;
+    gap:12px;
+    position:relative;
+    border:1px solid rgba(255,255,255,.06);
 }
 
 .price-card:hover{
-    transform:translateY(-8px);
+    transform:translateY(-10px);
+    box-shadow:0 25px 60px rgba(0,0,0,.5);
 }
 
 .featured{
-    background:#11740e;
+    background: linear-gradient(145deg, #11740e, #0b4f0a);
+    transform:scale(1.03);
+}
+
+.featured::before{
+    content:"MÁS POPULAR";
+    position:absolute;
+    top:15px;
+    right:15px;
+    font-size:0.7rem;
+    padding:5px 10px;
+    background:black;
+    border-radius:20px;
+    letter-spacing:1px;
 }
 
 
