@@ -289,7 +289,10 @@ section{
 
 .album-card:hover img{
     transform:scale(1.12);
-   transform:translateY(-8px);
+}
+.album-card:hover{
+    transform:translateY(-8px);
+
 }
 
 .album-card::before{
