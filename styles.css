@@ -218,11 +218,14 @@ section{
 
 .album-card{
     position:relative;
-    height:280px;
-    border-radius:15px;
+    height:420px;
+    border-radius:22px;
     display:block;
     text-decoration:none;
     color:white;
+   overflow:hidden;
+   box-shadow:0 20px 45px rgba(0,0,0,.35);
+   transition:.4s ease;
 }
 
 .album-card img{
@@ -233,23 +236,40 @@ section{
 }
 
 .album-card:hover img{
-    transform:scale(1.08);
+    transform:scale(1.12);
+   transform:translateY(-8px);
 }
 
 .album-card::before{
     content:"";
     position:absolute;
     inset:0;
-    background:linear-gradient(to top, rgba(0,0,0,.7), transparent);
+background:linear-gradient(
+    to top,
+    rgba(0,0,0,.82),
+    rgba(0,0,0,.15),
+    transparent
 }
 
 .overlay{
     position:absolute;
-    bottom:20px;
-    left:20px;
+    bottom:35px;
+    left:35px;
     z-index:2;
 }
+.overlay h2{
 
+    font-size:2rem;
+
+    margin-bottom:8px;
+
+}
+
+.overlay p{
+
+    opacity:.85;
+
+}
 
 
 .foto-trabajo{
@@ -263,6 +283,16 @@ section{
     display:block;
 
 }
+
+#galeria .btn{
+
+    margin-top:50px;
+
+}
+
+
+
+
 
 /* =========================
    SERVICIOS
