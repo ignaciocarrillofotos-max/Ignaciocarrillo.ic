@@ -6,42 +6,20 @@
 }
 
 body{
-    background:#111;
+
+    background:#000;
+
     color:white;
+
+    overflow-x:hidden;
 }
 
 
 /* HERO */
 
 .hero{
-    position:relative;
-    height:60vh;
-    overflow:hidden;
-
-    display:flex;              /* 👈 IMPORTANTE */
-    align-items:center;
-    justify-content:center;
-}
-
-.hero-video{
-    position:absolute;
-    inset:0;
-
-    width:100%;
-    height:100%;
-    object-fit:cover;
-    z-index:0;
-    filter:brightness(0.8) contrast(1.1);
-}
-
-.hero::after{
-    content:"";
-    position:absolute;
-    inset:0;
-
-    background:rgba(0,0,0,.75);
-
-    z-index:1;
+    height:55vh;
+    background:none;
 }
 
 
@@ -116,18 +94,17 @@ body{
 .album-card{
 
     position:relative;
-
     overflow:hidden;
-
     border-radius:18px;
-
     text-decoration:none;
-
     color:white;
-
     height:420px;
-
     box-shadow:0 10px 30px rgba(0,0,0,.35);
+    
+    background:rgba(15,15,15,.35);
+    backdrop-filter:blur(10px);
+    -webkit-backdrop-filter:blur(10px);
+    border:1px solid rgba(255,255,255,.08);
 
 }
 
@@ -189,6 +166,35 @@ body{
     font-weight:600;
 
 }
+
+
+
+
+.background-video{
+    position:fixed;
+    top:0;
+    left:0;
+
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+
+    z-index:-3;
+}
+
+.background-overlay{
+
+    position:fixed;
+    inset:0;
+
+    background:rgba(0,0,0,.55);
+
+    z-index:-2;
+}
+
+
+
 
 /* MÓVIL */
 
