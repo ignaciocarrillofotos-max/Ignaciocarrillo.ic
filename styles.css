@@ -765,3 +765,21 @@ margin-bottom:35px;
     font-size:0.85rem;
     opacity:0.6;
 }
+
+.footer-brand{
+    text-align:center;
+    margin-bottom:40px;
+}
+
+.footer-brand img{
+    width:160px;
+    opacity:0.9;
+    margin-bottom:10px;
+}
+
+.footer-brand p{
+    font-size:0.9rem;
+    letter-spacing:3px;
+    text-transform:uppercase;
+    opacity:0.6;
+}
