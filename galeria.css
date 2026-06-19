@@ -315,9 +315,33 @@ to{
 
 
 
-/* ==========================
+/* =========================
    CONTACTO
-========================== */
+========================= */
+
+.contacto-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:25px;
+    margin:50px 0;
+}
+
+.contacto-card{
+    background:#171717;
+    padding:25px;
+    border-radius:15px;
+    border:1px solid rgba(255,255,255,.05);
+    transition:.3s;
+}
+
+.contacto-card:hover{
+    transform:translateY(-6px);
+    background:#1c1c1c;
+}
+
+
+
+
 
 #contacto{
 
