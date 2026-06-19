@@ -384,7 +384,7 @@ to{
 
     padding:80px 10% 30px;
     margin-top:80px;
-
+    position:relative;
     border-top:1px solid rgba(255,255,255,.06);
 }
 
