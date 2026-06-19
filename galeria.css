@@ -372,30 +372,29 @@ to{
    FOOTER
 ========================= */
 .footer{
+    position:relative;
+
     background:linear-gradient(
         to top,
-        rgba(0,0,0,.85),
-        rgba(0,0,0,.35),
+        rgba(0,0,0,.92),
+        rgba(0,0,0,.55),
+        rgba(0,0,0,.10),
         transparent
     );
 
-    backdrop-filter:blur(8px);
-    -webkit-backdrop-filter:blur(8px);
+    backdrop-filter:blur(6px);
+    -webkit-backdrop-filter:blur(6px);
 
     padding:80px 10% 30px;
     margin-top:80px;
-    position:relative;
+
     border-top:1px solid rgba(255,255,255,.06);
 }
 
-.footer::before{
-    content:"";
-    position:absolute;
-    inset:0;
-    background:rgba(0,0,0,.2);
-    pointer-events:none;
+.background-video{
+    transform:translateZ(0);
+    will-change:transform;
 }
-
 
 .footer-grid{
     display:grid;
