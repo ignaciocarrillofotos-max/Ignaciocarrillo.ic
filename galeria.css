@@ -378,3 +378,58 @@ footer p{
     font-size:.95rem;
 
 }
+
+
+
+.btn{
+    display:inline-block;
+    padding:12px 28px;
+    background:linear-gradient(135deg,#07751e,#0a8a24);
+    color:#fff;
+    text-decoration:none;
+    border-radius:30px;
+    font-weight:500;
+    transition:.3s;
+    margin-top:30px;
+    box-shadow:0 8px 20px rgba(0,0,0,.25);
+}
+
+.btn:hover{
+    transform:translateY(-3px);
+    box-shadow:0 12px 30px rgba(0,0,0,.35);
+}
+
+#contacto{
+    padding:90px 10%;
+    text-align:center;
+}
+
+#contacto h2{
+    font-size:2.2rem;
+    margin-bottom:15px;
+}
+
+#contacto p{
+    color:#d0d0d0;
+    line-height:1.8;
+}
+
+.contact-info{
+    margin-top:30px;
+}
+
+footer{
+    text-align:center;
+    padding:50px 20px;
+}
+
+.footer-logo{
+    width:170px;
+    display:block;
+    margin:0 auto 20px;
+}
+
+footer p{
+    color:#888;
+    margin:8px 0;
+}
