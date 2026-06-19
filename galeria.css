@@ -372,11 +372,30 @@ to{
    FOOTER
 ========================= */
 .footer{
-    background:#0b0b0b;
-    padding:60px 10% 30px;
+    background:linear-gradient(
+        to top,
+        rgba(0,0,0,.85),
+        rgba(0,0,0,.35),
+        transparent
+    );
+
+    backdrop-filter:blur(8px);
+    -webkit-backdrop-filter:blur(8px);
+
+    padding:80px 10% 30px;
     margin-top:80px;
-    border-top:1px solid rgba(255,255,255,.05);
+
+    border-top:1px solid rgba(255,255,255,.06);
 }
+
+.footer::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:rgba(0,0,0,.2);
+    pointer-events:none;
+}
+
 
 .footer-grid{
     display:grid;
