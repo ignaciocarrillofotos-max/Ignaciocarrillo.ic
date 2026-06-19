@@ -15,6 +15,37 @@ body{
 }
 
 
+
+
+.background-video{
+    position:fixed;
+    top:0;
+    left:0;
+
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+
+    z-index:-3;
+}
+
+.background-overlay{
+
+    position:fixed;
+    inset:0;
+
+    background:rgba(0,0,0,.55);
+
+    z-index:-2;
+}
+
+
+
+
+
+
+
 /* HERO */
 
 .hero{
@@ -170,28 +201,6 @@ body{
 
 
 
-.background-video{
-    position:fixed;
-    top:0;
-    left:0;
-
-    width:100%;
-    height:100%;
-
-    object-fit:cover;
-
-    z-index:-3;
-}
-
-.background-overlay{
-
-    position:fixed;
-    inset:0;
-
-    background:rgba(0,0,0,.55);
-
-    z-index:-2;
-}
 
 
 
