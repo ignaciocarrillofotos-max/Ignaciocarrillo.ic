@@ -73,22 +73,32 @@ body{
 }
 
 
-
 .hero-overlay h1{
-    font-size:4rem;
-    margin-bottom:15px;
+
+    font-size:clamp(3rem,7vw,5.2rem);
+    font-weight:700;
+    letter-spacing:2px;
+    text-transform:uppercase;
+
 }
+
 
 .hero-overlay p{
-    font-size:18px;
-    margin-bottom:30px;
+
+    max-width:700px;
+    margin:auto;
+    line-height:1.7;
+    opacity:.9;
+    margin-bottom:35px;
+
 }
 
-
 .hero-logo{
-    width:120px;
-    margin-bottom:15px;
-    opacity:0.85;
+
+    width:170px;
+    margin-bottom:25px;
+    filter:drop-shadow(0 0 18px rgba(255,255,255,.15));
+
 }
 
 
