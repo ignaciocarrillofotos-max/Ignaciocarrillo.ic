@@ -271,6 +271,18 @@ body{
 
 }
 
+.footer-logo{
+
+    width:130px;
+
+}
+
+#contacto-galeria h2{
+
+    font-size:2rem;
+
+}
+
 }
 
 
@@ -297,5 +309,73 @@ to{
     transform:translateY(0);
 
 }
+
+}
+
+
+
+
+/* =========================
+   CONTACTO GALERÍA
+========================= */
+
+#contacto-galeria{
+
+    padding:120px 10%;
+    text-align:center;
+    background:#111;
+
+}
+
+#contacto-galeria h2{
+
+    font-size:2.5rem;
+    margin-bottom:20px;
+
+}
+
+#contacto-galeria p{
+
+    max-width:700px;
+    margin:0 auto;
+    line-height:1.8;
+    color:#d3d3d3;
+
+}
+
+#contacto-galeria .btn{
+
+    margin-top:40px;
+
+}
+
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+
+    background:#090909;
+    text-align:center;
+    padding:70px 20px;
+    border-top:1px solid rgba(255,255,255,.08);
+
+}
+
+.footer-logo{
+
+    width:170px;
+    margin-bottom:25px;
+    opacity:.9;
+
+}
+
+footer p{
+
+    color:#888;
+    margin:8px 0;
+    font-size:.9rem;
 
 }
