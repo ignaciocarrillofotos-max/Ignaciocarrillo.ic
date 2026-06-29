@@ -666,22 +666,17 @@ LIGHTBOX PROFESIONAL
 #lightbox{
 
     position:fixed;
-
     inset:0;
 
     display:none;
 
     justify-content:center;
-
     align-items:center;
-
     flex-direction:column;
 
     background:rgba(0,0,0,.96);
 
-    backdrop-filter:blur(8px);
-
-    z-index:9999;
+    z-index:99999;
 
     animation:fade .25s;
 
@@ -690,11 +685,8 @@ LIGHTBOX PROFESIONAL
 #lightbox img{
 
     max-width:88%;
-
-    max-height:78vh;
-
+    max-height:75vh;
     border-radius:12px;
-
     box-shadow:0 30px 80px rgba(0,0,0,.65);
 
 }
@@ -702,17 +694,11 @@ LIGHTBOX PROFESIONAL
 .close{
 
     position:absolute;
-
     top:25px;
-
     right:40px;
-
-    font-size:48px;
-
+    font-size:50px;
     cursor:pointer;
-
     color:white;
-
     transition:.3s;
 
 }
@@ -727,24 +713,26 @@ LIGHTBOX PROFESIONAL
 .next{
 
     position:absolute;
-
     top:50%;
-
     transform:translateY(-50%);
-
-    font-size:55px;
-
+    font-size:60px;
     color:white;
-
-    background:none;
-
     border:none;
-
+    background:none;
     cursor:pointer;
+    padding:20px;
 
-    padding:25px;
+}
 
-    transition:.3s;
+.prev{
+
+    left:30px;
+
+}
+
+.next{
+
+    right:30px;
 
 }
 
@@ -770,41 +758,31 @@ LIGHTBOX PROFESIONAL
 .contador{
 
     margin-top:20px;
-
     color:white;
-
     font-size:18px;
-
     letter-spacing:2px;
 
 }
 
 #miniaturas{
 
-    width:90%;
-
     display:flex;
-
-    justify-content:center;
-
     gap:10px;
-
     overflow-x:auto;
-
-    padding:25px;
-
-    margin-top:15px;
+    margin-top:25px;
+    padding:10px;
+    max-width:90%;
 
 }
 
 #miniaturas img{
 
-    width:90px;
-    height:65px;
+    width:80px;
+    height:60px;
     object-fit:cover;
     border-radius:8px;
-    opacity:.55;
     cursor:pointer;
+    opacity:.6;
     transition:.3s;
 
 }
