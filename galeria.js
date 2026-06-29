@@ -134,3 +134,29 @@ document.addEventListener("keydown",(e)=>{
     }
 
 });
+
+
+
+
+
+
+let touchStartX = 0;
+let touchEndX = 0;
+
+lightbox.addEventListener("touchstart", e => {
+    touchStartX = e.changedTouches[0].screenX;
+});
+
+lightbox.addEventListener("touchend", e => {
+
+    touchEndX = e.changedTouches[0].screenX;
+
+    if (touchEndX < touchStartX - 60) {
+        btnNext.click();
+    }
+
+    if (touchEndX > touchStartX + 60) {
+        btnPrev.click();
+    }
+
+});
