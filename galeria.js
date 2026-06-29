@@ -182,3 +182,34 @@ lightboxImg.addEventListener("dblclick", () => {
     }
 
 });
+
+
+
+let escala = 1;
+
+lightboxImg.addEventListener("wheel",(e)=>{
+
+    e.preventDefault();
+
+    if(e.deltaY<0){
+
+        escala+=0.15;
+
+    }else{
+
+        escala-=0.15;
+
+    }
+
+    if(escala<1) escala=1;
+    if(escala>4) escala=4;
+
+    lightboxImg.style.transform=`scale(${escala})`;
+
+});
+
+
+
+
+escala = 1;
+lightboxImg.style.transform="scale(1)";
