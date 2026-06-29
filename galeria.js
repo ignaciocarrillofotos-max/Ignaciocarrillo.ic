@@ -50,7 +50,10 @@ function abrirImagen(index){
     lightboxImg.src = imagenes[index].src;
     contador.innerHTML = (index + 1) + " / " + imagenes.length;
     actualizarMiniaturas();
-
+lightboxImg.classList.remove("animar");
+void lightboxImg.offsetWidth;
+lightboxImg.classList.add("animar");
+    
 }
 
 // Resaltar miniatura activa
