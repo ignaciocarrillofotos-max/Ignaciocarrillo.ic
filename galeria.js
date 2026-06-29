@@ -48,12 +48,19 @@ function abrirImagen(index){
     indiceActual = index;
     lightbox.style.display = "flex";
     lightboxImg.src = imagenes[index].src;
+
+    escala = 1;
+    zoom = false;
+
+    lightboxImg.style.transform = "scale(1)";
+    lightboxImg.style.cursor = "zoom-in";
     contador.innerHTML = (index + 1) + " / " + imagenes.length;
+
     actualizarMiniaturas();
-lightboxImg.classList.remove("animar");
-void lightboxImg.offsetWidth;
-lightboxImg.classList.add("animar");
-    
+
+    lightboxImg.classList.remove("animar");
+    void lightboxImg.offsetWidth;
+    lightboxImg.classList.add("animar");
 }
 
 // Resaltar miniatura activa
@@ -217,8 +224,5 @@ lightboxImg.addEventListener("wheel",(e)=>{
 escala = 1;
 lightboxImg.style.transform="scale(1)";
 
-lightbox.style.backgroundImage=`url(${imagenes[indiceActual].src})`;
-lightbox.style.backgroundSize="cover";
-lightbox.style.backgroundPosition="center";
 
 
