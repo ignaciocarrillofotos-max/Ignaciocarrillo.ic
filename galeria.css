@@ -625,7 +625,7 @@ footer p{
 
     break-inside:avoid;
     margin-bottom:18px;
-   
+    overflow:hidden;   
     cursor:pointer;
     box-shadow:0 20px 45px rgba(0,0,0,.35);
 }
@@ -636,7 +636,7 @@ footer p{
     display:block;
 
     border-radius:20px;
-    overflow:hidden;
+
     transition:.45s ease;
 
 }
