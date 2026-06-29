@@ -592,22 +592,10 @@ footer p{
 }
 
 
-
 .gallery img:hover{
 
     transform:translateY(-8px) scale(1.02);
     box-shadow:0 25px 60px rgba(0,0,0,.45);
-
-}
-
-
-.photo{
-
-    break-inside:avoid;
-    margin-bottom:18px;
-    overflow:hidden;
-    border-radius:20px;
-    cursor:pointer;
 
 }
 
@@ -635,6 +623,35 @@ footer p{
 }
 
 
+
+
+.photo{
+
+    break-inside:avoid;
+    margin-bottom:18px;
+    overflow:hidden;
+    border-radius:20px;
+    cursor:pointer;
+    box-shadow:0 20px 45px rgba(0,0,0,.35);
+}
+
+.photo img{
+
+    width:100%;
+    display:block;
+
+    border-radius:20px;
+
+    transition:.45s ease;
+
+}
+
+
+.photo:hover img{
+
+    transform:scale(1.04);
+
+}
 
 
 
@@ -826,4 +843,39 @@ opacity:1;
 
 
 
+
+
+/*==========================
+Movil
+==========================*/
+
+@media(max-width:1200px){
+
+.gallery{
+
+column-count:3;
+
+}
+
+}
+
+@media(max-width:768px){
+
+.gallery{
+
+column-count:2;
+
+}
+
+}
+
+@media(max-width:500px){
+
+.gallery{
+
+column-count:1;
+
+}
+
+}
 
