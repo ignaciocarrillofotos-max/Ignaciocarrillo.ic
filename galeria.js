@@ -160,3 +160,25 @@ lightbox.addEventListener("touchend", e => {
     }
 
 });
+
+
+
+let zoom = false;
+
+lightboxImg.addEventListener("dblclick", () => {
+
+    zoom = !zoom;
+
+    if (zoom) {
+
+        lightboxImg.style.transform = "scale(2)";
+        lightboxImg.style.cursor = "zoom-out";
+
+    } else {
+
+        lightboxImg.style.transform = "scale(1)";
+        lightboxImg.style.cursor = "zoom-in";
+
+    }
+
+});
