@@ -739,11 +739,15 @@ transform:scale(1);
     transform:translateY(-50%);
     font-size:60px;
     color:white;
-    border:none;
-    background:none;
     cursor:pointer;
     padding:20px;
 
+        width:65px;
+    height:65px;
+    border-radius:50%;
+    background:rgba(255,255,255,.08);
+    backdrop-filter:blur(15px);
+    border:1px solid rgba(255,255,255,.15);
 }
 
 .prev{
