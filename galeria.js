@@ -12,7 +12,7 @@ function openFolder(folder){
         window.location.href = "FOTOSVIDEOS/paisajes/";
     }
 
-
+}
 
 
 
