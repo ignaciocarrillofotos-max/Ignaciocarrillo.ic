@@ -861,7 +861,11 @@ opacity:1;
 
 }
 
+#lightbox{
 
+    backdrop-filter:blur(30px);
+
+}
 
 
 
