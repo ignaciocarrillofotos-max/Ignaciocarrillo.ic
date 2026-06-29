@@ -567,10 +567,6 @@ footer p{
     max-width:1700px;
     margin:80px auto;
 
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
-    gap:20px;
-
 }
 
 .gallery img{
@@ -649,7 +645,9 @@ footer p{
 
 .photo:hover img{
 
-    transform:scale(1.04);
+    transform:scale(1.06);
+    filter:brightness(1.05);
+
 
 }
 
@@ -684,8 +682,9 @@ LIGHTBOX PROFESIONAL
 
 #lightbox img{
 
-    max-width:88%;
-    max-height:75vh;
+    max-width:90%;
+    max-height:80vh;
+    object-fit:contain;
     border-radius:12px;
     box-shadow:0 30px 80px rgba(0,0,0,.65);
 
@@ -755,7 +754,7 @@ LIGHTBOX PROFESIONAL
 
 }
 
-.contador{
+#contador{
 
     margin-top:20px;
     color:white;
@@ -772,7 +771,8 @@ LIGHTBOX PROFESIONAL
     margin-top:25px;
     padding:10px;
     max-width:90%;
-
+    scrollbar-width:none;
+    
 }
 
 #miniaturas img{
@@ -784,6 +784,10 @@ LIGHTBOX PROFESIONAL
     cursor:pointer;
     opacity:.6;
     transition:.3s;
+}
+#miniaturas::-webkit-scrollbar{
+
+    display:none;
 
 }
 
