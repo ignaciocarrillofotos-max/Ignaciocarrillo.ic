@@ -219,6 +219,4 @@ lightboxImg.style.transform="scale(1)";
 
 
 
-lightbox.style.backgroundImage=`url(${imagenes[indiceActual].src})`;
-lightbox.style.backgroundSize="cover";
-lightbox.style.backgroundPosition="center";
+
