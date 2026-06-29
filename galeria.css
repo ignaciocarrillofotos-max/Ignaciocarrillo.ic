@@ -771,6 +771,15 @@ transform:scale(1);
 
 }
 
+.prev{
+    left:25px;
+}
+
+.next{
+    right:25px;
+}
+
+
 .prev:hover,
 .next:hover{
 
