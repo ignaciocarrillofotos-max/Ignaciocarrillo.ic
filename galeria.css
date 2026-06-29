@@ -585,17 +585,46 @@ footer p{
 
     transition:.4s;
 
-    box-shadow:0 15px 35px rgba(0,0,0,.35);
+    box-shadow:0 15px 35px rgba(0,0,0,.35);  
+        aspect-ratio:4/5;
+        object-fit:cover;
 
 }
+
+
 
 .gallery img:hover{
 
-    transform:scale(1.03);
-
+    transform:translateY(-8px) scale(1.02);
     box-shadow:0 25px 60px rgba(0,0,0,.45);
 
 }
+
+
+
+.intro-galeria{
+
+    max-width:850px;
+
+    margin:0 auto 60px;
+
+    text-align:center;
+
+}
+
+.intro-galeria p{
+
+    color:#d6d6d6;
+
+    line-height:1.9;
+
+    font-size:1.05rem;
+
+}
+
+
+
+
 
 
 
