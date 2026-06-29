@@ -632,28 +632,39 @@ footer p{
 #lightbox{
 
     position:fixed;
-
     inset:0;
-
     background:rgba(0,0,0,.95);
-
     display:none;
-
     justify-content:center;
-
     align-items:center;
-
     z-index:9999;
+        animation:fade .25s;
 
 }
 
 #lightbox img{
 
     max-width:90%;
-
     max-height:90%;
-
     border-radius:10px;
+
+}
+
+
+
+@keyframes fade{
+
+from{
+
+opacity:0;
+
+}
+
+to{
+
+opacity:1;
+
+}
 
 }
 
