@@ -561,14 +561,14 @@ footer p{
 
 .gallery{
 
-    width:90%;
-    max-width:1500px;
-    margin:70px auto;
+    column-count:4;
+    column-gap:18px;
+    width:92%;
+    max-width:1700px;
+    margin:80px auto;
 
     display:grid;
-
     grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
-
     gap:20px;
 
 }
@@ -599,6 +599,18 @@ footer p{
     box-shadow:0 25px 60px rgba(0,0,0,.45);
 
 }
+
+
+.photo{
+
+    break-inside:avoid;
+    margin-bottom:18px;
+    overflow:hidden;
+    border-radius:20px;
+    cursor:pointer;
+
+}
+
 
 
 
