@@ -16,81 +16,97 @@ function openFolder(folder){
 
 
 
+
 const imagenes = document.querySelectorAll(".gallery img");
 
 const lightbox = document.getElementById("lightbox");
 const lightboxImg = document.getElementById("lightbox-img");
 
-const prev = document.querySelector(".prev");
-const next = document.querySelector(".next");
-const close = document.querySelector(".close");
+const btnCerrar = document.querySelector(".close");
+const btnPrev = document.querySelector(".prev");
+const btnNext = document.querySelector(".next");
 
-const miniaturas = document.getElementById("miniaturas");
 const contador = document.getElementById("contador");
+const miniaturas = document.getElementById("miniaturas");
 
-let indice = 0;
+let indiceActual = 0;
 
 // Crear miniaturas
-imagenes.forEach((img,i)=>{
+imagenes.forEach((img, index) => {
     const mini = document.createElement("img");
     mini.src = img.src;
-    mini.addEventListener("click",()=>{
-        indice = i;
-        mostrarImagen();
-
+    mini.addEventListener("click", () => {
+        abrirImagen(index);
     });
 
     miniaturas.appendChild(mini);
 
 });
 
-function mostrarImagen(){
-    lightbox.style.display="flex";
-    lightboxImg.src = imagenes[indice].src;
-    contador.textContent = (indice+1)+" / "+imagenes.length;
-    document.querySelectorAll("#miniaturas img").forEach((img,i)=>{
-        img.classList.toggle("active",i===indice);
+// Abrir imagen
+function abrirImagen(index){
+    indiceActual = index;
+    lightbox.style.display = "flex";
+    lightboxImg.src = imagenes[index].src;
+    contador.innerHTML = (index + 1) + " / " + imagenes.length;
+    actualizarMiniaturas();
+
+}
+
+// Resaltar miniatura activa
+function actualizarMiniaturas(){
+    const minis = miniaturas.querySelectorAll("img");
+    minis.forEach((mini, i)=>{
+        mini.style.opacity = i === indiceActual ? "1" : ".45";
+        mini.style.transform =
+            i === indiceActual
+            ? "scale(1.08)"
+            : "scale(1)";
 
     });
 
 }
 
-imagenes.forEach((img,i)=>{
+// Abrir al pulsar una foto
+imagenes.forEach((img,index)=>{
     img.addEventListener("click",()=>{
-        indice=i;
-        mostrarImagen();
+        abrirImagen(index);
 
     });
 
 });
 
-next.addEventListener("click",()=>{
-    indice++;
-    if(indice>=imagenes.length){
-        indice=0;
+// Flecha derecha
+btnNext.addEventListener("click",()=>{
+    indiceActual++;
+    if(indiceActual>=imagenes.length){
+        indiceActual=0;
 
     }
 
-    mostrarImagen();
+    abrirImagen(indiceActual);
 
 });
 
-prev.addEventListener("click",()=>{
-    indice--;
-    if(indice<0){
-        indice=imagenes.length-1;
+// Flecha izquierda
+btnPrev.addEventListener("click",()=>{
+    indiceActual--;
+    if(indiceActual<0){
+        indiceActual=imagenes.length-1;
 
     }
 
-    mostrarImagen();
+    abrirImagen(indiceActual);
 
 });
 
-close.addEventListener("click",()=>{
+// Cerrar
+btnCerrar.addEventListener("click",()=>{
     lightbox.style.display="none";
 
 });
 
+// Click fuera de la foto
 lightbox.addEventListener("click",(e)=>{
     if(e.target===lightbox){
         lightbox.style.display="none";
@@ -99,22 +115,21 @@ lightbox.addEventListener("click",(e)=>{
 
 });
 
+// Teclado
 document.addEventListener("keydown",(e)=>{
-    if(lightbox.style.display==="flex"){
-        if(e.key==="ArrowRight"){
-            next.click();
+    if(lightbox.style.display!=="flex") return;
+    if(e.key==="ArrowRight"){
+        btnNext.click();
 
-        }
+    }
 
-        if(e.key==="ArrowLeft"){
-            prev.click();
+    if(e.key==="ArrowLeft"){
+        btnPrev.click();
 
-        }
+    }
 
-        if(e.key==="Escape"){
-          close.click();
-
-        }
+    if(e.key==="Escape"){
+        lightbox.style.display="none";
 
     }
 
