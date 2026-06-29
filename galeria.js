@@ -37,5 +37,3 @@ lightbox.addEventListener("click",()=>{
     lightbox.style.display="none";
 
 });
-
-}
