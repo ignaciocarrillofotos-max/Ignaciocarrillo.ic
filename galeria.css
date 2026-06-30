@@ -914,9 +914,8 @@ Movil, Galeria
 @media(max-width:1200px){
 
 .gallery{
-
-column-count:3;
-
+    grid-template-columns:repeat(3,1fr);
+    gap:18px;
 }
 
 }
@@ -924,20 +923,38 @@ column-count:3;
 @media(max-width:768px){
 
 .gallery{
-
-column-count:2;
-
+    grid-template-columns:repeat(2,1fr);
+    gap:14px;
+    width:94%;
+    margin:40px auto;
 }
 
+.hero{
+    min-height:22vh;
+    padding:30px 20px;
+}
+
+.hero-logo{
+    width:95px;
+}
+
+.hero h1{
+    font-size:2rem;
+}
+
+.hero p{
+    font-size:.95rem;
+    margin-bottom:20px;
+}
+    
 }
 
 @media(max-width:500px){
 
 .gallery{
-
-column-count:1;
-
+    grid-template-columns:1fr;
+    gap:12px;
+    width:95%;
 }
 
 }
-
