@@ -242,7 +242,7 @@ const btnCompartir = document.getElementById("btnCompartir");
 
 btnCompartir.addEventListener("click", async ()=>{
 
-    const url = imagenes[indiceActual].src;
+const url = window.location.href;
 
     if(navigator.share){
 
