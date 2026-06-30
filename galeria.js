@@ -242,15 +242,18 @@ const btnCompartir = document.getElementById("btnCompartir");
 
 btnCompartir.addEventListener("click", async ()=>{
 
-const url = window.location.href;
+    const url = new URL(
+        imagenes[indiceActual].src,
+        window.location.href
+    ).href;
 
     if(navigator.share){
 
         await navigator.share({
 
-            title:"Ignacio Carrillo IC",
+            title:"Ignaciocarrillo.IC",
 
-            text:"Mira esta fotografía",
+            text:"Fotografía de deportes",
 
             url:url
 
@@ -260,7 +263,7 @@ const url = window.location.href;
 
         navigator.clipboard.writeText(url);
 
-        alert("Enlace copiado");
+        alert("Enlace de la fotografía copiado");
 
     }
 
