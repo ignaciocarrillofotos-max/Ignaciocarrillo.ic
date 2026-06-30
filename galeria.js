@@ -61,7 +61,14 @@ function abrirImagen(index){
     lightboxImg.classList.remove("animar");
     void lightboxImg.offsetWidth;
     lightboxImg.classList.add("animar");
+
+    btnFavorito.innerHTML =
+favoritos.includes(index)
+? "❤ Guardada"
+: "🤍 Favorito";
+    
 }
+
 
 // Resaltar miniatura activa
 function actualizarMiniaturas(){
@@ -225,4 +232,61 @@ escala = 1;
 lightboxImg.style.transform="scale(1)";
 
 
+
+
+
+
+
+
+const btnCompartir = document.getElementById("btnCompartir");
+
+btnCompartir.addEventListener("click", async ()=>{
+
+    const url = imagenes[indiceActual].src;
+
+    if(navigator.share){
+
+        await navigator.share({
+
+            title:"Ignacio Carrillo IC",
+
+            text:"Mira esta fotografía",
+
+            url:url
+
+        });
+
+    }else{
+
+        navigator.clipboard.writeText(url);
+
+        alert("Enlace copiado");
+
+    }
+
+});
+
+const btnFavorito = document.getElementById("btnFavorito");
+
+let favoritos = JSON.parse(localStorage.getItem("favoritos")) || [];
+
+btnFavorito.addEventListener("click",()=>{
+    if(favoritos.includes(indiceActual)){
+        favoritos =
+        favoritos.filter(i=>i!==indiceActual);
+
+    }else{
+
+        favoritos.push(indiceActual);
+
+    }
+
+    localStorage.setItem(
+        "favoritos",
+        JSON.stringify(favoritos)
+    );
+
+    abrirImagen(indiceActual);
+
+});
 
