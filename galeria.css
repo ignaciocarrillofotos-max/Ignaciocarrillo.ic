@@ -802,6 +802,46 @@ scale(1.15);
 
 }
 
+
+.lightbox-actions{
+
+    display:flex;
+    gap:15px;
+    margin-top:20px;
+
+}
+
+
+.lightbox-actions button{
+
+    background:rgba(255,255,255,.12);
+
+    color:white;
+
+    border:1px solid rgba(255,255,255,.15);
+
+    padding:12px 22px;
+
+    border-radius:30px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+    backdrop-filter:blur(8px);
+
+}
+
+.lightbox-actions button:hover{
+
+    background:white;
+
+    color:black;
+
+}
+
+
+
 #miniaturas{
 
     display:flex;
