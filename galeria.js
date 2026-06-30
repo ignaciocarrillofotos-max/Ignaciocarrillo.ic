@@ -240,31 +240,30 @@ lightboxImg.style.transform="scale(1)";
 
 const btnCompartir = document.getElementById("btnCompartir");
 
-btnCompartir.addEventListener("click", async ()=>{
+btnCompartir.addEventListener("click", async () => {
 
-    const url = new URL(
-        imagenes[indiceActual].src,
-        window.location.href
-    ).href;
+    const url = "https://ignaciocarrillo.es/" +
+        imagenes[indiceActual].getAttribute("src");
 
-    if(navigator.share){
+    try {
 
-        await navigator.share({
+        if (navigator.share) {
 
-            title:"Ignaciocarrillo.IC",
+            await navigator.share({
+                title: "Ignacio Carrillo IC",
+                text: "Mira esta fotografía de mi galería.",
+                url: url
+            });
 
-            text:"Fotografía de deportes",
+        } else {
 
-            url:url
+            await navigator.clipboard.writeText(url);
+            alert("Enlace de la fotografía copiado.");
 
-        });
+        }
 
-    }else{
-
-        navigator.clipboard.writeText(url);
-
-        alert("Enlace de la fotografía copiado");
-
+    } catch (error) {
+        console.log(error);
     }
 
 });
