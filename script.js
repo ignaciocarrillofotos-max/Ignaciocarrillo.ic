@@ -55,22 +55,31 @@ document.addEventListener("click", function(e){
 
 const slider = document.querySelector('.services');
 
-let autoScroll = setInterval(()=>{
-    slider.scrollLeft += 1;
+function autoMove(){
+    slider.scrollLeft += 2;
 
-    if(slider.scrollLeft + slider.clientWidth >= slider.scrollWidth){
+    // Reiniciar ANTES del final para evitar rebote en móvil
+    const limit = slider.scrollWidth - slider.clientWidth - 5;
+
+    if(slider.scrollLeft >= limit){
         slider.scrollLeft = 0;
     }
-}, 20);
+}
 
+let autoScroll = setInterval(autoMove, 20);
+
+// Pausa en PC
 slider.addEventListener("mouseenter", ()=> clearInterval(autoScroll));
 slider.addEventListener("mouseleave", ()=>{
-    autoScroll = setInterval(()=>{
-        slider.scrollLeft += 1;
-        if(slider.scrollLeft + slider.clientWidth >= slider.scrollWidth){
-            slider.scrollLeft = 0;
-        }
-    }, 20);
+    autoScroll = setInterval(autoMove, 20);
 });
+
+// Pausa en móvil
+slider.addEventListener("touchstart", ()=> clearInterval(autoScroll));
+slider.addEventListener("touchend", ()=>{
+    autoScroll = setInterval(autoMove, 20);
+});
+
+
 
 
