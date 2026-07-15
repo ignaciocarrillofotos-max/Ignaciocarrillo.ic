@@ -372,16 +372,15 @@ section{
 
 .services{
     display:flex;
-    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
     gap:20px;
-       overflow: hidden;
-    width: 100%;
-    animation: slide 20s linear infinite;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
 }
-@keyframes slide {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-100%); }
+.services::-webkit-scrollbar{
+    display:none;
 }
+
 
 .service-card{
     position:relative;
