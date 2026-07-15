@@ -385,7 +385,7 @@ section{
 
 .service-card{
     position:relative;
-    height:220px;
+    height:260px;
     overflow:hidden;
     border-radius:15px;
        flex: 0 0 320px;
