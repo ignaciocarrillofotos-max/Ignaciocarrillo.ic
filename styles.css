@@ -276,7 +276,7 @@ section{
 /* Carrusel horizontal para clientes */
 .clientes-slider{
     display:flex;
-    gap:45px;
+    gap:55px;
     overflow-x:auto;
     scroll-behavior:smooth;
     scrollbar-width:none;
