@@ -671,8 +671,8 @@ LIGHTBOX PROFESIONAL
     align-items:center;
     flex-direction:column;
 
-    background:rgba(0,0,0,.96);
-    backdrop-filter:blur(30px);
+    background:rgba(10,10,10,.92);
+    backdrop-filter:blur(18px);
 
     z-index:99999;
 
