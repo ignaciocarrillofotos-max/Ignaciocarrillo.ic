@@ -969,11 +969,7 @@ Movil, Galeria
 .prev,
 .next{
 
-    width:48px;
-    height:48px;
-    font-size:26px;
-
-    top:50%;
+    display:none;
 
 }
 
