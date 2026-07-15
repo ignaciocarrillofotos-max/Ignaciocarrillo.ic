@@ -52,6 +52,17 @@ document.addEventListener("click", function(e){
 
 });
 
+
+const slider = document.querySelector('.services');
+
+let autoScroll = setInterval(()=>{
+    slider.scrollLeft += 1;
+
+    if(slider.scrollLeft + slider.clientWidth >= slider.scrollWidth){
+        slider.scrollLeft = 0;
+    }
+}, 20);
+
 slider.addEventListener("mouseenter", ()=> clearInterval(autoScroll));
 slider.addEventListener("mouseleave", ()=>{
     autoScroll = setInterval(()=>{
