@@ -82,4 +82,32 @@ slider.addEventListener("touchend", ()=>{
 
 
 
+const clientes = document.querySelector('.clientes-slider');
+
+function autoMoveClientes(){
+    clientes.scrollLeft += 2;
+
+    // Reiniciar ANTES del final para evitar rebote en móvil
+    const limit = clientes.scrollWidth - clientes.clientWidth - 5;
+
+    if(clientes.scrollLeft >= limit){
+        clientes.scrollLeft = 0;
+    }
+}
+
+let autoScrollClientes = setInterval(autoMoveClientes, 20);
+
+// Pausa en PC
+clientes.addEventListener("mouseenter", ()=> clearInterval(autoScrollClientes));
+clientes.addEventListener("mouseleave", ()=>{
+    autoScrollClientes = setInterval(autoMoveClientes, 20);
+});
+
+// Pausa en móvil
+clientes.addEventListener("touchstart", ()=> clearInterval(autoScrollClientes));
+clientes.addEventListener("touchend", ()=>{
+    autoScrollClientes = setInterval(autoMoveClientes, 20);
+});
+
+
 
