@@ -290,7 +290,7 @@ section{
 
 /* Tamaño profesional de cada tarjeta */
 .clientes-slider .card{
-    flex:0 0 350px; /* Puedes poner 320px si quieres más compacto */
+    flex:0 0 400px; /* Puedes poner 320px si quieres más compacto */
 }
 
 
