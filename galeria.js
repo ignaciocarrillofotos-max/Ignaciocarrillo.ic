@@ -90,8 +90,9 @@ imagenes.forEach((img,index)=>{
     img.addEventListener("click",()=>{
         abrirImagen(index);
 
-
+    });
 });
+
 
 // Flecha derecha
 btnNext.addEventListener("click",()=>{
@@ -138,25 +139,17 @@ lightbox.addEventListener("click",(e)=>{
 
 // Teclado
 document.addEventListener("keydown",(e)=>{
-    if(lightbox.style.display!=="flex") return;
-    if(e.key==="ArrowRight"){
-        btnNext.click();
+    if(lightbox.style.display !== "flex") return;
 
+    if(e.key === "ArrowRight") btnNext.click();
+    if(e.key === "ArrowLeft") btnPrev.click();
+
+    if(e.key === "Escape"){
+        lightbox.style.display = "none";
+        document.body.style.overflow = "auto";
     }
-
-    if(e.key==="ArrowLeft"){
-        btnPrev.click();
-
-    }
-
-if(e.key==="Escape"){
-    lightbox.style.display = "none";
-    document.body.style.overflow = "auto";
-
-}
-    }
-
 });
+
 
 
 
@@ -296,5 +289,5 @@ btnFavorito.addEventListener("click",()=>{
 
     abrirImagen(indiceActual);
 
+    });
 });
-
