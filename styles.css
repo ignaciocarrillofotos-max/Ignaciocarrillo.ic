@@ -591,19 +591,18 @@ section{
         display:none;
     }
 
-nav.show{
-    display:flex;
-    flex-direction:column;
-    position:absolute;
-    top:90px;
-    right:20px;
-    background:black;
-    padding:15px;
-    width:220px;
-    z-index:9999;
-}
+    nav.show{
+        display:flex;
+        flex-direction:column;
+        position:absolute;
+        top:90px;
+        right:20px;
+        background:black;
+        padding:15px;
+        width:220px;
+        z-index:9999;
+    }
 
-   
     .hamburger{
         display:block;
     }
@@ -623,8 +622,17 @@ nav.show{
     .service-card{
         height:180px;
     }
-}
 
+    /* Tamaño perfecto para móvil */
+    .clientes-slider .card{
+        flex: 0 0 300px;
+    }
+} /* ← ESTE es el cierre correcto del media query */
+
+
+/* =========================
+   RESTO DEL CSS
+========================= */
 
 .reveal{
     opacity:0;
@@ -637,106 +645,61 @@ nav.show{
     transform:translateY(0);
 }
 
-
 .firma-logo{
-
-width:180px;
-display:block;
-margin:25px auto 0;
-opacity:.92;
-
+    width:180px;
+    display:block;
+    margin:25px auto 0;
+    opacity:.92;
 }
-
 
 .firma{
-
-display:block;
-
-text-align:center;
-
-font-size:.80rem;
-letter-spacing:12px;
-text-transform:uppercase;
-color:rgba(255,255,255,.75);
-font-weight:300;
-margin-bottom:35px;
-
+    display:block;
+    text-align:center;
+    font-size:.80rem;
+    letter-spacing:12px;
+    text-transform:uppercase;
+    color:rgba(255,255,255,.75);
+    font-weight:300;
+    margin-bottom:35px;
 }
 
-
-
-
 #about{
-
     max-width:950px;
-
     margin:auto;
-
 }
 
 .presentacion{
-
     display:flex;
-
     flex-direction:column;
-
     align-items:center;
-
     text-align:center;
-
     margin-bottom:70px;
-
 }
-
-
 
 .presentacion h2{
-
     margin-top:30px;
-
     font-size:2.2rem;
-
     letter-spacing:1px;
-
 }
-
 
 .profesion{
-
     color:#64c478;
-
     font-weight:500;
-
     letter-spacing:3px;
-
     text-transform:uppercase;
-
     margin:10px 0 25px;
-
 }
 
-
-
-
-
 .historia{
-
     text-align:left;
-
     line-height:2;
-
     font-size:1.05rem;
-
     color:#d8d8d8;
-
 }
 
 .historia p{
-
     margin-bottom:28px;
-
 }
-
 
 
 
@@ -764,10 +727,7 @@ margin-bottom:35px;
     background:#1c1c1c;
 }
 
-    .clientes-slider .card{
-        flex: 0 0 300px; /* tamaño perfecto para móvil */
-    }
-}
+
 
 
 /* =========================
