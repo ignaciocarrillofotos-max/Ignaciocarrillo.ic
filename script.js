@@ -85,7 +85,7 @@ slider.addEventListener("touchend", ()=>{
 const clientes = document.querySelector('.clientes-slider');
 
 function autoMoveClientes(){
-    clientes.scrollLeft += 2;
+    clientes.scrollLeft += 1.4;
 
     // Reiniciar ANTES del final para evitar rebote en móvil
     const limit = clientes.scrollWidth - clientes.clientWidth - 5;
