@@ -134,9 +134,7 @@ lightbox.addEventListener("click",(e)=>{
 
 });
 
-    }
 
-});
 
 // Teclado
 document.addEventListener("keydown",(e)=>{
