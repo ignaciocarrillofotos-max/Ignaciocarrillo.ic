@@ -673,9 +673,9 @@ LIGHTBOX PROFESIONAL
 
 background:rgba(0,0,0,.88);
 backdrop-filter:blur(20px);
-
+touch-action:none;
+overscroll-behavior:contain;
     z-index:99999;
-
     animation:fade .25s;
 
 }
