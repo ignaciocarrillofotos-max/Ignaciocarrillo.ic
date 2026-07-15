@@ -965,8 +965,67 @@ Movil, Galeria
     font-size:1rem;
 
 }
+    
+.prev,
+.next{
+
+    width:48px;
+    height:48px;
+    font-size:26px;
+
+    top:50%;
 
 }
+
+.prev{
+    left:8px;
+}
+
+.next{
+    right:8px;
+}
+
+#lightbox img{
+
+    max-width:96%;
+    max-height:72vh;
+
+}
+
+.close{
+
+    width:42px;
+    height:42px;
+    font-size:28px;
+
+    top:12px;
+    right:12px;
+
+}
+
+    #miniaturas img{
+
+    width:70px;
+    height:52px;
+
+}
+
+.lightbox-actions{
+
+    width:95%;
+    gap:10px;
+
+}
+
+.lightbox-actions button{
+
+    flex:1;
+    padding:12px;
+
+}
+    
+}
+
 
 @media(max-width:500px){
 
