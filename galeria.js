@@ -1,21 +1,8 @@
 function openFolder(folder){
-
-    if(folder === "deportes"){
-        window.location.href = "FOTOSVIDEOS/deportes/";
-    }
-
-    if(folder === "fauna"){
-        window.location.href = "FOTOSVIDEOS/fauna/";
-    }
-
-    if(folder === "paisajes"){
-        window.location.href = "FOTOSVIDEOS/paisajes/";
-    }
-
+    if(folder === "deportes") window.location.href = "FOTOSVIDEOS/deportes/";
+    if(folder === "fauna") window.location.href = "FOTOSVIDEOS/fauna/";
+    if(folder === "paisajes") window.location.href = "FOTOSVIDEOS/paisajes/";
 }
-
-
-
 
 const imagenes = document.querySelectorAll(".gallery img");
 
@@ -30,23 +17,22 @@ const contador = document.getElementById("contador");
 const miniaturas = document.getElementById("miniaturas");
 
 let indiceActual = 0;
+let zoom = false;
+let escala = 1;
 
 // Crear miniaturas
 imagenes.forEach((img, index) => {
     const mini = document.createElement("img");
     mini.src = img.src;
-    mini.addEventListener("click", () => {
-        abrirImagen(index);
-    });
-
+    mini.addEventListener("click", () => abrirImagen(index));
     miniaturas.appendChild(mini);
-
 });
 
 // Abrir imagen
 function abrirImagen(index){
-        document.body.style.overflow = "hidden";
+    document.body.style.overflow = "hidden";
     indiceActual = index;
+
     lightbox.style.display = "flex";
     lightboxImg.src = imagenes[index].src;
 
@@ -55,6 +41,7 @@ function abrirImagen(index){
 
     lightboxImg.style.transform = "scale(1)";
     lightboxImg.style.cursor = "zoom-in";
+
     contador.innerHTML = (index + 1) + " / " + imagenes.length;
 
     actualizarMiniaturas();
@@ -63,79 +50,50 @@ function abrirImagen(index){
     void lightboxImg.offsetWidth;
     lightboxImg.classList.add("animar");
 
-    btnFavorito.innerHTML =
-favoritos.includes(index)
-? "❤ Guardada"
-: "🤍 Favorito";
-    
+    btnFavorito.innerHTML = favoritos.includes(index)
+        ? "❤ Guardada"
+        : "🤍 Favorito";
 }
-
 
 // Resaltar miniatura activa
 function actualizarMiniaturas(){
     const minis = miniaturas.querySelectorAll("img");
     minis.forEach((mini, i)=>{
         mini.style.opacity = i === indiceActual ? "1" : ".45";
-        mini.style.transform =
-            i === indiceActual
-            ? "scale(1.08)"
-            : "scale(1)";
-
+        mini.style.transform = i === indiceActual ? "scale(1.08)" : "scale(1)";
     });
-
 }
 
 // Abrir al pulsar una foto
 imagenes.forEach((img,index)=>{
-    img.addEventListener("click",()=>{
-        abrirImagen(index);
-
-    });
+    img.addEventListener("click",()=> abrirImagen(index));
 });
-
 
 // Flecha derecha
 btnNext.addEventListener("click",()=>{
-    indiceActual++;
-    if(indiceActual>=imagenes.length){
-        indiceActual=0;
-
-    }
-
+    indiceActual = (indiceActual + 1) % imagenes.length;
     abrirImagen(indiceActual);
-
 });
 
 // Flecha izquierda
 btnPrev.addEventListener("click",()=>{
-    indiceActual--;
-    if(indiceActual<0){
-        indiceActual=imagenes.length-1;
-
-    }
-
+    indiceActual = (indiceActual - 1 + imagenes.length) % imagenes.length;
     abrirImagen(indiceActual);
-
 });
 
 // Cerrar
 btnCerrar.addEventListener("click",()=>{
     lightbox.style.display = "none";
     document.body.style.overflow = "auto";
-
 });
 
 // Click fuera de la foto
 lightbox.addEventListener("click",(e)=>{
-    if(e.target===lightbox){
+    if(e.target === lightbox){
         lightbox.style.display = "none";
         document.body.style.overflow = "auto";
-
     }
-
 });
-
-
 
 // Teclado
 document.addEventListener("keydown",(e)=>{
@@ -150,12 +108,7 @@ document.addEventListener("keydown",(e)=>{
     }
 });
 
-
-
-
-
-
-
+// Swipe táctil
 let touchStartX = 0;
 let touchEndX = 0;
 
@@ -164,130 +117,71 @@ lightbox.addEventListener("touchstart", e => {
 });
 
 lightbox.addEventListener("touchend", e => {
-
     touchEndX = e.changedTouches[0].screenX;
 
-    if (touchEndX < touchStartX - 60) {
-        btnNext.click();
-    }
-
-    if (touchEndX > touchStartX + 60) {
-        btnPrev.click();
-    }
-
+    if (touchEndX < touchStartX - 60) btnNext.click();
+    if (touchEndX > touchStartX + 60) btnPrev.click();
 });
 
-
-
-let zoom = false;
-
+// Zoom doble click
 lightboxImg.addEventListener("dblclick", () => {
-
     zoom = !zoom;
 
     if (zoom) {
-
         lightboxImg.style.transform = "scale(2)";
         lightboxImg.style.cursor = "zoom-out";
-
     } else {
-
         lightboxImg.style.transform = "scale(1)";
         lightboxImg.style.cursor = "zoom-in";
-
     }
-
 });
 
-
-
-let escala = 1;
-
+// Zoom con rueda
 lightboxImg.addEventListener("wheel",(e)=>{
-
     e.preventDefault();
 
-    if(e.deltaY<0){
+    escala += (e.deltaY < 0 ? 0.15 : -0.15);
 
-        escala+=0.15;
+    if(escala < 1) escala = 1;
+    if(escala > 4) escala = 4;
 
-    }else{
-
-        escala-=0.15;
-
-    }
-
-    if(escala<1) escala=1;
-    if(escala>4) escala=4;
-
-    lightboxImg.style.transform=`scale(${escala})`;
-
+    lightboxImg.style.transform = `scale(${escala})`;
 });
 
-
-
-
-escala = 1;
-lightboxImg.style.transform="scale(1)";
-
-
-
-
-
-
-
-
+// Compartir
 const btnCompartir = document.getElementById("btnCompartir");
 
 btnCompartir.addEventListener("click", async () => {
-
-    const url = "https://ignaciocarrillo.es/" +
-        imagenes[indiceActual].getAttribute("src");
+    const url = "https://ignaciocarrillo.es/" + imagenes[indiceActual].getAttribute("src");
 
     try {
-
         if (navigator.share) {
-
             await navigator.share({
                 title: "Ignacio Carrillo IC",
                 text: "Mira esta fotografía de mi galería.",
                 url: url
             });
-
         } else {
-
             await navigator.clipboard.writeText(url);
             alert("Enlace de la fotografía copiado.");
-
         }
-
     } catch (error) {
         console.log(error);
     }
-
 });
 
+// Favoritos
 const btnFavorito = document.getElementById("btnFavorito");
-
 let favoritos = JSON.parse(localStorage.getItem("favoritos")) || [];
 
 btnFavorito.addEventListener("click",()=>{
     if(favoritos.includes(indiceActual)){
-        favoritos =
-        favoritos.filter(i=>i!==indiceActual);
-
-    }else{
-
+        favoritos = favoritos.filter(i => i !== indiceActual);
+    } else {
         favoritos.push(indiceActual);
-
     }
 
-    localStorage.setItem(
-        "favoritos",
-        JSON.stringify(favoritos)
-    );
+    localStorage.setItem("favoritos", JSON.stringify(favoritos));
 
     abrirImagen(indiceActual);
-
-    });
 });
