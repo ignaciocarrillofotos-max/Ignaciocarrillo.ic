@@ -371,9 +371,16 @@ section{
 ========================= */
 
 .services{
-    display:grid;
+    display:flex;
     grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
     gap:20px;
+       overflow: hidden;
+    width: 100%;
+    animation: slide 20s linear infinite;
+}
+@keyframes slide {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-100%); }
 }
 
 .service-card{
