@@ -45,6 +45,7 @@ imagenes.forEach((img, index) => {
 
 // Abrir imagen
 function abrirImagen(index){
+        document.body.style.overflow = "hidden";
     indiceActual = index;
     lightbox.style.display = "flex";
     lightboxImg.src = imagenes[index].src;
@@ -119,14 +120,22 @@ btnPrev.addEventListener("click",()=>{
 
 // Cerrar
 btnCerrar.addEventListener("click",()=>{
-    lightbox.style.display="none";
+    lightbox.style.display = "none";
+    document.body.style.overflow = "auto";
+
+});
 
 });
 
 // Click fuera de la foto
 lightbox.addEventListener("click",(e)=>{
     if(e.target===lightbox){
-        lightbox.style.display="none";
+        lightbox.style.display = "none";
+        document.body.style.overflow = "auto";
+
+    }
+
+});
 
     }
 
@@ -145,9 +154,11 @@ document.addEventListener("keydown",(e)=>{
 
     }
 
-    if(e.key==="Escape"){
-        lightbox.style.display="none";
+if(e.key==="Escape"){
+    lightbox.style.display = "none";
+    document.body.style.overflow = "auto";
 
+}
     }
 
 });
