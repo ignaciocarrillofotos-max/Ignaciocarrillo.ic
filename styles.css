@@ -376,6 +376,7 @@ section{
     overflow-x: auto;
     scroll-behavior: smooth;
     scrollbar-width: none;
+       flex-wrap: nowrap;
 }
 .services::-webkit-scrollbar{
     display:none;
@@ -387,6 +388,7 @@ section{
     height:220px;
     overflow:hidden;
     border-radius:15px;
+       flex: 0 0 260px;
 }
 
 .service-card img{
