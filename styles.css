@@ -273,6 +273,27 @@ section{
 
 }
 
+/* Carrusel horizontal para clientes */
+.clientes-slider{
+    display:flex;
+    gap:45px;
+    overflow-x:auto;
+    scroll-behavior:smooth;
+    scrollbar-width:none;
+    flex-wrap:nowrap;
+}
+
+.clientes-slider::-webkit-scrollbar{
+    display:none;
+}
+
+/* Tamaño profesional de cada tarjeta */
+.clientes-slider .card{
+    flex:0 0 350px; /* Puedes poner 320px si quieres más compacto */
+}
+
+
+
 
 /* =========================
    GALERÍA INDEX
