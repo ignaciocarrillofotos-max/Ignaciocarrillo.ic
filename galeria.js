@@ -90,7 +90,6 @@ imagenes.forEach((img,index)=>{
     img.addEventListener("click",()=>{
         abrirImagen(index);
 
-    });
 
 });
 
@@ -122,8 +121,6 @@ btnPrev.addEventListener("click",()=>{
 btnCerrar.addEventListener("click",()=>{
     lightbox.style.display = "none";
     document.body.style.overflow = "auto";
-
-});
 
 });
 
