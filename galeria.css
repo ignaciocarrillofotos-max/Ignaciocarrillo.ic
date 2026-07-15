@@ -914,7 +914,7 @@ Movil, Galeria
 @media(max-width:1200px){
 
 .gallery{
-    column-count:3;
+    column-count:4;
 }
 
 }
@@ -922,41 +922,48 @@ Movil, Galeria
 @media(max-width:768px){
 
 .gallery{
+
     column-count:2;
     width:94%;
     margin:40px auto;
+
 }
 
 .hero{
-    min-height:34vh;
-    padding:35px 20px;
+
+    min-height:30vh;
+    padding:30px 20px;
+
 }
 
 .hero-overlay{
-    max-width:520%;
+
+    max-width:520px;
+
 }
 
 .hero-logo{
-    width:180px;
-    margin-bottom:18px;
+
+    width:150px;
+
 }
 
 .hero h1{
-    font-size:2.7rem;
-    line-height:1.1;
-        margin-bottom:12px;
+
+    font-size:2.2rem;
+
 }
 
 .hero p{
-    font-size:1.1rem;
-    line-height:1.6;
-    max-width:360px;
-    margin:0 auto 22px;
+
+    font-size:1rem;
+
 }
 
 .volver{
-    padding:13px 28px;
-    font-size:.1rem;
+
+    font-size:1rem;
+
 }
 
 }
@@ -964,31 +971,9 @@ Movil, Galeria
 @media(max-width:500px){
 
 .gallery{
-    column-count:1;
-        width:95%;
-}
 
-.hero{
-
-    min-height:38vh;
-
-}
-
-.hero-logo{
-
-    width:170px;
-
-}
-
-.hero h1{
-
-    font-size:2.3rem;
-
-}
-
-.hero p{
-
-    font-size:1rem;
+    column-count:2;
+    width:95%;
 
 }
 
