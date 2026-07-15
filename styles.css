@@ -281,6 +281,7 @@ section{
     scroll-behavior:smooth;
     scrollbar-width:none;
     flex-wrap:nowrap;
+       padding-left: 40px;
 }
 
 .clientes-slider::-webkit-scrollbar{
