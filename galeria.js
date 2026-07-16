@@ -15,6 +15,11 @@ const btnNext = document.querySelector(".next");
 
 const contador = document.getElementById("contador");
 const miniaturas = document.getElementById("miniaturas");
+    const topBar = document.querySelector(".lightbox-top");
+const acciones = document.querySelector(".lightbox-actions");
+
+let interfazVisible = true;
+let temporizadorUI;
 
 let indiceActual = 0;
 let zoom = false;
@@ -53,6 +58,7 @@ function abrirImagen(index){
     btnFavorito.innerHTML = favoritos.includes(index)
         ? "❤ Guardada"
         : "🤍 Favorito";
+    reiniciarTemporizador();
 }
 
 // Resaltar miniatura activa
@@ -125,15 +131,38 @@ lightbox.addEventListener("touchend", e => {
 
 // Zoom doble click
 lightboxImg.addEventListener("dblclick", () => {
+
     zoom = !zoom;
 
     if (zoom) {
+
         lightboxImg.style.transform = "scale(2)";
         lightboxImg.style.cursor = "zoom-out";
+
     } else {
+
         lightboxImg.style.transform = "scale(1)";
         lightboxImg.style.cursor = "zoom-in";
+
     }
+
+});
+
+// Mostrar / ocultar interfaz (solo móvil)
+lightboxImg.addEventListener("click",()=>{
+
+    if(window.innerWidth > 768) return;
+
+    if(interfazVisible){
+
+        ocultarUI();
+
+    }else{
+
+        mostrarUI();
+
+    }
+
 });
 
 // Zoom con rueda
@@ -147,6 +176,42 @@ lightboxImg.addEventListener("wheel",(e)=>{
 
     lightboxImg.style.transform = `scale(${escala})`;
 });
+
+function mostrarUI(){
+
+    interfazVisible = true;
+
+    if(topBar) topBar.style.opacity = "1";
+    if(acciones) acciones.style.opacity = "1";
+    miniaturas.style.opacity = "1";
+
+}
+
+function ocultarUI(){
+
+    interfazVisible = false;
+
+    if(topBar) topBar.style.opacity = "0";
+    if(acciones) acciones.style.opacity = "0";
+    miniaturas.style.opacity = "0";
+
+}
+
+function reiniciarTemporizador(){
+
+    if(window.innerWidth > 768) return;
+
+    clearTimeout(temporizadorUI);
+
+    mostrarUI();
+
+    temporizadorUI = setTimeout(()=>{
+
+        ocultarUI();
+
+    },2500);
+
+}
 
 // Compartir
 const btnCompartir = document.getElementById("btnCompartir");
