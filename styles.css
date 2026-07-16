@@ -276,12 +276,15 @@ section{
 /* Carrusel horizontal para clientes */
 .clientes-slider{
     display:flex;
-    gap:75px;
-    overflow-x:auto;
-    scroll-behavior:smooth;
-    scrollbar-width:none;
     flex-wrap:nowrap;
-       padding-left: 40px;
+    gap:35px;
+    overflow-x:auto;
+    scrollbar-width:none;
+    scroll-behavior:smooth;
+    width:100vw;
+    margin-left:calc(50% - 50vw);
+    padding:0 20px;
+
 }
 
 .clientes-slider::-webkit-scrollbar{
@@ -290,7 +293,7 @@ section{
 
 /* Tamaño profesional de cada tarjeta */
 .clientes-slider .card{
-    flex:0 0 610px; /* Puedes poner 320px si quieres más compacto */
+    flex:0 0 520px; /* Puedes poner 320px si quieres más compacto */
 }
 
 
@@ -625,7 +628,7 @@ section{
 
     /* Tamaño perfecto para móvil */
     .clientes-slider .card{
-        flex: 0 0 300px;
+        flex: 0 0 82vw;
     }
 } /* ← ESTE es el cierre correcto del media query */
 
