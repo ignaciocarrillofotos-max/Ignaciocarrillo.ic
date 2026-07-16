@@ -906,14 +906,17 @@ scale(1.15);
 
 #miniaturas{
 
+    position:absolute;
+    bottom:25px;
+    left:50%;
+    transform:translateX(-50%);
     display:flex;
-    gap:10px;
-    overflow-x:auto;
-    margin-top:25px;
+    gap:12px;
     padding:10px;
     max-width:90%;
+    overflow-x:auto;
     scrollbar-width:none;
-        transition:.35s;
+    z-index:9999;
 }
 
 #miniaturas img{
