@@ -947,74 +947,52 @@ Movil, Galeria
 @media(max-width:768px){
 
 .gallery{
-
     column-count:2;
     width:94%;
     margin:40px auto;
-
 }
 
 .hero{
-
     min-height:30vh;
     padding:30px 20px;
-
 }
 
 .hero-overlay{
-
     max-width:520px;
-
 }
 
 .hero-logo{
-
     width:150px;
-
 }
 
 .hero h1{
-
     font-size:2.2rem;
-
 }
 
 .hero p{
-
     font-size:1rem;
-
 }
 
 .volver{
-
     font-size:1rem;
-
-}
-    
-.prev,
-.next{
-
-    display:none;
-
 }
 
-.prev{
-    left:8px;
-}
+/* LIGHTBOX */
 
-.next{
-    right:8px;
+#lightbox{
+    background:rgba(10,10,10,.92);
+    backdrop-filter:blur(18px);
+
 }
 
 #lightbox img{
-
-    max-width:96%;
+    max-width:100%;
     max-height:72vh;
+    border-radius:0;
 
 }
 
 .close{
-
     width:42px;
     height:42px;
     font-size:28px;
@@ -1024,16 +1002,21 @@ Movil, Galeria
 
 }
 
-    #miniaturas img{
+.prev,
+.next{
 
-    width:70px;
-    height:52px;
+    display:none;
 
 }
 
 .lightbox-actions{
+    position:absolute;
+    bottom:90px;
 
-    width:95%;
+    width:92%;
+    left:50%;
+    transform:translateX(-50%);
+
     gap:10px;
 
 }
@@ -1044,7 +1027,25 @@ Movil, Galeria
     padding:12px;
 
 }
-    
+
+#miniaturas{
+    position:absolute;
+    bottom:18px;
+
+    left:0;
+    right:0;
+
+    max-width:100%;
+    padding:0 10px;
+
+}
+
+#miniaturas img{
+    width:65px;
+    height:48px;
+
+}
+
 }
 
 
