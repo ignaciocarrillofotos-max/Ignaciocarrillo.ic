@@ -396,17 +396,29 @@ section{
 ========================= */
 
 .services{
+
     display:flex;
     gap:20px;
-    overflow-x: auto;
-    scroll-behavior: smooth;
-    scrollbar-width: none;
-       flex-wrap: nowrap;
+    overflow-x:auto;
+    overflow-y:hidden;
+    scroll-behavior:smooth;
+    scrollbar-width:none;
+    flex-wrap:nowrap;
+    width:100vw;
+    margin-left:calc(50% - 50vw);
+    padding:0 20px;
+
 }
 .services::-webkit-scrollbar{
     display:none;
 }
 
+.services-wrapper{
+    display:flex;
+    flex-direction:column;
+    gap:24px;
+
+}
 
 .service-card{
     position:relative;
