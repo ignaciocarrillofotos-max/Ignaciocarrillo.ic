@@ -21,11 +21,24 @@ videos.forEach((vid, index) => {
     mini.src = vid.querySelector("source").src;
     mini.muted = true;
     mini.playsInline = true;
+    mini.autoplay = true;
+    mini.loop = true;
+
+    // PREVIEW ENTRE DOS PUNTOS
+    mini.addEventListener("loadedmetadata", () => {
+        mini.currentTime = 10; // empieza en el segundo 10
+    });
+
+    mini.addEventListener("timeupdate", () => {
+        if (mini.currentTime > 15) { // termina en el segundo 13
+            mini.currentTime = 10;   // vuelve al inicio del fragmento
+        }
+    });
 
     mini.addEventListener("click", () => abrirVideo(index));
-
     miniaturas.appendChild(mini);
 });
+
 
 // Abrir vídeo
 function abrirVideo(index){
