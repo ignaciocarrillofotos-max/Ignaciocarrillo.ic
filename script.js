@@ -41,9 +41,7 @@ function toggleExpand(btn){
 
 
 document.addEventListener("click", function(e){
-
     if(!e.target.closest(".boton-expandible")){
-
         document.querySelectorAll(".contenido-expandido").forEach(m=>{
             m.classList.remove("show");
         });
@@ -53,18 +51,45 @@ document.addEventListener("click", function(e){
 });
 
 
-const slider = document.querySelector('.services');
-
-function autoMove(){
-    slider.scrollLeft += 1.4;
-
-    // Reiniciar ANTES del final para evitar rebote en móvil
-    const limit = slider.scrollWidth - slider.clientWidth - 5;
-
-    if(slider.scrollLeft >= limit){
-        slider.scrollLeft = 0;
+document.querySelectorAll(".services").forEach((slider,index)=>{
+    slider.innerHTML += slider.innerHTML;
+    let velocidad = index===0 ? 1.2 : -1.2;
+    if(index===1){
+        slider.scrollLeft = slider.scrollWidth/2;
     }
-}
+
+    function mover(){
+        slider.scrollLeft += velocidad;
+        if(velocidad>0){
+            if(slider.scrollLeft >= slider.scrollWidth/2){
+                slider.scrollLeft = 0;
+            }
+
+        }else{
+            if(slider.scrollLeft<=0){
+                slider.scrollLeft = slider.scrollWidth/2;
+            }
+
+        }
+
+    }
+
+    let auto = setInterval(mover,20);
+    slider.addEventListener("mouseenter",()=>clearInterval(auto));
+    slider.addEventListener("mouseleave",()=>{
+        auto = setInterval(mover,20);
+    });
+
+    slider.addEventListener("touchstart",()=>clearInterval(auto));
+    slider.addEventListener("touchend",()=>{
+
+        setTimeout(()=>{
+            auto = setInterval(mover,20);
+        },1500);
+
+    });
+
+});
 
 let autoScroll = setInterval(autoMove, 20);
 
