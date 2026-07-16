@@ -485,9 +485,28 @@ section{
 
     position:absolute;
     inset:0;
+.service-card img,
+.service-card video{
+
+    position:absolute;
+    inset:0;
+    width:100%;
+    height:100%;
+    object-fit:cover;
 
 }
 
+.service-card img{
+    transition:.4s;
+
+}
+
+.service-card video{
+    display:block;
+
+}
+
+   
 /* =========================
    PACKS
 ========================= */
