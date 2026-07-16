@@ -33,56 +33,49 @@ Una selección de algunos de mis trabajos más destacados.
 </section>
     
 
-  
+
 <div class="gallery">
 
     <div class="photo">
-        <video muted playsinline preload="metadata">
-            <source src="FOTOSVIDEOS/videos/video_boda1.mp4">
+        <video class="thumb-video" muted playsinline preload="metadata">
+            <source src="FOTOSVIDEOS/videos/video_boda1.mp4" type="video/mp4">
         </video>
     </div>
 
     <div class="photo">
-        <video muted playsinline preload="metadata">
-            <source src="FOTOSVIDEOS/videos/video_web1.mp4">
+        <video class="thumb-video" muted playsinline preload="metadata">
+            <source src="FOTOSVIDEOS/videos/yonadando.mp4" type="video/mp4">
         </video>
     </div>
 
     <div class="photo">
-        <video muted playsinline preload="metadata">
-            <source src="FOTOSVIDEOS/videos/yonadando.mp4">
+        <video class="thumb-video" muted playsinline preload="metadata">
+            <source src="FOTOSVIDEOS/videos/video_web1.mp4" type="video/mp4">
         </video>
     </div>
 
-    
 </div>
 
 
 
-    
 
     
-<div id="lightbox">
+<div id="lightbox-video">
 
-<div class="lightbox-top">
-    <span class="close">✕</span>
-    <div id="contador"></div>
-</div>
-<button class="prev">&#10094;</button>
-<img id="lightbox-img">
-<button class="next">&#10095;</button>
-    
-<div class="lightbox-actions">
-    <button id="btnCompartir">
-        📤 Compartir
-    </button>
-    <button id="btnFavorito">
-        ❤ Favorito
-    </button>
-</div>
-    <div id="miniaturas"></div>
+    <div class="lightbox-top">
+        <span class="close">✕</span>
+        <div id="contador"></div>
+    </div>
+
+    <button class="prev">&#10094;</button>
+    <video id="lightbox-player" controls></video>
+    <button class="next">&#10095;</button>
+    <div id="miniaturas-video"></div>
 
 </div>
+
+<script src="videos.js"></script>
+
 
 
 
