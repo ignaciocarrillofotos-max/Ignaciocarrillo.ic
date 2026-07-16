@@ -675,6 +675,19 @@ footer p{
     filter:brightness(1.05);
 }
 
+.thumb-video{
+    width:100%;
+    border-radius:20px;
+    object-fit:cover;
+    box-shadow:0 20px 45px rgba(0,0,0,.35);
+    cursor:pointer;
+    transition:.45s ease;
+}
+
+.photo:hover .thumb-video{
+    transform:scale(1.06);
+    filter:brightness(1.05);
+}
 
 
 
