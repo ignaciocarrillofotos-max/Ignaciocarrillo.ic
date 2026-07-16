@@ -658,6 +658,23 @@ footer p{
 
 }
 
+/* MINIATURAS DE VÍDEO */
+.photo video{
+    width:100%;
+    display:block;
+    border-radius:20px;
+    object-fit:cover;
+    transition:.45s ease;
+    box-shadow:0 20px 45px rgba(0,0,0,.35);
+    cursor:pointer;
+}
+
+/* Hover igual que fotos */
+.photo:hover video{
+    transform:scale(1.06);
+    filter:brightness(1.05);
+}
+
 
 
 
@@ -700,6 +717,27 @@ overscroll-behavior:contain;
     animation:zoomFoto .25s;
     
 }
+
+/* LIGHTBOX DE VÍDEO */
+#lightbox-video{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.88);
+    backdrop-filter:blur(20px);
+    display:none;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    z-index:99999;
+}
+
+#lightbox-video video{
+    max-width:90%;
+    max-height:80vh;
+    border-radius:12px;
+    box-shadow:0 30px 80px rgba(0,0,0,.65);
+}
+
 
 
 .lightbox-top{
