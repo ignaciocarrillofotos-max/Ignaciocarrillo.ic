@@ -250,3 +250,45 @@ btnFavorito.addEventListener("click",()=>{
 
     abrirImagen(indiceActual);
 });
+
+
+
+
+
+// =========================
+// MUSICA AUTOMATICA DEPORTES
+// =========================
+
+const music = document.getElementById("music");
+const toggleMusic = document.getElementById("toggleMusic");
+
+// Si la página NO tiene música, no hacer nada
+if(music && toggleMusic){
+
+    // Detectar si es móvil
+    const esMovil = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+
+    // En ordenador: sonido automático
+    // En móvil: autoplay pero muteado (obligatorio)
+    if(esMovil){
+        music.muted = true;
+        music.play().catch(()=>{});
+        toggleMusic.textContent = "🔊 Activar música";
+    } else {
+        music.muted = false;
+        music.play().catch(()=>{});
+        toggleMusic.textContent = "🔇 Silenciar música";
+    }
+
+    // Botón para activar/silenciar
+    toggleMusic.addEventListener("click", ()=>{
+        if(music.muted){
+            music.muted = false;
+            music.play();
+            toggleMusic.textContent = "🔇 Silenciar música";
+        } else {
+            music.muted = true;
+            toggleMusic.textContent = "🔊 Activar música";
+        }
+    });
+}
