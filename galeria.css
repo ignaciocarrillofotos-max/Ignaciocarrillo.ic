@@ -947,6 +947,30 @@ scale(1.15);
     
 }
 
+#miniaturas-video{
+    display:flex;
+    gap:10px;
+    overflow-x:auto;
+    margin-top:25px;
+    padding:10px;
+    max-width:90%;
+    scrollbar-width:none;
+}
+
+#miniaturas-video video{
+    width:95px;
+    height:70px;
+    object-fit:cover;
+    border-radius:10px;
+    cursor:pointer;
+    opacity:.6;
+    transition:.35s;
+}
+
+#miniaturas-video video:hover{
+    opacity:1;
+}
+
 
 
 
