@@ -442,13 +442,6 @@ section{
 
 }
 
-.service-card img{
-    width:100%;
-    height:100%;
-    object-fit:cover;
-    transition:.4s;
-}
-
 .service-card:hover img{
     transform:scale(1.1);
 }
@@ -472,6 +465,13 @@ section{
 
 }
 
+.service-card img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    transition:.4s;
+}
+
 .service-card video{
     width:100%;
     height:100%;
@@ -480,6 +480,13 @@ section{
     display:block;
 }
 
+.service-card img,
+.service-card video{
+
+    position:absolute;
+    inset:0;
+
+}
 
 /* =========================
    PACKS
