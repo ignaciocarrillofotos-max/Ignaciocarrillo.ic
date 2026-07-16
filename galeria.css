@@ -875,7 +875,7 @@ scale(1.15);
     padding:10px;
     max-width:90%;
     scrollbar-width:none;
-    
+        transition:.35s;
 }
 
 #miniaturas img{
