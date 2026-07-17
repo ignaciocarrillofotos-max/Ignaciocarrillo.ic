@@ -970,3 +970,35 @@ transition:.45s cubic-bezier(.2,.8,.2,1);
     text-transform:uppercase;
     opacity:0.6;
 }
+
+
+
+
+/* =========================
+  PACKS
+========================= */
+
+.pricing{
+    gap:20px;
+}
+
+.price-card{
+    flex:0 0 88vw;
+    min-width:88vw;
+    max-width:88vw;
+}
+
+.active-pack{
+    flex:0 0 88vw;
+    min-width:88vw;
+    max-width:88vw;
+}
+
+.active-pack .price-content{
+    display:block;
+}
+
+.active-pack ol,
+.active-pack ul{
+    padding-left:20px;
+}
