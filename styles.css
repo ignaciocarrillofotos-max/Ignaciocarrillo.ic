@@ -422,58 +422,117 @@ transition:.45s cubic-bezier(.2,.8,.2,1);
    SERVICIOS
 ========================= */
 
-.services-wrapper{
-    display:flex;
-    flex-direction:column;
-    gap:40px;
-    margin-top:50px;
-}
+.services{
 
-.services-top,
-.services-bottom{
     display:flex;
-    flex-wrap:nowrap;
-    gap:35px;
+    gap:20px;
     overflow-x:auto;
     overflow-y:hidden;
+    scroll-behavior:smooth;
     scrollbar-width:none;
-    scroll-behavior:auto;
-    cursor:grab;
-    user-select:none;
-    padding:20px 0;
-}
+    flex-wrap:nowrap;
+    width:100vw;
+    margin-left:calc(50% - 50vw);
+    padding:0 20px;
 
-.services-top::-webkit-scrollbar,
-.services-bottom::-webkit-scrollbar{
+}
+.services::-webkit-scrollbar{
     display:none;
 }
 
+.services-wrapper{
+    display:flex;
+    flex-direction:column;
+    gap:24px;
+
+}
+
 .service-card{
-    flex:0 0 320px;
-    background:#171717;
-    border-radius:22px;
-    overflow:hidden;
-    box-shadow:0 20px 45px rgba(0,0,0,.25);
-    border:1px solid rgba(255,255,255,.05);
     position:relative;
-    transition:.35s;
+    height:260px;
+    overflow:hidden;
+    border-radius:15px;
+       flex: 0 0 320px;
+}
+
+.service-card::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:linear-gradient(
+        to top,
+        rgba(0,0,0,.60),
+        rgba(0,0,0,.25),
+        rgba(0,0,0,.05)
+    );
+    z-index:1;
+
+}
+
+.service-card::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:linear-gradient(
+        to top,
+        rgba(0,0,0,.65),
+        rgba(0,0,0,.25),
+        rgba(0,0,0,.15)
+    );
+    pointer-events:none;
+    z-index:1;
+
+}
+
+.service-card:hover img{
+    transform:scale(1.1);
+}
+
+.service-card span{
+
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    z-index:2;
+    color:#fff;
+    font-size:1.15rem;
+    font-weight:700;
+    letter-spacing:2px;
+    text-transform:uppercase;
+    text-shadow:
+        0 3px 12px rgba(0,0,0,.95),
+        0 0 25px rgba(0,0,0,.6);
+    white-space:nowrap;
+
+}
+
+.service-card img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    transition:.4s;
+}
+
+.service-card video{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    border-radius:15px;
+    display:block;
 }
 
 .service-card img,
 .service-card video{
-    width:100%;
-    height:220px;
-    object-fit:cover;
-    display:block;
-}
 
-.service-card span{
+    position:absolute;
+    inset:0;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    transition:.4s;
     display:block;
-    text-align:center;
-    padding:15px 0;
-    font-size:1.2rem;
-    font-weight:500;
-    color:white;
+   
 }
 
 
