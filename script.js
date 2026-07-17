@@ -141,7 +141,7 @@ clientes.addEventListener("touchend",()=>{
 
 const packs = document.querySelector(".packs-slider");
 let dir = 1;
-let vel = 0.4;
+let vel = 0.06;
 
 function moverPacks(){
     packs.scrollLeft += vel * dir;
