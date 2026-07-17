@@ -94,32 +94,39 @@ document.querySelectorAll(".services").forEach((slider,index)=>{
 
 
 
-const clientes = document.querySelector('.clientes-slider');
+const clientes = document.querySelector(".clientes-slider");
+let direccion = 1;
+let velocidad = 0.8;
 
-function autoMoveClientes(){
-    clientes.scrollLeft += 1.2;
+function moverClientes(){
+    clientes.scrollLeft += velocidad * direccion;
+    const max = clientes.scrollWidth - clientes.clientWidth;
+    if(clientes.scrollLeft >= max){
+        direccion = -1;
 
-    // Reiniciar ANTES del final para evitar rebote en móvil
-    const limit = clientes.scrollWidth - clientes.clientWidth - 5;
-
-    if(clientes.scrollLeft >= limit){
-        clientes.scrollLeft = 0;
     }
+
+    if(clientes.scrollLeft <= 0){
+        direccion = 1;
+
+    }
+
 }
 
-let autoScrollClientes = setInterval(autoMoveClientes, 20);
+let autoClientes = setInterval(moverClientes,20);
+clientes.addEventListener("mouseenter",()=>clearInterval(autoClientes));
+clientes.addEventListener("mouseleave",()=>{
+    autoClientes = setInterval(moverClientes,20);
 
-// Pausa en PC
-clientes.addEventListener("mouseenter", ()=> clearInterval(autoScrollClientes));
-clientes.addEventListener("mouseleave", ()=>{
-    autoScrollClientes = setInterval(autoMoveClientes, 20);
 });
 
-// Pausa en móvil
-clientes.addEventListener("touchstart", ()=> clearInterval(autoScrollClientes));
-clientes.addEventListener("touchend", ()=>{
-    autoScrollClientes = setInterval(autoMoveClientes, 20);
-});
+clientes.addEventListener("touchstart",()=>clearInterval(autoClientes));
+clientes.addEventListener("touchend",()=>{
+    setTimeout(()=>{
+        autoClientes = setInterval(moverClientes,20);
 
+    },1500);
+
+});
 
 
