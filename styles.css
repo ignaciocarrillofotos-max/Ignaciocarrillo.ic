@@ -403,7 +403,7 @@ section{
     border-radius:18px;
     text-decoration:none;
     letter-spacing:1px;
-    transition:.35s ease;
+transition:.45s cubic-bezier(.2,.8,.2,1);
     box-shadow:0 15px 40px rgba(0,0,0,.35);
 }
 
