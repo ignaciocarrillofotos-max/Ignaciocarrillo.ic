@@ -275,15 +275,23 @@ section{
 
 /* Carrusel horizontal para clientes */
 .clientes-slider{
+
     display:flex;
     flex-wrap:nowrap;
     gap:35px;
     overflow-x:auto;
+    overflow-y:hidden;
     scrollbar-width:none;
-    scroll-behavior:smooth;
+    scroll-behavior:auto;
     width:100vw;
     margin-left:calc(50% - 50vw);
-    padding:0 20px;
+    padding:20px;
+    cursor:grab;
+    user-select:none;
+
+}
+.clientes-slider:active{
+    cursor:grabbing;
 
 }
 
