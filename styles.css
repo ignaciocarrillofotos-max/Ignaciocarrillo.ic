@@ -553,6 +553,8 @@ text-align:center;
    flex:2;
 justify-content:flex-start;
 align-items:flex-start;
+       height:auto;
+    min-height:260px;
 }
 
 .price-content{
