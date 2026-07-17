@@ -530,19 +530,21 @@ align-items:stretch;
 }
 
 .price-card{
-flex:.8;
-min-height:560px;
-padding:45px;
-border-radius:22px;
-background:#181818;
-overflow:hidden;
-cursor:pointer;
-transition:.55s cubic-bezier(.2,.8,.2,1);
-position:relative;
-display:flex;
-flex-direction:column;
-justify-content:flex-start;
+    flex:1;                     /* todas empiezan iguales */
+    height:260px;               /* ← tamaño inicial cuadrado */
+    padding:35px;               /* más compacto */
+    border-radius:22px;
+    background:#181818;
+    overflow:hidden;            /* ← oculta contenido */
+    cursor:pointer;
+    transition:.55s cubic-bezier(.2,.8,.2,1);
+    position:relative;
+    display:flex;
+    flex-direction:column;
+    justify-content:flex-start;
+    align-items:flex-start;
 }
+
 
 .price-card:hover{
     transform:translateY(-10px);
@@ -554,25 +556,36 @@ justify-content:flex-start;
 opacity:0;
 max-height:0;
 overflow:hidden;
+       transform:translateY(40px);
 transition:
 opacity .35s,
 max-height .5s;
+        transform .6s cubic-bezier(.2,.8,.2,1);
 }
 
 .price-card:hover .price-content{
 opacity:1;
 max-height:900px;
+       transform:translateY(0);
 }
 
 .price-card h3{
-font-size:2rem;
-margin-bottom:20px;
+font-size:1.8rem;
+margin-bottom:10px;
 transition:.35s;
 }
 
 .price-card:hover h3{
 color:#64c478;
 }
+
+.price-card:not(:hover){
+    filter:blur(1px);
+    opacity:.75;
+    transform:scale(.96);
+    transition:.45s ease;
+}
+
 
 .featured{
     background: linear-gradient(145deg, #11740e, #0b4f0a);
