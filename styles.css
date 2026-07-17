@@ -629,8 +629,10 @@ transition:.45s cubic-bezier(.2,.8,.2,1);
 
 /* Móvil: mostrar contenido */
 .active-pack .price-content{
+    max-height:900px;
     opacity:1;
     transform:translateY(0);
+
 }
 
 /* Título */
