@@ -51,7 +51,7 @@ document.addEventListener("click", function(e){
 });
 
 
-document.querySelectorAll(".services").forEach((slider,index)=>{
+document.querySelectorAll(".services-top").forEach((slider,index)=>{
     slider.innerHTML += slider.innerHTML;
     let velocidad = index===0 ? 1.2 : -1.2;
     if(index===1){
