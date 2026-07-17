@@ -644,13 +644,10 @@ max-width:420px;
     height:14px;
     background:#64c478;
     border-radius:50%;
-    margin-top:10px;
+    margin:18px auto 28px;
     opacity:.8;
     transition:.3s;
-   .pack-indicator{
-    margin:18px auto 28px;
 
-}
 }
 
 .price-card:hover .pack-indicator{
