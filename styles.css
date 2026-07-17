@@ -562,10 +562,12 @@ transition:.45s cubic-bezier(.2,.8,.2,1);
     position:relative;
     display:flex;
     flex-direction:column;
-    justify-content:center;
-    align-items:center;
+justify-content:flex-start;
+align-items:flex-start;
+padding-top:40px;
     text-align:center;
-    min-width:85%;
+  min-width:340px;
+max-width:420px;
     overflow:hidden;
 }
 
@@ -625,7 +627,11 @@ transition:.45s cubic-bezier(.2,.8,.2,1);
     font-size:1.8rem;
     margin-bottom:10px;
     transition:.35s;
-       color:white;
+       color:#fff;
+       width:100%;
+    text-align:center;
+    margin:0;
+    letter-spacing:2px;
 }
 
 .price-card:hover h3{
@@ -641,6 +647,10 @@ transition:.45s cubic-bezier(.2,.8,.2,1);
     margin-top:10px;
     opacity:.8;
     transition:.3s;
+   .pack-indicator{
+    margin:18px auto 28px;
+
+}
 }
 
 .price-card:hover .pack-indicator{
