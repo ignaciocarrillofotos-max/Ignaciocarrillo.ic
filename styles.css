@@ -523,26 +523,55 @@ section{
 ========================= */
 
 .pricing{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:30px;
+display:flex;
+gap:18px;
+align-items:stretch;
+
 }
 
 .price-card{
-    background: linear-gradient(145deg, #1a1a1a, #141414);
-    padding:40px;
-    border-radius:18px;
-    transition:0.35s ease;
-    display:flex;
-    flex-direction:column;
-    gap:12px;
-    position:relative;
-    border:1px solid rgba(255,255,255,.06);
+flex:.8;
+min-height:560px;
+padding:45px;
+border-radius:22px;
+background:#181818;
+overflow:hidden;
+cursor:pointer;
+transition:.55s cubic-bezier(.2,.8,.2,1);
+position:relative;
+display:flex;
+flex-direction:column;
+justify-content:flex-start;
 }
 
 .price-card:hover{
     transform:translateY(-10px);
     box-shadow:0 25px 60px rgba(0,0,0,.5);
+   flex:2;
+}
+
+.price-content{
+opacity:0;
+max-height:0;
+overflow:hidden;
+transition:
+opacity .35s,
+max-height .5s;
+}
+
+.price-card:hover .price-content{
+opacity:1;
+max-height:900px;
+}
+
+.price-card h3{
+font-size:2rem;
+margin-bottom:20px;
+transition:.35s;
+}
+
+.price-card:hover h3{
+color:#64c478;
 }
 
 .featured{
