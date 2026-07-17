@@ -561,7 +561,11 @@ transition:.45s cubic-bezier(.2,.8,.2,1);
     justify-content:flex-start;
     border-radius:22px;
     overflow:hidden;
-    transition:.45s;
+       transition:
+    flex .45s,
+    transform .45s,
+    box-shadow .45s,
+    opacity .45s;
 
 }
 
@@ -580,6 +584,15 @@ transition:.45s cubic-bezier(.2,.8,.2,1);
 .active-pack::after{
     width:90px;
 
+}
+
+.price-card:hover{
+
+    flex:2.2;
+    transform:scale(1.03) translateY(-6px);
+box-shadow:
+    0 25px 60px rgba(0,0,0,.45),
+    0 0 30px rgba(100,196,120,.18);
 }
 
 /* Contenido oculto por defecto */
@@ -655,6 +668,16 @@ transition:.45s cubic-bezier(.2,.8,.2,1);
 
 }
 
+.pricing:hover .price-card{
+    opacity:.45;
+
+}
+
+.pricing:hover .price-card:hover{
+    opacity:1;
+
+}
+
 
 
 .pack-subtitle{
@@ -715,7 +738,17 @@ transition:.45s cubic-bezier(.2,.8,.2,1);
     padding-right:0;
 }
 
+.pricing:hover .price-card{
 
+    opacity:.45;
+
+}
+
+.pricing:hover .price-card:hover{
+
+    opacity:1;
+
+}
 
 
 
@@ -974,31 +1007,72 @@ transition:.45s cubic-bezier(.2,.8,.2,1);
 
 
 
-/* =========================
-  PACKS
-========================= */
+/* ==========================
+   PACKS MÓVIL
+========================== */
 
 .pricing{
-    gap:20px;
+
+    display:flex;
+    overflow-x:auto;
+    gap:18px;
+    padding:0 20px;
+    scroll-snap-type:x mandatory;
+
 }
 
 .price-card{
+
     flex:0 0 88vw;
     min-width:88vw;
     max-width:88vw;
+
+    scroll-snap-align:center;
+
 }
 
 .active-pack{
+
     flex:0 0 88vw;
     min-width:88vw;
     max-width:88vw;
+
 }
 
 .active-pack .price-content{
+
     display:block;
+    max-height:1200px;
+
 }
 
-.active-pack ol,
-.active-pack ul{
+.price-content{
+
+    width:100%;
+
+}
+
+.price-content ol,
+.price-content ul{
+
     padding-left:20px;
+
+}
+
+.price-content li{
+
+    margin-bottom:8px;
+
+}
+
+.price-card h3{
+
+    font-size:1.8rem;
+
+}
+
+.pack-subtitle{
+
+    font-size:.95rem;
+
 }
