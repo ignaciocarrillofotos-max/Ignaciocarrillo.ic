@@ -91,19 +91,6 @@ document.querySelectorAll(".services").forEach((slider,index)=>{
 
 });
 
-let autoScroll = setInterval(autoMove, 20);
-
-// Pausa en PC
-slider.addEventListener("mouseenter", ()=> clearInterval(autoScroll));
-slider.addEventListener("mouseleave", ()=>{
-    autoScroll = setInterval(autoMove, 20);
-});
-
-// Pausa en móvil
-slider.addEventListener("touchstart", ()=> clearInterval(autoScroll));
-slider.addEventListener("touchend", ()=>{
-    autoScroll = setInterval(autoMove, 20);
-});
 
 
 
