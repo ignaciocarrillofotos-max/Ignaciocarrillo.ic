@@ -554,7 +554,7 @@ align-items:stretch;
     background:#181818;
     overflow:hidden;            /* ← oculta contenido */
     cursor:pointer;
-    transition:.55s cubic-bezier(.2,.8,.2,1);
+       transition:.35s ease;
     position:relative;
     display:flex;
     flex-direction:column;
@@ -566,7 +566,7 @@ text-align:center;
 
 
 .price-card:hover{
-    transform:translateY(-10px);
+    transform:scale(1.03);
     box-shadow:0 25px 60px rgba(0,0,0,.5);
    flex:2;
 justify-content:flex-start;
@@ -577,8 +577,8 @@ align-items:flex-start;
 
 .price-content{
     opacity:0;
-    max-height:0;
-    overflow:hidden;
+    max-height:none;
+    overflow:visible;
     transform:translateY(40px);
     transition:
         opacity .35s,
@@ -725,7 +725,7 @@ color:#64c478;
 }
 
 .active-pack{
-    flex:3;
+    flex:2.2;
     height:auto;
     min-height:260px;
     transform:scale(1.03);
