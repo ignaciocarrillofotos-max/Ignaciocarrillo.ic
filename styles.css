@@ -553,15 +553,16 @@ align-items:stretch;
 }
 
 .price-content{
-opacity:0;
-max-height:0;
-overflow:hidden;
-       transform:translateY(40px);
-transition:
-opacity .35s,
-max-height .5s;
+    opacity:0;
+    max-height:0;
+    overflow:hidden;
+    transform:translateY(40px);
+    transition:
+        opacity .35s,
+        max-height .5s,
         transform .6s cubic-bezier(.2,.8,.2,1);
 }
+
 
 .price-card:hover .price-content{
 opacity:1;
