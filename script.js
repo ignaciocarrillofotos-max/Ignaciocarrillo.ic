@@ -167,3 +167,15 @@ packs.addEventListener("touchend", ()=>{
     setTimeout(()=> autoPacks = setInterval(moverPacks, 20), 1500);
 });
 
+
+
+
+const cards = document.querySelectorAll(".price-card");
+
+cards.forEach(card => {
+    card.addEventListener("click", () => {
+        cards.forEach(c => c.classList.remove("active-pack"));
+        card.classList.add("active-pack");
+    });
+});
+
