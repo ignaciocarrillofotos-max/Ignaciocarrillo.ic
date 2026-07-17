@@ -174,14 +174,17 @@ packs.addEventListener("touchend", ()=>{
 const cards = document.querySelectorAll(".price-card");
 
 cards.forEach(card => {
-    card.addEventListener("click", (e) => {
-
-        // Si el click viene del botón consultar → no expandir pack
-        if(e.target.closest(".boton-expandible")) return;
-
-        cards.forEach(c => c.classList.remove("active-pack"));
+ card.addEventListener("click",(e)=>{
+    if(e.target.closest(".boton-expandible")) return;
+    if(card.classList.contains("active-pack")){
+        card.classList.remove("active-pack");
+    }else{
+        cards.forEach(c=>c.classList.remove("active-pack"));
         card.classList.add("active-pack");
-    });
+
+    }
+
+});
 });
 
 
