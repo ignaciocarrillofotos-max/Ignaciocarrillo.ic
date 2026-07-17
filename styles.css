@@ -634,10 +634,19 @@ transition:.45s cubic-bezier(.2,.8,.2,1);
 
 
 .pack-subtitle{
-    color:#8f8f8f;
-    margin:10px 0 30px;
-    letter-spacing:1px;
+
+    width:100%;
+    text-align:center;
+    margin:10px 0 25px;
+    color:#9a9a9a;
     font-size:.95rem;
+    letter-spacing:1px;
+    transition:.35s;
+
+}
+
+.price-card:hover .pack-subtitle{
+    color:#d7d7d7;
 
 }
 
