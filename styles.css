@@ -759,6 +759,31 @@ color:#64c478;
     max-height:90%;
 }
 
+
+
+
+/* SOLO PC */
+@media (min-width: 900px){
+    .price-card:hover .price-content,
+    .active-pack .price-content{
+        display:grid;
+        grid-template-columns: 1fr 1fr;
+        gap:20px;
+        text-align:left;
+    }
+    .price-content hr{
+        display:none; /* quita las líneas que separan columnas */
+    }
+    .price-content ol,
+    .price-content ul{
+        margin-top:10px;
+    }
+}
+
+
+
+
+
 /* =========================
    MÓVIL
 ========================= */
