@@ -95,12 +95,13 @@ document.querySelectorAll(".services").forEach((slider,index)=>{
 
 
 const clientes = document.querySelector(".clientes-slider");
+clientes.innerHTML += clientes.innerHTML;
 let direccion = 1;
-let velocidad = 0.8;
+let velocidad = 1;
 
 function moverClientes(){
     clientes.scrollLeft += velocidad * direccion;
-    const max = clientes.scrollWidth - clientes.clientWidth;
+    const max = clientes.scrollWidth/2;
     if(clientes.scrollLeft >= max){
         direccion = -1;
 
@@ -114,19 +115,24 @@ function moverClientes(){
 }
 
 let autoClientes = setInterval(moverClientes,20);
-clientes.addEventListener("mouseenter",()=>clearInterval(autoClientes));
+clientes.addEventListener("mouseenter",()=>{
+    clearInterval(autoClientes);
+
+});
+
 clientes.addEventListener("mouseleave",()=>{
     autoClientes = setInterval(moverClientes,20);
 
 });
 
-clientes.addEventListener("touchstart",()=>clearInterval(autoClientes));
-clientes.addEventListener("touchend",()=>{
-    setTimeout(()=>{
-        autoClientes = setInterval(moverClientes,20);
-
-    },1500);
+clientes.addEventListener("touchstart",()=>{
+    clearInterval(autoClientes);
 
 });
 
+clientes.addEventListener("touchend",()=>{
+    setTimeout(()=>{
+        autoClientes = setInterval(moverClientes,20);
+    },1500);
 
+});
