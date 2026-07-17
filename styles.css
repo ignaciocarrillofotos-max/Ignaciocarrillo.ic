@@ -552,7 +552,6 @@ align-items:stretch;
     padding:35px;               /* más compacto */
     border-radius:22px;
     background:#181818;
-    overflow:hidden;            /* ← oculta contenido */
     cursor:pointer;
        transition:.35s ease;
     position:relative;
@@ -573,6 +572,7 @@ justify-content:flex-start;
 align-items:flex-start;
        height:auto;
     min-height:260px;
+   overflow:hidden
 }
 
 .price-content{
@@ -584,6 +584,8 @@ align-items:flex-start;
         opacity .35s,
         max-height .5s,
         transform .6s cubic-bezier(.2,.8,.2,1);
+       flex:1;
+}
 }
 
 
@@ -727,10 +729,9 @@ color:#64c478;
     height:auto;
     min-height:260px;
     transform:scale(1.03);
+   overflow:hidden;
 }
-.price-content{
-    max-height:none;
-}
+
 
 
 
@@ -783,6 +784,14 @@ color:#64c478;
        .price-card{
         min-width:380px;
       }
+       .price-card:hover{
+        flex:2.2;
+        transform:scale(1.03) translateY(-6px);
+        justify-content:flex-start;
+        align-items:flex-start;
+        height:auto;
+    }
+
     .price-card:hover .price-content,
     .active-pack .price-content{
         display:grid;
