@@ -720,9 +720,7 @@ color:#64c478;
     padding-right:0;
 }
 
-.price-card{
-    min-width:85%; /* ocupa casi toda la pantalla en móvil */
-}
+
 
 .active-pack{
     flex:2.2;
