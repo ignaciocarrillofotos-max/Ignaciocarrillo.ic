@@ -675,6 +675,8 @@ color:#64c478;
 .price-card:hover .pack-indicator{
     transform:scale(1.3);
     opacity:1;
+       flex:3;
+    height:auto;
 }
 
 
@@ -684,16 +686,33 @@ color:#64c478;
     overflow-x:auto;
     scroll-behavior:smooth;
     padding-bottom:10px;
+       padding-left:0;
+    padding-right:0;
+        -ms-overflow-style:none;
+    scrollbar-width:none;
 }
 
 .packs-slider::-webkit-scrollbar{
     display:none;
 }
 
-.packs-slider{
-    -ms-overflow-style:none;
-    scrollbar-width:none;
+.price-card{
+    min-width:85%; /* ocupa casi toda la pantalla en móvil */
 }
+
+.active-pack{
+    flex:3;
+    height:auto;
+    min-height:260px;
+    transform:scale(1.03);
+}
+.price-content{
+    max-height:none;
+}
+
+
+
+
 
 
 /* =========================
