@@ -566,6 +566,7 @@ transition:.45s cubic-bezier(.2,.8,.2,1);
     font-size:1.8rem;
     margin-bottom:10px;
     transition:.35s;
+       color:white;
 }
 
 .price-card:hover h3{
