@@ -441,7 +441,7 @@ transition:.45s cubic-bezier(.2,.8,.2,1);
     justify-content:center;
     align-items:center;
     text-align:center;
-    min-width:95%;
+    min-width:85%;
     overflow:hidden;
 }
 
