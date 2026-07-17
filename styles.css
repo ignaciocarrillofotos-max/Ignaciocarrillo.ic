@@ -566,11 +566,12 @@ transition:.45s cubic-bezier(.2,.8,.2,1);
 }
 
 .price-card::after{
+
     content:"";
     width:0;
     height:2px;
     background:#64c478;
-    margin-top:18px;
+    margin:0 auto 20px;
     transition:.45s;
 
 }
@@ -634,6 +635,8 @@ transition:.45s cubic-bezier(.2,.8,.2,1);
 
 /* Título */
 .price-card h3{
+    width:100%;
+    text-align:center;
     font-size:2rem;
     font-weight:700;
     margin:0;
@@ -650,9 +653,6 @@ transition:.45s cubic-bezier(.2,.8,.2,1);
 
 }
 
-.price-card:hover h3{
-    color:#64c478;
-}
 
 
 .pack-subtitle{
