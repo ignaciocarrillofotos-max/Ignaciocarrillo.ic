@@ -389,12 +389,29 @@ section{
 
 }
 
-#galeria .btn{
 
+.btn-galeria{
+    display:block;
+    width:100%;
+    padding:22px 0;
     margin-top:50px;
-
+    text-align:center;
+    font-size:1.4rem;
+    font-weight:600;
+    color:white;
+    background:#111;
+    border-radius:18px;
+    text-decoration:none;
+    letter-spacing:1px;
+    transition:.35s ease;
+    box-shadow:0 15px 40px rgba(0,0,0,.35);
 }
 
+.btn-galeria:hover{
+    background:#64c478;
+    transform:translateY(-6px);
+    box-shadow:0 25px 55px rgba(0,0,0,.45);
+}
 
 
 
