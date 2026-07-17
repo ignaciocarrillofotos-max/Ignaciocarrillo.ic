@@ -565,16 +565,36 @@ transition:.45s cubic-bezier(.2,.8,.2,1);
 
 }
 
-/* Contenido oculto por defecto */
-.price-content{
-    opacity:0;
-    transform:translateY(40px);
-    transition:
-        opacity .35s,
-        transform .6s cubic-bezier(.2,.8,.2,1);
-       width:100%;
+.price-card::after{
+    content:"";
+    width:0;
+    height:2px;
+    background:#64c478;
+    margin-top:18px;
+    transition:.45s;
+
 }
 
+.price-card:hover::after,
+.active-pack::after{
+    width:90px;
+
+}
+
+/* Contenido oculto por defecto */
+.price-content{
+    width:100%;
+    max-height:0;
+    overflow:hidden;
+    opacity:0;
+    transform:translateY(25px);
+    transition:
+        max-height .55s ease,
+        opacity .35s ease,
+        transform .45s ease,
+        padding .35s ease;
+
+}
 /* Hover (solo PC) */
 @media (min-width:900px){
     .price-card:hover{
@@ -585,24 +605,19 @@ transition:.45s cubic-bezier(.2,.8,.2,1);
         height:auto;
     }
 
-    .price-card:hover .price-content,
-    .active-pack .price-content{
-        display:grid;
-        grid-template-columns:1fr 1fr;
-        gap:20px;
-        text-align:left;
-    }
+.price-card:hover .price-content,
+.active-pack .price-content{
+    max-height:900px;
+    opacity:1;
+    transform:translateY(0);
+
+}
 
     .price-content hr{
         display:none;
     }
 }
 
-/* Mostrar contenido en hover */
-.price-card:hover .price-content{
-    opacity:1;
-    transform:translateY(0);
-}
 
 /* Móvil: pack abierto */
 .active-pack{
@@ -625,6 +640,13 @@ transition:.45s cubic-bezier(.2,.8,.2,1);
     letter-spacing:3px;
     color:#fff;
     transition:.35s;
+
+}
+
+.price-card:hover h3,
+.active-pack h3{
+    color:#64c478;
+    letter-spacing:4px;
 
 }
 
