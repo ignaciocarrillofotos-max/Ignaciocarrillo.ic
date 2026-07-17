@@ -578,6 +578,7 @@ max-width:420px;
     transition:
         opacity .35s,
         transform .6s cubic-bezier(.2,.8,.2,1);
+       width:100%;
 }
 
 /* Hover (solo PC) */
