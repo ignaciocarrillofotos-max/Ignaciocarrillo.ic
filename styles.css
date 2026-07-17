@@ -561,6 +561,7 @@ align-items:stretch;
 justify-content:center;
 align-items:center;
 text-align:center;
+       min-width:95%;
 }
 
 
@@ -781,6 +782,8 @@ color:#64c478;
 
 /* SOLO PC */
 @media (min-width: 900px){
+       .price-card{
+        min-width:380px;
     .price-card:hover .price-content,
     .active-pack .price-content{
         display:grid;
