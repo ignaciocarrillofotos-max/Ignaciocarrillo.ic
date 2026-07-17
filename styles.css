@@ -660,6 +660,21 @@ color:#64c478;
     background:rgba(255,255,255,.08);
 }
 
+.pack-indicator{
+    width:14px;
+    height:14px;
+    background:#64c478;   /* verde */
+    border-radius:50%;
+    margin-top:10px;
+    opacity:.8;
+    transition:.3s;
+}
+
+.price-card:hover .pack-indicator{
+    transform:scale(1.3);
+    opacity:1;
+}
+
 
 
 
