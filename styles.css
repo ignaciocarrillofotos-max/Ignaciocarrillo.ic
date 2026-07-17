@@ -784,6 +784,7 @@ color:#64c478;
 @media (min-width: 900px){
        .price-card{
         min-width:380px;
+      }
     .price-card:hover .price-content,
     .active-pack .price-content{
         display:grid;
