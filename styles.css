@@ -690,10 +690,16 @@ color:#64c478;
     padding-right:0;
         -ms-overflow-style:none;
     scrollbar-width:none;
+       width:100%;
 }
 
 .packs-slider::-webkit-scrollbar{
     display:none;
+}
+
+#packs{
+    padding-left:0;
+    padding-right:0;
 }
 
 .price-card{
