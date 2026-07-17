@@ -624,14 +624,13 @@ max-width:420px;
 
 /* Título */
 .price-card h3{
+    width:100%;
+    margin:0 0 18px;
     font-size:1.8rem;
-    margin-bottom:10px;
-    transition:.35s;
-       color:#fff;
-       width:100%;
-    text-align:center;
-    margin:0;
+    color:#fff;
     letter-spacing:2px;
+    transition:.35s;
+
 }
 
 .price-card:hover h3{
