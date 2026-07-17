@@ -676,7 +676,22 @@ color:#64c478;
 }
 
 
+.packs-slider{
+    display:flex;
+    gap:18px;
+    overflow-x:auto;
+    scroll-behavior:smooth;
+    padding-bottom:10px;
+}
 
+.packs-slider::-webkit-scrollbar{
+    display:none;
+}
+
+.packs-slider{
+    -ms-overflow-style:none;
+    scrollbar-width:none;
+}
 
 
 /* =========================
