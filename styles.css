@@ -723,18 +723,19 @@ box-shadow:
     border-radius:16px;
     padding:18px;
     margin:18px 0;
-       scrollbar-width:none;
+}
+
 .pack-box ol,
 .pack-box ul{
     max-height:155px;
     overflow-y:auto;
-       scroll-behavior:smooth;
+    scroll-behavior:smooth;
+    scrollbar-width:none;
 }
-   .pack-box ol::-webkit-scrollbar,
+
+.pack-box ol::-webkit-scrollbar,
 .pack-box ul::-webkit-scrollbar{
-    width:0;
-}
-   
+    display:none;
 }
 
 .price-content hr{
@@ -747,8 +748,8 @@ box-shadow:
         transparent
     );
     margin:22px 0;
-
 }
+
 
 /* Móvil: pack abierto */
 .active-pack{
