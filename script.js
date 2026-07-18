@@ -188,3 +188,43 @@ cards.forEach(card => {
 });
 
 
+
+
+
+document.querySelectorAll(".pack-box ol, .pack-box ul").forEach(lista=>{
+    let velocidad = 0.3;
+    function mover(){
+        lista.scrollTop += velocidad;
+        if(lista.scrollTop >= lista.scrollHeight - lista.clientHeight){
+            lista.scrollTop = 0;
+
+        }
+
+    }
+
+    let auto = setInterval(mover,25);
+    lista.addEventListener("mouseenter",()=>{
+        clearInterval(auto);
+
+    });
+
+    lista.addEventListener("mouseleave",()=>{
+        auto = setInterval(mover,25);
+
+    });
+
+    lista.addEventListener("touchstart",()=>{
+        clearInterval(auto);
+
+    });
+
+    lista.addEventListener("touchend",()=>{
+        setTimeout(()=>{
+            auto = setInterval(mover,25);
+        },2000);
+
+    });
+
+});
+
+
