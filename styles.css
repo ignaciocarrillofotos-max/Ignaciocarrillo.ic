@@ -941,6 +941,7 @@ box-shadow:
 .price-card:hover .boton-contacto-pack,
 
 .active-pack .price-content p,
+.active-pack .price-content li,
 .active-pack .boton-contacto-pack{
 
     opacity:1;
