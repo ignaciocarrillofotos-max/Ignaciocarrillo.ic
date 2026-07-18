@@ -675,6 +675,38 @@ box-shadow:
     }
 }
 
+/* Listas de los packs */
+
+.price-content ol,
+.price-content ul{
+
+    list-style:none;
+    padding:0;
+    margin:0;
+}
+.price-content li{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    padding:10px 0;
+    border-bottom:1px solid rgba(255,255,255,.05);
+}
+.price-content li::before{
+    content:"✓";
+    color:#64c478;
+    font-weight:700;
+    font-size:1rem;
+    flex-shrink:0;
+}
+
+.titulo-pack{
+    color:#64c478;
+    text-transform:uppercase;
+    letter-spacing:2px;
+    font-size:.82rem;
+    font-weight:600;
+    margin:18px 0 14px;
+}
 
 /* Móvil: pack abierto */
 .active-pack{
