@@ -924,7 +924,7 @@ box-shadow:
 /* Animación de aparición del contenido */
 .price-content p,
 .price-content li,
-.price-content .boton-expandible{
+.price-content .boton-contacto-pack{
 
     opacity:0;
 
@@ -938,11 +938,10 @@ box-shadow:
 
 .price-card:hover .price-content p,
 .price-card:hover .price-content li,
-.price-card:hover .boton-expandible,
+.price-card:hover .boton-contacto-pack,
 
 .active-pack .price-content p,
-.active-pack .price-content li,
-.active-pack .boton-expandible{
+.active-pack .boton-contacto-pack{
 
     opacity:1;
 
@@ -964,7 +963,7 @@ box-shadow:
 
 }
 
-.boton-expandible{
+.boton-contacto-pack{
 
     transition-delay:.28s;
 
