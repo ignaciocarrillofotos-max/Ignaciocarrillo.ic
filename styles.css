@@ -1069,7 +1069,7 @@ box-shadow:
     }
     .boton-contacto-pack{
         flex-direction:column;
-   
+    }
 } /* ← ESTE es el cierre correcto del media query */
 
 
