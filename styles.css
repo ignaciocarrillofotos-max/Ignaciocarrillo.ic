@@ -831,6 +831,37 @@ box-shadow:
 
 
 
+.boton-contacto-pack{
+
+    display:flex;
+    gap:12px;
+    margin-top:30px;
+    flex-wrap:wrap;
+
+}
+
+.btn-pack{
+
+    flex:1;
+    padding:12px 18px;
+    background:#1b1b1b;
+    color:#fff;
+    text-decoration:none;
+    border-radius:12px;
+    text-align:center;
+    transition:.35s;
+    border:1px solid rgba(255,255,255,.08);
+
+}
+
+.btn-pack:hover{
+    background:#64c478;
+    color:#111;
+    transform:translateY(-3px);
+    box-shadow:0 10px 25px rgba(100,196,120,.35);
+
+}
+
 /* =========================
    EFECTO APPLE PACKS
 ========================= */
@@ -996,6 +1027,9 @@ box-shadow:
     .clientes-slider .card{
         flex: 0 0 82vw;
     }
+    .boton-contacto-pack{
+        flex-direction:column;
+   
 } /* ← ESTE es el cierre correcto del media query */
 
 
