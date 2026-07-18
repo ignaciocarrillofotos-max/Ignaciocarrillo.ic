@@ -590,9 +590,7 @@ transition:.45s cubic-bezier(.2,.8,.2,1);
 
     flex:2.2;
     transform:scale(1.03) translateY(-6px);
-box-shadow:
-    0 25px 60px rgba(0,0,0,.45),
-    0 0 30px rgba(100,196,120,.18);
+   
    background:
 linear-gradient(
 145deg,
@@ -744,17 +742,76 @@ box-shadow:
     padding-right:0;
 }
 
+
+/* =========================
+   EFECTO PREMIUM
+========================= */
+
+/* Los packs que no están seleccionados se atenúan */
 .pricing:hover .price-card{
 
     opacity:.45;
+    filter:blur(2px) brightness(.75);
 
 }
 
 .pricing:hover .price-card:hover{
 
     opacity:1;
+    filter:none;
 
 }
+
+/* Animación de aparición del contenido */
+
+.price-content p,
+.price-content li,
+.price-content .boton-expandible{
+
+    opacity:0;
+
+    transform:translateY(15px);
+
+    transition:
+        opacity .35s ease,
+        transform .35s ease;
+
+}
+
+.price-card:hover .price-content p,
+.price-card:hover .price-content li,
+.price-card:hover .boton-expandible,
+
+.active-pack .price-content p,
+.active-pack .price-content li,
+.active-pack .boton-expandible{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+}
+
+/* Aparición escalonada */
+
+.price-content p{
+
+    transition-delay:.08s;
+
+}
+
+.price-content li{
+
+    transition-delay:.16s;
+
+}
+
+.boton-expandible{
+
+    transition-delay:.28s;
+
+}
+
 
 
 /* =========================
