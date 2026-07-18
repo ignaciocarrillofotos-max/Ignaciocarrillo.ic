@@ -717,6 +717,26 @@ box-shadow:
     margin:18px 0 14px;
 }
 
+.pack-box{
+    background:#1a1a1a;
+    border:1px solid rgba(255,255,255,.05);
+    border-radius:16px;
+    padding:18px;
+    margin:18px 0;
+       scrollbar-width:none;
+.pack-box ol,
+.pack-box ul{
+    max-height:155px;
+    overflow-y:auto;
+       scroll-behavior:smooth;
+}
+   .pack-box ol::-webkit-scrollbar,
+.pack-box ul::-webkit-scrollbar{
+    width:0;
+}
+   
+}
+
 .price-content hr{
     border:none;
     height:1px;
