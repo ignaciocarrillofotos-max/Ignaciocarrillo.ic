@@ -554,7 +554,7 @@ transition:.45s cubic-bezier(.2,.8,.2,1);
 .price-card{
 
     flex:1;
-    min-height:120px;
+    min-height:180px;
     padding:35px;
     display:flex;
     flex-direction:column;
