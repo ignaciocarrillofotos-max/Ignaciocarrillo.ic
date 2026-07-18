@@ -727,7 +727,7 @@ box-shadow:
 
 .pack-box ol,
 .pack-box ul{
-    max-height:155px;
+    max-height:150px;
     overflow-y:auto;
     scroll-behavior:smooth;
     scrollbar-width:none;
