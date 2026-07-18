@@ -743,27 +743,26 @@ box-shadow:
 }
 
 
+
 /* =========================
-   EFECTO PREMIUM
+   EFECTO APPLE PACKS
 ========================= */
 
-/* Los packs que no están seleccionados se atenúan */
 .pricing:hover .price-card{
 
     opacity:.45;
     filter:blur(2px) brightness(.75);
-
+    transform:scale(.94);
 }
 
 .pricing:hover .price-card:hover{
 
     opacity:1;
     filter:none;
-
+    transform:scale(1.03) translateY(-8px);
 }
 
 /* Animación de aparición del contenido */
-
 .price-content p,
 .price-content li,
 .price-content .boton-expandible{
@@ -814,23 +813,7 @@ box-shadow:
 
 
 
-/* =========================
-   EFECTO APPLE PACKS
-========================= */
 
-.pricing:hover .price-card{
-
-    opacity:.45;
-    filter:blur(2px) brightness(.75);
-    transform:scale(.94);
-}
-
-.pricing:hover .price-card:hover{
-
-    opacity:1;
-    filter:none;
-    transform:scale(1.03) translateY(-8px);
-}
 
 
 
