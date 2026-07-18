@@ -593,6 +593,18 @@ transition:.45s cubic-bezier(.2,.8,.2,1);
 box-shadow:
     0 25px 60px rgba(0,0,0,.45),
     0 0 30px rgba(100,196,120,.18);
+   background:
+linear-gradient(
+145deg,
+#222,
+#171717
+);
+
+border:1px solid rgba(100,196,120,.25);
+
+box-shadow:
+0 30px 70px rgba(0,0,0,.45),
+0 0 40px rgba(100,196,120,.18);
 }
 
 /* Contenido oculto por defecto */
@@ -601,7 +613,7 @@ box-shadow:
     max-height:0;
     overflow:hidden;
     opacity:0;
-    transform:translateY(25px);
+    transform:translateY(35px);
     transition:
         max-height .55s ease,
         opacity .35s ease,
@@ -668,15 +680,6 @@ box-shadow:
 
 }
 
-.pricing:hover .price-card{
-    opacity:.45;
-
-}
-
-.pricing:hover .price-card:hover{
-    opacity:1;
-
-}
 
 
 
@@ -750,6 +753,24 @@ box-shadow:
 
 }
 
+
+/* =========================
+   EFECTO APPLE PACKS
+========================= */
+
+.pricing:hover .price-card{
+
+    opacity:.45;
+    filter:blur(2px) brightness(.75);
+
+}
+
+.pricing:hover .price-card:hover{
+
+    opacity:1;
+    filter:none;
+
+}
 
 
 
