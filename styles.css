@@ -81,6 +81,11 @@ fadeHero 2.4s ease;
     color:rgba(255,255,255,.9);
 }
 
+.hero-texto{
+    animation:
+fadeHero 2.8s ease;
+}
+
 /* =========================
    NAVBAR
 ========================= */
@@ -94,6 +99,11 @@ fadeHero 2.4s ease;
     align-items:center;
     padding:20px 8%;
     z-index:10;
+       backdrop-filter:blur(16px);
+    background:
+rgba(0,0,0,.18);
+    border-bottom:
+1px solid rgba(255,255,255,.06);
 }
 
 .logo img{
@@ -140,11 +150,13 @@ nav a{
 
     box-shadow:0 8px 20px rgba(0,0,0,.25);
        margin-top:35px;
+   backdrop-filter:blur(12px);
 }
 
 .btn:hover{
     transform:translateY(-3px) scale(1.03);
     box-shadow:0 12px 30px rgba(0,0,0,.35);
+       letter-spacing:.8px;
 }
 
 .btn-consultar{
