@@ -1179,3 +1179,21 @@ fadeHero 2s ease;
     font-size:.95rem;
 
 }
+
+
+
+
+
+
+
+
+@keyframes fadeHero{
+    from{
+        opacity:0;
+        transform:translateY(35px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
