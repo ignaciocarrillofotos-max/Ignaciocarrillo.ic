@@ -1061,6 +1061,8 @@ box-shadow:
 
     .service-card{
         height:180px;
+               width: 90%;
+        margin: 0 auto;
     }
 
     /* Tamaño perfecto para móvil */
@@ -1259,7 +1261,8 @@ fadeHero 2s ease;
     max-width:88vw;
 
     scroll-snap-align:center;
-
+        width: 90%;
+        margin: 0 auto;
 }
 
 .active-pack{
