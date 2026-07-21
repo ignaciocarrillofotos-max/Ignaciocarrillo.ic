@@ -2,24 +2,202 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Eventos</title>
 <link rel="stylesheet" href="galeria.css">
+    <div class="audio-player">
+    <audio id="music" src="musica/1979.mp3" loop></audio>
+    <button id="toggleMusic">🔇 Silenciar música</button>
+</div>
+
 </head>
 <body>
 
-<a href="galeria.html" class="volver">← Volver</a>
 
+<header class="hero">
+
+    <div class="hero-overlay">
+<img src="FOTOSVIDEOS/logos/blancofirmaignacio.PNG" class="hero-logo">
 <h1>Eventos</h1>
+<br>
+<a href="galeria.html" class="volver">
+← Volver a la galería
+</a>
+<br>
+     
+    </div>
+</header>
 
+
+<section class="intro-galeria">
+<p>
+Cada fotografía refleja la intensidad, el esfuerzo y la emoción del deporte.
+Una selección de algunos de mis trabajos más destacados.
+</p>
+
+</section>
+    
+
+  
 <div class="gallery">
 
-  <img src="FOTOSVIDEOS/SocioIgnacio.jpg">
-<img src="FOTOSVIDEOS/eventos/foto1.jpg">
-<img src="FOTOSVIDEOS/eventos/foto2.jpg">
-<img src="FOTOSVIDEOS/eventos/foto3.jpg">
-<img src="FOTOSVIDEOS/eventos/foto4.jpg">
+      <div class="photo">
+        <img src="FOTOSVIDEOS/eventos/DJI_0039.JPG" loading="lazy" alt="">
+    </div>
+        <div class="photo">
+        <img src="FOTOSVIDEOS/eventos/DJI_0041.JPG" loading="lazy" alt="">
+    </div>
+        <div class="photo">
+        <img src="FOTOSVIDEOS/eventos/DSC08120.jpg" loading="lazy" alt="">
+    </div>
+        <div class="photo">
+        <img src="FOTOSVIDEOS/eventos/DSC08128.jpg" loading="lazy" alt="">
+    </div>
+        <div class="photo">
+        <img src="FOTOSVIDEOS/eventos/DSC08130.jpg" loading="lazy" alt="">
+    </div>
+        <div class="photo">
+        <img src="FOTOSVIDEOS/eventos/DSC08173.jpg" loading="lazy" alt="">
+    </div>
+        <div class="photo">
+        <img src="FOTOSVIDEOS/eventos/DSC08213.jpg" loading="lazy" alt="">
+    </div>
+        <div class="photo">
+        <img src="FOTOSVIDEOS/eventos/DSC08216.jpg" loading="lazy" alt="">
+    </div>
+        <div class="photo">
+        <img src="FOTOSVIDEOS/eventos/DSC08389.jpg" loading="lazy" alt="">
+    </div>
+        <div class="photo">
+        <img src="FOTOSVIDEOS/eventos/DSC08399.jpg" loading="lazy" alt="">
+    </div>
+        <div class="photo">
+        <img src="FOTOSVIDEOS/eventos/DSC08405.jpg" loading="lazy" alt="">
+    </div>
+        <div class="photo">
+        <img src="FOTOSVIDEOS/eventos/DSC08875.jpg" loading="lazy" alt="">
+    </div>
+        <div class="photo">
+        <img src="FOTOSVIDEOS/eventos/DSC08982.jpg" loading="lazy" alt="">
+    </div>
+          <div class="photo">
+        <img src="FOTOSVIDEOS/eventos/DSC09261.jpg" loading="lazy" alt="">
+    </div>
+          <div class="photo">
+        <img src="FOTOSVIDEOS/eventos/DSC09264.jpg" loading="lazy" alt="">
+    </div>
+          <div class="photo">
+        <img src="FOTOSVIDEOS/eventos/DSC09265.jpg" loading="lazy" alt="">
+    </div>
+
+
 
 </div>
 
+
+    
+
+    
+<div id="lightbox">
+
+<div class="lightbox-top">
+    <span class="close">✕</span>
+    <div id="contador"></div>
+</div>
+<button class="prev">&#10094;</button>
+<img id="lightbox-img">
+<button class="next">&#10095;</button>
+    
+<div class="lightbox-actions">
+    <button id="btnCompartir">
+        📤 Compartir
+    </button>
+    <button id="btnFavorito">
+        ❤ Favorito
+    </button>
+</div>
+    <div id="miniaturas"></div>
+
+</div>
+
+
+
+
+<hr>
+
+    
+<section id="contacto">
+    <h2>Contacto</h2>
+    <p class="subtitulo">
+        Cuéntame tu idea y la hacemos realidad
+    </p>
+
+    <div class="contacto-grid">
+
+        <div class="contacto-card">
+            <h3>Email</h3>
+            <p>ignaciocarrillo.fotos@gmail.com</p>
+        </div>
+
+        <div class="contacto-card">
+            <h3>Teléfono</h3>
+            <p>+34 614 53 21 68</p>
+        </div>
+
+        <div class="contacto-card">
+            <h3>Instagram</h3>
+            <a href="https://instagram.com/ignaciocarrillo.ic" target="_blank">
+                @ignaciocarrillo.ic
+            </a>
+        </div>
+
+    </div>
+
+    <a class="btn" href="mailto:ignaciocarrillo.fotos@gmail.com">
+        Escribirme ahora
+    </a>
+</section>
+
+
+
+ <footer class="footer">
+  <div class="footer-brand">
+    <img src="FOTOSVIDEOS/logos/blancofirmaignacio.PNG" alt="Ignaciocarrillo.IC">
+    <p>Fotografía & Videografía</p>
+</div>
+    
+    <div class="footer-grid">
+
+        <div>
+            <h3>Ignacio Carrillo IC</h3>
+            <p>Fotografía & Videografía profesional</p>
+        </div>
+
+<div class="footer-links">
+<a href="index.html#about">Sobre mí</a>
+<a href="index.html#colaboraciones">Colaboraciones</a>
+<a href="index.html#packs">Packs</a>
+<a href="index.html#servicios">Servicios</a>
+<a href="index.html#contacto">Contacto</a>
+</div>
+        <div>
+            <h4>Contacto</h4>
+            <p>Email: ignaciocarrillo.fotos@gmail.com</p>
+            <p>Tel: +34 614 53 21 68</p>
+        </div>
+
+    </div>
+
+    <p class="footer-bottom">
+        © 2026 Ignacio Carrillo IC. Todos los derechos reservados.
+    </p>
+</footer>
+    
+    
+<script src="galeria.js"></script>
+
+
+
+  
 </body>
 </html>
