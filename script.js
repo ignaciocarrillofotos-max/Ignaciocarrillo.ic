@@ -53,22 +53,26 @@ document.addEventListener("click", function(e){
 
 
 document.querySelectorAll(".services").forEach((slider,index)=>{
-    slider.innerHTML += slider.innerHTML;
-    let velocidad = index===0 ? 1.2 : -1.2;
-    if(index===1){
-        slider.scrollLeft = slider.scrollWidth/2;
+    const track = slider.querySelector(".services-track");
+
+    // Duplicamos SOLO las tarjetas
+    track.innerHTML += track.innerHTML;
+    let velocidad = index === 0 ? 1.2 : -1.2;
+    if(index === 1){
+        slider.scrollLeft = track.scrollWidth / 2;
     }
 
     function mover(){
         slider.scrollLeft += velocidad;
-        if(velocidad>0){
-            if(slider.scrollLeft >= slider.scrollWidth/2){
+        const mitad = track.scrollWidth / 2;
+        if(velocidad > 0){
+            if(slider.scrollLeft >= mitad){
                 slider.scrollLeft = 0;
             }
 
         }else{
-            if(slider.scrollLeft<=0){
-                slider.scrollLeft = slider.scrollWidth/2;
+            if(slider.scrollLeft <= 0){
+                slider.scrollLeft = mitad;
             }
 
         }
@@ -81,17 +85,17 @@ document.querySelectorAll(".services").forEach((slider,index)=>{
         auto = setInterval(mover,20);
     });
 
-    slider.addEventListener("touchstart",()=>clearInterval(auto));
-    slider.addEventListener("touchend",()=>{
+    slider.addEventListener("touchstart",()=>{
+        clearInterval(auto);
+    });
 
+    slider.addEventListener("touchend",()=>{
         setTimeout(()=>{
             auto = setInterval(mover,20);
         },1500);
-
     });
 
 });
-
 
 
 
