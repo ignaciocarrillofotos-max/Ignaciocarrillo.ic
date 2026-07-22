@@ -455,134 +455,93 @@ transition:.45s cubic-bezier(.2,.8,.2,1);
    SERVICIOS
 ========================= */
 
-.services{
-
-    position:relative;
-    overflow:hidden;
-    width:100vw;
-    margin-left:calc(50% - 50vw);
-    padding:0;
-
-}
-.services-track{
-
-    display:flex;
-    gap:20px;
-    width:max-content;
-    padding:0 20px;
-    will-change:transform;
-
-}
-.services-wrapper{
-    display:flex;
-    flex-direction:column;
-    gap:24px;
-
+.services {
+    position: relative;
+    overflow: hidden;
+    width: 100vw;
+    margin-left: calc(50% - 50vw);
+    padding: 0;
 }
 
-.service-card{
-
-    position:relative;
-    flex:0 0 320px;
-    height:260px;
-    overflow:hidden;
-    border-radius:15px;
-    user-select:none;
-    -webkit-user-select:none;
-
+.services-track {
+    display: flex;
+    gap: 20px;
+    width: max-content;
+    padding: 0 20px;
+    will-change: transform;
+    transition: all .3s ease-in-out; /* Añade una transición suave */
 }
 
-.service-card::before{
-    content:"";
-    position:absolute;
-    inset:0;
-    background:linear-gradient(
-        to top,
-        rgba(0,0,0,.60),
-        rgba(0,0,0,.25),
-        rgba(0,0,0,.05)
-    );
-    z-index:1;
-
+.services-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
 }
 
-.service-card::after{
-    content:"";
-    position:absolute;
-    inset:0;
-    background:linear-gradient(
-        to top,
-        rgba(0,0,0,.65),
-        rgba(0,0,0,.25),
-        rgba(0,0,0,.15)
-    );
-    pointer-events:none;
-    z-index:1;
+.service-card {
+    position: relative;
+    flex: 0 0 320px;
+    height: 260px;
+    overflow: hidden;
+    border-radius: 15px;
+    user-select: none;
+    -webkit-user-select: none;
+    transition: all .3s ease-in-out; /* Añade una transición suave */
+}
 
+.service-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0,0,0,.60), rgba(0,0,0,.25), rgba(0,0,0,.05));
+    z-index: 1;
+}
+
+.service-card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0,0,0,.65), rgba(0,0,0,.25), rgba(0,0,0,.15));
+    pointer-events: none;
+    z-index: 1;
 }
 
 .service-card:hover img,
-.service-card:hover video{
-
-    transform:scale(1.08);
-
+.service-card:hover video {
+    transform: scale(1.08);
 }
 
-.service-card span{
-
-    position:absolute;
-    top:50%;
-    left:50%;
-    transform:translate(-50%,-50%);
-    z-index:2;
-    color:#fff;
-    font-size:1.15rem;
-    font-weight:700;
-    letter-spacing:2px;
-    text-transform:uppercase;
-    text-shadow:
-        0 3px 12px rgba(0,0,0,.95),
-        0 0 25px rgba(0,0,0,.6);
-    white-space:nowrap;
-
-}
-
-.service-card img{
-    width:100%;
-    height:100%;
-    object-fit:cover;
-    transition:.4s;
-}
-
-.service-card video{
-    width:100%;
-    height:100%;
-    object-fit:cover;
-    border-radius:15px;
-    display:block;
+.service-card span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    color: #fff;
+    font-size: 1.15rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-shadow: 0 3px 12px rgba(0,0,0,.95), 0 0 25px rgba(0,0,0,.6);
+    white-space: nowrap;
 }
 
 .service-card img,
-.service-card video{
-
-    position:absolute;
-    inset:0;
-    width:100%;
-    height:100%;
-    object-fit:cover;
-    transition:.4s;
-    display:block;
-   
+.service-card video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: .4s;
+    display: block;
 }
 
-.services-track:hover{
-    cursor:grab;
+.services-track:hover {
+    cursor: grab;
 }
 
-.services-track:active{
-    cursor:grabbing;
+.services-track:active {
+    cursor: grabbing;
 }
-
 
 
 
@@ -1041,53 +1000,53 @@ box-shadow:
    MÓVIL
 ========================= */
 
-@media(max-width:768px){
-
-    nav{
-        display:none;
+@media(max-width:768px) {
+    nav {
+        display: none;
     }
 
-    nav.show{
-        display:flex;
-        flex-direction:column;
-        position:absolute;
-        top:90px;
-        right:20px;
-        background:black;
-        padding:15px;
-        width:220px;
-        z-index:9999;
+    nav.show {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 90px;
+        right: 20px;
+        background: black;
+        padding: 15px;
+        width: 220px;
+        z-index: 9999;
     }
 
-    .hamburger{
-        display:block;
+    .hamburger {
+        display: block;
     }
 
-    .hero h1{
-        font-size:2rem;
+    .hero h1 {
+        font-size: 2rem;
     }
 
-    .hero p{
-        font-size:1rem;
+    .hero p {
+        font-size: 1rem;
     }
 
-    .album-card{
-        height:220px;
+    .album-card {
+        height: 220px;
     }
 
-    .service-card{
-        height:180px;
-               width: 90%;
+    .service-card {
+        height: 180px;
+        width: 90%;
         margin: 0 auto;
     }
 
     /* Tamaño perfecto para móvil */
-    .clientes-slider .card{
+    .clientes-slider .card {
         flex: 0 0 82vw;
     }
-    .boton-contacto-pack{
-        flex-direction:column;
+    .boton-contacto-pack {
+        flex-direction: column;
     }
+
     .service-card img,
     .service-card video {
         position: relative;
@@ -1105,8 +1064,7 @@ box-shadow:
             -webkit-overflow-scrolling: touch;
         }
     }
-   
-} /* ← ESTE es el cierre correcto del media query */
+}
 
 
 
