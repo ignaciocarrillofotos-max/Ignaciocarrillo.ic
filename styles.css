@@ -992,83 +992,6 @@ box-shadow:
 
 
 
-
-
-
-
-/* =========================
-   MÓVIL
-========================= */
-
-@media(max-width:768px) {
-    nav {
-        display: none;
-    }
-
-    nav.show {
-        display: flex;
-        flex-direction: column;
-        position: absolute;
-        top: 90px;
-        right: 20px;
-        background: black;
-        padding: 15px;
-        width: 220px;
-        z-index: 9999;
-    }
-
-    .hamburger {
-        display: block;
-    }
-
-    .hero h1 {
-        font-size: 2rem;
-    }
-
-    .hero p {
-        font-size: 1rem;
-    }
-
-    .album-card {
-        height: 220px;
-    }
-
-    .service-card {
-        height: 180px;
-        width: 90%;
-        margin: 0 auto;
-    }
-
-    /* Tamaño perfecto para móvil */
-    .clientes-slider .card {
-        flex: 0 0 82vw;
-    }
-    .boton-contacto-pack {
-        flex-direction: column;
-    }
-
-    .service-card img,
-    .service-card video {
-        position: relative;
-        inset: 0;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        transition: .4s;
-        display: block;
-    }
-
-    /* Añade estilos adicionales para iOS Safari */
-    @supports (-webkit-overflow-scrolling: touch) {
-        .services-track {
-            -webkit-overflow-scrolling: touch;
-        }
-    }
-}
-
-
-
-
 /* =========================
    RESTO DEL CSS
 ========================= */
@@ -1143,6 +1066,137 @@ fadeHero 2s ease;
 .historia p{
     margin-bottom:28px;
 }
+
+
+
+
+
+/* =========================
+   MÓVIL
+========================= */
+
+@media(max-width:768px) {
+    /* Estilos específicos para dispositivos móviles */
+    nav {
+        display: none;
+    }
+
+    nav.show {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 90px;
+        right: 20px;
+        background: black;
+        padding: 15px;
+        width: 220px;
+        z-index: 9999;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .album-card {
+        height: 220px;
+    }
+
+    .service-card {
+        height: 180px;
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    /* Tamaño perfecto para móvil */
+    .clientes-slider .card {
+        flex: 0 0 82vw;
+    }
+    .boton-contacto-pack {
+        flex-direction: column;
+    }
+
+    .service-card img,
+    .service-card video {
+        position: relative;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: .4s;
+        display: block;
+    }
+
+    /* Añade estilos adicionales para iOS Safari */
+    @supports (-webkit-overflow-scrolling: touch) {
+        .services-track {
+            -webkit-overflow-scrolling: touch;
+        }
+    }
+
+    /* PACKS MÓVIL */
+    .pricing {
+        display: flex;
+        overflow-x: auto;
+        gap: 18px;
+        padding: 0 20px;
+        scroll-snap-type: x mandatory;
+    }
+
+    .price-card {
+        flex: 0 0 88vw;
+        min-width: 88vw;
+        max-width: 88vw;
+        scroll-snap-align: center;
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    .active-pack {
+        flex: 0 0 88vw;
+        min-width: 88vw;
+        max-width: 88vw;
+    }
+
+    .active-pack .price-content {
+        display: block;
+        max-height: 1200px;
+    }
+
+    .price-content {
+        width: 100%;
+    }
+
+    .price-content ol,
+    .price-content ul {
+        padding-left: 20px;
+    }
+
+    .price-content li {
+        margin-bottom: 8px;
+    }
+
+    .price-card h3 {
+        font-size: 1.8rem;
+    }
+
+    .pack-subtitle {
+        font-size: .95rem;
+    }
+}
+
+
+
+
+
+
 
 
 
@@ -1227,80 +1281,6 @@ fadeHero 2s ease;
     letter-spacing:3px;
     text-transform:uppercase;
     opacity:0.6;
-}
-
-
-
-
-/* ==========================
-   PACKS MÓVIL
-========================== */
-
-.pricing{
-
-    display:flex;
-    overflow-x:auto;
-    gap:18px;
-    padding:0 20px;
-    scroll-snap-type:x mandatory;
-
-}
-
-.price-card{
-
-    flex:0 0 88vw;
-    min-width:88vw;
-    max-width:88vw;
-
-    scroll-snap-align:center;
-        width: 90%;
-        margin: 0 auto;
-}
-
-.active-pack{
-
-    flex:0 0 88vw;
-    min-width:88vw;
-    max-width:88vw;
-
-}
-
-.active-pack .price-content{
-
-    display:block;
-    max-height:1200px;
-
-}
-
-.price-content{
-
-    width:100%;
-
-}
-
-.price-content ol,
-.price-content ul{
-
-    padding-left:20px;
-
-}
-
-.price-content li{
-
-    margin-bottom:8px;
-
-}
-
-.price-card h3{
-
-    font-size:1.8rem;
-
-}
-
-.pack-subtitle{
-
-    font-size:.95rem;
-
 }
 
 
