@@ -457,10 +457,17 @@ transition:.45s cubic-bezier(.2,.8,.2,1);
 
 .services {
     position: relative;
-    overflow: hidden;
+    overflow-x: scroll;
+    overflow-y: hidden;
     width: 100vw;
     margin-left: calc(50% - 50vw);
     padding: 0;
+          -webkit-overflow-scrolling: touch; /* iPhone */
+    scrollbar-width: none; /* Firefox */
+}
+
+.services::-webkit-scrollbar {
+    display: none; /* Chrome, Safari */
 }
 
 .services-track {
