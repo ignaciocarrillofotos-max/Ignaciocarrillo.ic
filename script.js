@@ -52,47 +52,48 @@ document.addEventListener("click", function(e){
 
 
 
-document.querySelectorAll(".services").forEach((slider,index)=>{
+document.querySelectorAll(".services").forEach((slider, index) => {
     const track = slider.querySelector(".services-track");
 
-    // Duplicamos SOLO las tarjetas
-    track.innerHTML += track.innerHTML;
-    let velocidad = index === 0 ? 1.2 : -1.2;
-    if(index === 1){
+    // Duplicar una sola vez
+    if (!track.dataset.duplicado) {
+        track.innerHTML += track.innerHTML;
+        track.dataset.duplicado = "true";
+    }
+
+    let velocidad = index === 0 ? 0.8 : -0.8;
+
+    // Empieza la segunda fila en la mitad
+    if (index === 1) {
         slider.scrollLeft = track.scrollWidth / 2;
     }
 
-    function mover(){
+    function mover() {
         slider.scrollLeft += velocidad;
-        const mitad = track.scrollWidth / 2;
-        if(velocidad > 0){
-            if(slider.scrollLeft >= mitad){
+        const limite = (track.scrollWidth / 2) - slider.clientWidth;
+        if (velocidad > 0) {
+            if (slider.scrollLeft >= limite) {
                 slider.scrollLeft = 0;
             }
 
-        }else{
-            if(slider.scrollLeft <= 0){
-                slider.scrollLeft = mitad;
+        } else {
+            if (slider.scrollLeft <= 0) {
+                slider.scrollLeft = limite;
             }
-
         }
-
     }
 
-    let auto = setInterval(mover,20);
-    slider.addEventListener("mouseenter",()=>clearInterval(auto));
-    slider.addEventListener("mouseleave",()=>{
-        auto = setInterval(mover,20);
+    let auto = setInterval(mover, 16);
+    slider.addEventListener("mouseenter", () => clearInterval(auto));
+    slider.addEventListener("mouseleave", () => {
+        auto = setInterval(mover, 16);
     });
 
-    slider.addEventListener("touchstart",()=>{
-        clearInterval(auto);
-    });
-
-    slider.addEventListener("touchend",()=>{
-        setTimeout(()=>{
-            auto = setInterval(mover,20);
-        },1500);
+    slider.addEventListener("touchstart", () => clearInterval(auto));
+    slider.addEventListener("touchend", () => {
+        setTimeout(() => {
+            auto = setInterval(mover, 16);
+        }, 1000);
     });
 
 });
