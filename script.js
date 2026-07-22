@@ -75,7 +75,6 @@ document.querySelectorAll(".services").forEach((slider, index) => {
             if (slider.scrollLeft >= limite) {
                 slider.scrollLeft = 0;
             }
-
         } else {
             if (slider.scrollLeft <= 0) {
                 slider.scrollLeft = limite;
@@ -95,7 +94,6 @@ document.querySelectorAll(".services").forEach((slider, index) => {
             auto = setInterval(mover, 16);
         }, 1000);
     });
-
 });
 
 
