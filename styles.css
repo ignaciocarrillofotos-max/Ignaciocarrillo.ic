@@ -457,10 +457,10 @@ transition:.45s cubic-bezier(.2,.8,.2,1);
 
 .services {
     position: relative;
-    overflow-x: scroll;
+    overflow-x: auto;
     overflow-y: hidden;
     width: 100vw;
-    margin-left: calc(50% - 50vw);
+    margin: 0;
     padding: 0;
           -webkit-overflow-scrolling: touch; /* iPhone */
     scrollbar-width: none; /* Firefox */
