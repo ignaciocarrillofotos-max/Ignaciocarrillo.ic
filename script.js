@@ -237,3 +237,29 @@ document.querySelectorAll(".pack-box ol, .pack-box ul").forEach(lista=>{
 });
 
 
+
+
+
+
+
+
+function toggleHistoria() {
+    const historia = document.querySelector('.historia-collapsed');
+    if (!historia) return;
+
+    historia.classList.toggle('historia-expanded');
+
+    const texto = historia.querySelector('.historia-toggle span');
+    const flecha = historia.querySelector('.flecha');
+
+    if (historia.classList.contains('historia-expanded')) {
+        texto.textContent = "Leer menos";
+        flecha.style.transform = "rotate(-135deg)";
+    } else {
+        texto.textContent = "Leer más";
+        flecha.style.transform = "rotate(45deg)";
+    }
+}
+
+
+
