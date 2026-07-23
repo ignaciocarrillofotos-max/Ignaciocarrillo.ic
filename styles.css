@@ -1141,11 +1141,7 @@ fadeHero 2s ease;
         display: block;
     }
 
-    /* Añade estilos adicionales para iOS Safari */
-    @supports (-webkit-overflow-scrolling: touch) {
-        .services-track {
-            -webkit-overflow-scrolling: touch;
-        }
+
     }
 
     /* PACKS MÓVIL */
