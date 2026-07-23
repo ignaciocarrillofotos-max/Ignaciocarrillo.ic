@@ -149,32 +149,33 @@ clientes.addEventListener("touchend",()=>{
 
 
 const packs = document.querySelector(".packs-slider");
-let dir = 1;
-let vel = 0.06;
-
-function moverPacks(){
-    packs.scrollLeft += vel * dir;
-
-    const max = packs.scrollWidth - packs.clientWidth;
-
-    if(packs.scrollLeft >= max){
-        dir = -1;
+if (packs) {
+    let dir = 1;
+    let vel = 0.06;
+    function moverPacks() {
+        packs.scrollLeft += vel * dir;
+        const max = packs.scrollWidth - packs.clientWidth;
+        if (packs.scrollLeft >= max) {
+            dir = -1;
+        }
+        if (packs.scrollLeft <= 0) {
+            dir = 1;
+        }
     }
 
-    if(packs.scrollLeft <= 0){
-        dir = 1;
+    // SOLO EN ORDENADOR
+    if (window.innerWidth > 768) {
+        let autoPacks = setInterval(moverPacks, 20);
+        packs.addEventListener("mouseenter", () => {
+            clearInterval(autoPacks);
+        });
+        packs.addEventListener("mouseleave", () => {
+            autoPacks = setInterval(moverPacks, 20);
+        });
+
     }
+
 }
-
-let autoPacks = setInterval(moverPacks, 20);
-
-packs.addEventListener("mouseenter", ()=> clearInterval(autoPacks));
-packs.addEventListener("mouseleave", ()=> autoPacks = setInterval(moverPacks, 20));
-
-packs.addEventListener("touchstart", ()=> clearInterval(autoPacks));
-packs.addEventListener("touchend", ()=>{
-    setTimeout(()=> autoPacks = setInterval(moverPacks, 20), 1500);
-});
 
 
 
