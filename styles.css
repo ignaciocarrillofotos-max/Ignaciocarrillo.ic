@@ -1142,21 +1142,23 @@ fadeHero 2s ease;
         min-width: 88vw;
         max-width: 88vw;
         scroll-snap-align: center;
-        width: 90%;
-        margin: 0 auto;
+
     }
 
     .active-pack {
         flex: 0 0 88vw;
         min-width: 88vw;
         max-width: 88vw;
-           transform:scale(1.03);
+           transform:scale(1.04);
+    box-shadow:
+        0 25px 60px rgba(0,0,0,.45),
+        0 0 30px rgba(100,196,120,.20);
+
     }
 
     .active-pack .price-content {
-        display: block;
-        max-height: 1200px;
-           opacity:1;
+    max-height:1200px;
+    opacity:1;
     transform:translateY(0);
     }
 
