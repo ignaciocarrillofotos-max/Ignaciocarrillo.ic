@@ -1071,6 +1071,59 @@ fadeHero 2s ease;
     margin-bottom:28px;
 }
 
+/* HISTORIA COLLAPSABLE */
+.historia-collapsed {
+    position: relative;
+    overflow: hidden;
+}
+
+.historia-preview p {
+    margin-bottom: 28px;
+}
+
+.historia-full {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height .7s ease, opacity .45s ease;
+}
+
+.historia-expanded .historia-full {
+    max-height: 2000px;
+    opacity: 1;
+}
+
+.historia-toggle {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    justify-content: center;
+    color: #64c478;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    transition: .3s;
+}
+
+.historia-toggle:hover {
+    color: #7be68f;
+}
+
+.flecha {
+    width: 12px;
+    height: 12px;
+    border-right: 2px solid #64c478;
+    border-bottom: 2px solid #64c478;
+    transform: rotate(45deg);
+    transition: .35s;
+}
+
+.historia-expanded .flecha {
+    transform: rotate(-135deg);
+}
+
 
 
 
