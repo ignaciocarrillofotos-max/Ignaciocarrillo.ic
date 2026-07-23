@@ -750,20 +750,6 @@ box-shadow:
 }
 
 
-/* Móvil: pack abierto */
-.active-pack{
-    flex:2.2;
-    height:auto;
-    transform:scale(1.03);
-}
-
-/* Móvil: mostrar contenido */
-.active-pack .price-content{
-    max-height:900px;
-    opacity:1;
-    transform:translateY(0);
-
-}
 
 /* Título */
 .price-card h3{
@@ -1141,9 +1127,7 @@ fadeHero 2s ease;
         display: block;
     }
 
-
-    }
-
+/* PACK ABIERTO EN MÓVIL */
     /* PACKS MÓVIL */
     .pricing {
         display: flex;
@@ -1166,11 +1150,14 @@ fadeHero 2s ease;
         flex: 0 0 88vw;
         min-width: 88vw;
         max-width: 88vw;
+           transform:scale(1.03);
     }
 
     .active-pack .price-content {
         display: block;
         max-height: 1200px;
+           opacity:1;
+    transform:translateY(0);
     }
 
     .price-content {
