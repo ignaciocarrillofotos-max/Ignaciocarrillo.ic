@@ -675,6 +675,29 @@ footer p{
 
 }
 
+/* =========================
+   FIRMA EN LAS MINIATURAS
+========================= */
+
+.gallery-watermark{
+
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    width:65% !important;
+    height:auto !important;
+    opacity:.10;
+    pointer-events:none;
+    user-select:none;
+    z-index:5;
+    border-radius:0 !important;
+    filter:drop-shadow(
+        0 3px 10px rgba(0,0,0,.35)
+    );
+
+}
+
 
 /* MINIATURAS DE VÍDEO */
 .photo video{
