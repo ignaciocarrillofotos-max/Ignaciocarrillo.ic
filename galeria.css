@@ -848,14 +848,11 @@ transform:scale(1);
 }
 
 .close{
-
-    position:absolute;
-
-    font-size:50px;
+    position:relative;
+    font-size:30px;
     cursor:pointer;
     color:white;
     transition:.3s;
-    
     width:55px;
     height:55px;
     display:flex;
@@ -864,7 +861,8 @@ transform:scale(1);
     border-radius:50%;
     background:rgba(255,255,255,.08);
     backdrop-filter:blur(12px);
-    
+    flex-shrink:0;
+
 }
 
 .close:hover{
