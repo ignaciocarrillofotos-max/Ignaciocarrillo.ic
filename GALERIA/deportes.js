@@ -1,5 +1,5 @@
 // Primero declaras el array
-const fotos = [
+const galeriaActual = [
     "../FOTOSVIDEOS/metaabrazo.JPG",
     "../FOTOSVIDEOS/deportes/YoDuatlon.jpg",
     "../FOTOSVIDEOS/deportes/DSC00699.JPG",
