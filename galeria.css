@@ -1190,31 +1190,36 @@ Movil, Galeria
 
 #miniaturas{
 
-    position:absolute;
-    bottom:18px;
+    position:fixed;
+    bottom:15px;
     left:0;
-    width:100%;
+    width:100vw;
     max-width:none;
-    padding:0 12px;
     display:flex;
     justify-content:flex-start;
     gap:10px;
+    padding:0 15px;
     overflow-x:auto;
     overflow-y:hidden;
+    box-sizing:border-box;
+    z-index:999999;
     -webkit-overflow-scrolling:touch;
     scrollbar-width:none;
 
 }
+
 #miniaturas::-webkit-scrollbar{
     display:none;
 
 }
 
-    
+
 #miniaturas img{
     width:65px;
     height:48px;
     flex:0 0 auto;
+    object-fit:cover;
+
 }
 
 }
