@@ -52,54 +52,45 @@ document.addEventListener("click", function(e){
 
 
 
-document.querySelectorAll(".services").forEach((slider, index) => {
-    const track = slider.querySelector(".services-track");
-    function iniciarCarrusel() {
-        if (!track.dataset.duplicado) {
-            track.innerHTML += track.innerHTML;
-            track.dataset.duplicado = "true";
-        }
 
-        let velocidad = index === 0 ? 0.8 : -0.8;
-        if (index === 1) {
-            slider.scrollLeft = track.scrollWidth / 2;
-        }
 
-        function mover() {
-            slider.scrollLeft += velocidad;
-            const limite = (track.scrollWidth / 2) - slider.clientWidth;
-            if (velocidad > 0) {
-                if (slider.scrollLeft >= limite) slider.scrollLeft = 0;
-            } else {
-                if (slider.scrollLeft <= 0) slider.scrollLeft = limite;
-            }
-        }
 
-        let auto = setInterval(mover, 16);
-        slider.addEventListener("mouseenter", () => clearInterval(auto));
-        slider.addEventListener("mouseleave", () => auto = setInterval(mover, 16));
-        slider.addEventListener("touchstart", () => clearInterval(auto));
-        slider.addEventListener("touchend", () => {
-            setTimeout(() => auto = setInterval(mover, 16), 1000);
-        });
-    }
+document.querySelectorAll(".services").forEach(slider => {
 
-    // Esperar a que imágenes y vídeos estén listos
-    const elementos = slider.querySelectorAll("img, video");
-    let cargados = 0;
-    elementos.forEach(el => {
-        if (el.complete || el.readyState >= 2) {
-            cargados++;
-        } else {
-            el.addEventListener("load", () => {
-                cargados++;
-                if (cargados === elementos.length) iniciarCarrusel();
-            });
-        }
+    let isDown = false;
+    let startX;
+    let scrollLeft;
+
+    slider.addEventListener("mousedown", (e) => {
+        isDown = true;
+        startX = e.pageX - slider.offsetLeft;
+        scrollLeft = slider.scrollLeft;
     });
 
-    if (cargados === elementos.length) iniciarCarrusel();
+    slider.addEventListener("mouseleave", () => {
+        isDown = false;
+    });
+
+    slider.addEventListener("mouseup", () => {
+        isDown = false;
+    });
+
+    slider.addEventListener("mousemove", (e) => {
+        if (!isDown) return;
+        e.preventDefault();
+
+        const x = e.pageX - slider.offsetLeft;
+        const walk = (x - startX) * 1.5;
+
+        slider.scrollLeft = scrollLeft - walk;
+    });
+
 });
+
+
+
+
+
 
 
 
