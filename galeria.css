@@ -636,6 +636,7 @@ footer p{
     overflow:hidden;   
     cursor:pointer;
     box-shadow:0 20px 45px rgba(0,0,0,.35);
+        position:relative;
 }
 
 .photo img{
@@ -657,6 +658,7 @@ footer p{
 
 
 }
+
 
 /* MINIATURAS DE VÍDEO */
 .photo video{
@@ -690,7 +692,25 @@ footer p{
 }
 
 
+.watermark{
+    position:absolute;
+    right:12px;
+    bottom:12px;
+    width:90px !important;
+    height:auto !important;
+    opacity:.08;
+    pointer-events:none;
+    user-select:none;
+    z-index:5;
+    border-radius:0 !important;
+    transition:opacity .3s ease;
 
+}
+
+.photo:hover .watermark{
+    opacity:.18;
+
+}
 
 
 
