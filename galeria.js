@@ -4,7 +4,7 @@ function openFolder(folder){
     if(folder === "paisajes") window.location.href = "FOTOSVIDEOS/paisajes/";
 }
 
-const imagenes = document.querySelectorAll(".gallery img");
+let imagenes = document.querySelectorAll(".gallery img");
 
 const lightbox = document.getElementById("lightbox");
 const lightboxImg = document.getElementById("lightbox-img");
@@ -32,6 +32,29 @@ imagenes.forEach((img, index) => {
     mini.addEventListener("click", () => abrirImagen(index));
     miniaturas.appendChild(mini);
 });
+
+
+// =========================
+// CREAR GALERÍA AUTOMÁTICAMENTE
+// =========================
+
+const gallery = document.querySelector(".gallery");
+
+if (gallery && typeof fotos !== "undefined") {
+
+    fotos.forEach(src => {
+
+        gallery.innerHTML += `
+            <div class="photo">
+                <img src="${src}" loading="lazy" alt="">
+            </div>
+        `;
+
+    });
+
+}
+
+
 
 // Abrir imagen
 function abrirImagen(index){
