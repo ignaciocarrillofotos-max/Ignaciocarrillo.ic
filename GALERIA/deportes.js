@@ -2,6 +2,19 @@
 const nombreGaleria = "Deportes";
 
 const galeriaActual = [
+
+{
+    tipo:"foto",
+    src:"../FOTOSVIDEOS/metaabrazo.JPG"
+},
+
+{
+    tipo:"foto",
+    src:"../FOTOSVIDEOS/deportes/YoDuatlon.jpg"
+}
+
+];
+    
     "../FOTOSVIDEOS/metaabrazo.JPG",
     "../FOTOSVIDEOS/deportes/YoDuatlon.jpg",
     "../FOTOSVIDEOS/deportes/DSC00699.JPG",
