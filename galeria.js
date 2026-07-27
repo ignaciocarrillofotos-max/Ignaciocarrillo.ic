@@ -36,12 +36,7 @@ img.src = src;
 img.loading = "lazy";
 img.dataset.index = index;
 
-const watermark = document.createElement("img");
-watermark.src = "../FOTOSVIDEOS/logos/mi_Firma_blanco_letras.png";
-watermark.className = "watermark";
-
 photo.appendChild(img);
-photo.appendChild(watermark);
 gallery.appendChild(photo);
     });
 
