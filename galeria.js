@@ -153,32 +153,33 @@ function abrirImagen(index){
 // =========================
 // FLECHAS
 // =========================
-btnNext.addEventListener("click",()=>{
-    indiceActual = (indiceActual + 1) % imagenes.length;
-    abrirImagen(indiceActual);
-});
+if(btnNext){
+    btnNext.addEventListener("click",()=>{
+        indiceActual = (indiceActual + 1) % imagenes.length;
+        abrirImagen(indiceActual);
+    });
+}
 
-btnPrev.addEventListener("click",()=>{
-    indiceActual = (indiceActual - 1 + imagenes.length) % imagenes.length;
-    abrirImagen(indiceActual);
-});
+if(btnPrev){
+    btnPrev.addEventListener("click",()=>{
+        indiceActual = (indiceActual - 1 + imagenes.length) % imagenes.length;
+        abrirImagen(indiceActual);
+    });
+}
 
 
 
 // =========================
 // CERRAR
 // =========================
-btnCerrar.addEventListener("click",()=>{
-    lightbox.style.display = "none";
-    document.body.style.overflow = "auto";
-});
+if(btnCerrar){
 
-lightbox.addEventListener("click",(e)=>{
-    if(e.target === lightbox){
+    btnCerrar.addEventListener("click",()=>{
         lightbox.style.display = "none";
         document.body.style.overflow = "auto";
-    }
-});
+    });
+
+}
 
 
 
