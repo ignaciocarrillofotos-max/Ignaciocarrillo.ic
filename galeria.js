@@ -14,13 +14,21 @@ function openFolder(folder){
 // =========================
 function crearGaleria(){
     const gallery = document.querySelector(".gallery");
-    if(!gallery || typeof galeriaActual === "undefined"){
-        return;
-    }
+if(!gallery || typeof galeriaActual === "undefined"){
+    return;
+}
+
+if(typeof tipoGaleria === "undefined"){
+    return;
+}
 
 
     gallery.innerHTML = "";
 
+if(tipoGaleria !== "fotos"){
+    return;
+}
+    
     galeriaActual.forEach((src,index)=>{
         const photo = document.createElement("div");
         photo.classList.add("photo");
