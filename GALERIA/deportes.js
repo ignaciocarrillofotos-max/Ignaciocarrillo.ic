@@ -1,4 +1,6 @@
 // Primero declaras el array
+const nombreGaleria = "Deportes";
+
 const galeriaActual = [
     "../FOTOSVIDEOS/metaabrazo.JPG",
     "../FOTOSVIDEOS/deportes/YoDuatlon.jpg",
