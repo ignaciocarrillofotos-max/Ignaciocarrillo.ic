@@ -15,22 +15,3 @@ const fotos = [
     "../FOTOSVIDEOS/deportes/foto6.jpg"
 ];
 
-
-
-
-
-
-// Luego generas la galería
-const gallery = document.querySelector(".gallery");
-
-fotos.forEach((src, index) => {
-    const photo = document.createElement("div");
-    photo.classList.add("photo");
-
-    const img = document.createElement("img");
-    img.src = src;
-    img.dataset.index = index;
-
-    photo.appendChild(img);
-    gallery.appendChild(photo);
-});
