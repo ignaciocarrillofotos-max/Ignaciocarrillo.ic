@@ -1,34 +1,44 @@
+// =========================
+// ABRIR CARPETAS (si lo usas)
+// =========================
 function openFolder(folder){
     if(folder === "deportes") window.location.href = "FOTOSVIDEOS/deportes/";
     if(folder === "fauna") window.location.href = "FOTOSVIDEOS/fauna/";
     if(folder === "paisajes") window.location.href = "FOTOSVIDEOS/paisajes/";
 }
 
-// =========================
-// CREAR GALERÍA AUTOMÁTICAMENTE
-// =========================
 
+
+// =========================
+// CREAR GALERÍA AUTOMÁTICAMENTE (si existe "fotos")
+// =========================
 const gallery = document.querySelector(".gallery");
 
 if (gallery && typeof fotos !== "undefined") {
 
     gallery.innerHTML = "";
 
-    fotos.forEach(src => {
+    fotos.forEach((src, index) => {
 
-        gallery.innerHTML += `
-            <div class="photo">
-                <img src="${src}" loading="lazy" alt="">
-            </div>
-        `;
+        const photo = document.createElement("div");
+        photo.classList.add("photo");
 
+        const img = document.createElement("img");
+        img.src = src;
+        img.loading = "lazy";
+        img.dataset.index = index;
+
+        photo.appendChild(img);
+        gallery.appendChild(photo);
     });
-
 }
 
-// Ahora sí obtenemos las imágenes creadas
-let imagenes = document.querySelectorAll(".gallery img");
 
+
+// =========================
+// VARIABLES DEL LIGHTBOX
+// =========================
+let imagenes = [];
 const lightbox = document.getElementById("lightbox");
 const lightboxImg = document.getElementById("lightbox-img");
 
@@ -38,7 +48,7 @@ const btnNext = document.querySelector(".next");
 
 const contador = document.getElementById("contador");
 const miniaturas = document.getElementById("miniaturas");
-    const topBar = document.querySelector(".lightbox-top");
+const topBar = document.querySelector(".lightbox-top");
 const acciones = document.querySelector(".lightbox-actions");
 
 let interfazVisible = true;
@@ -48,18 +58,68 @@ let indiceActual = 0;
 let zoom = false;
 let escala = 1;
 
-// Crear miniaturas
-imagenes.forEach((img, index) => {
-    const mini = document.createElement("img");
-    mini.src = img.src;
-    mini.addEventListener("click", () => abrirImagen(index));
-    miniaturas.appendChild(mini);
+
+
+// =========================
+// INICIALIZAR GALERÍA CUANDO YA EXISTEN LAS FOTOS
+// =========================
+window.addEventListener("DOMContentLoaded", () => {
+    iniciarGaleria();
 });
 
+function iniciarGaleria() {
+
+    imagenes = document.querySelectorAll(".gallery img");
+
+    if (imagenes.length === 0) {
+        console.warn("No se encontraron imágenes en la galería.");
+        return;
+    }
+
+    crearMiniaturas();
+    activarEventos();
+}
 
 
 
-// Abrir imagen
+// =========================
+// MINIATURAS
+// =========================
+function crearMiniaturas() {
+    miniaturas.innerHTML = "";
+
+    imagenes.forEach((img, index) => {
+        const mini = document.createElement("img");
+        mini.src = img.src;
+        mini.addEventListener("click", () => abrirImagen(index));
+        miniaturas.appendChild(mini);
+    });
+}
+
+function actualizarMiniaturas(){
+    const minis = miniaturas.querySelectorAll("img");
+    minis.forEach((mini, i)=>{
+        mini.style.opacity = i === indiceActual ? "1" : ".45";
+        mini.style.transform = i === indiceActual ? "scale(1.08)" : "scale(1)";
+    });
+}
+
+
+
+// =========================
+// EVENTOS DE LAS IMÁGENES
+// =========================
+function activarEventos() {
+    imagenes.forEach((img, index) => {
+        img.addEventListener("click", () => abrirImagen(index));
+    });
+}
+
+
+
+// =========================
+// ABRIR IMAGEN
+// =========================
 function abrirImagen(index){
     document.body.style.overflow = "hidden";
     indiceActual = index;
@@ -84,42 +144,35 @@ function abrirImagen(index){
     btnFavorito.innerHTML = favoritos.includes(index)
         ? "❤ Guardada"
         : "🤍 Favorito";
+
     reiniciarTemporizador();
 }
 
-// Resaltar miniatura activa
-function actualizarMiniaturas(){
-    const minis = miniaturas.querySelectorAll("img");
-    minis.forEach((mini, i)=>{
-        mini.style.opacity = i === indiceActual ? "1" : ".45";
-        mini.style.transform = i === indiceActual ? "scale(1.08)" : "scale(1)";
-    });
-}
 
-// Abrir al pulsar una foto
-imagenes.forEach((img,index)=>{
-    img.addEventListener("click",()=> abrirImagen(index));
-});
 
-// Flecha derecha
+// =========================
+// FLECHAS
+// =========================
 btnNext.addEventListener("click",()=>{
     indiceActual = (indiceActual + 1) % imagenes.length;
     abrirImagen(indiceActual);
 });
 
-// Flecha izquierda
 btnPrev.addEventListener("click",()=>{
     indiceActual = (indiceActual - 1 + imagenes.length) % imagenes.length;
     abrirImagen(indiceActual);
 });
 
-// Cerrar
+
+
+// =========================
+// CERRAR
+// =========================
 btnCerrar.addEventListener("click",()=>{
     lightbox.style.display = "none";
     document.body.style.overflow = "auto";
 });
 
-// Click fuera de la foto
 lightbox.addEventListener("click",(e)=>{
     if(e.target === lightbox){
         lightbox.style.display = "none";
@@ -127,7 +180,11 @@ lightbox.addEventListener("click",(e)=>{
     }
 });
 
-// Teclado
+
+
+// =========================
+// TECLADO
+// =========================
 document.addEventListener("keydown",(e)=>{
     if(lightbox.style.display !== "flex") return;
 
@@ -140,7 +197,11 @@ document.addEventListener("keydown",(e)=>{
     }
 });
 
-// Swipe táctil
+
+
+// =========================
+// SWIPE
+// =========================
 let touchStartX = 0;
 let touchEndX = 0;
 
@@ -155,43 +216,24 @@ lightbox.addEventListener("touchend", e => {
     if (touchEndX > touchStartX + 60) btnPrev.click();
 });
 
-// Zoom doble click
+
+
+// =========================
+// ZOOM
+// =========================
 lightboxImg.addEventListener("dblclick", () => {
 
     zoom = !zoom;
 
     if (zoom) {
-
         lightboxImg.style.transform = "scale(2)";
         lightboxImg.style.cursor = "zoom-out";
-
     } else {
-
         lightboxImg.style.transform = "scale(1)";
         lightboxImg.style.cursor = "zoom-in";
-
     }
-
 });
 
-// Mostrar / ocultar interfaz (solo móvil)
-lightboxImg.addEventListener("click",()=>{
-
-    if(window.innerWidth > 768) return;
-
-    if(interfazVisible){
-
-        ocultarUI();
-
-    }else{
-
-        mostrarUI();
-
-    }
-
-});
-
-// Zoom con rueda
 lightboxImg.addEventListener("wheel",(e)=>{
     e.preventDefault();
 
@@ -203,28 +245,38 @@ lightboxImg.addEventListener("wheel",(e)=>{
     lightboxImg.style.transform = `scale(${escala})`;
 });
 
+
+
+// =========================
+// UI MÓVIL
+// =========================
+lightboxImg.addEventListener("click",()=>{
+
+    if(window.innerWidth > 768) return;
+
+    if(interfazVisible){
+        ocultarUI();
+    }else{
+        mostrarUI();
+    }
+
+});
+
 function mostrarUI(){
-
     interfazVisible = true;
-
     if(topBar) topBar.style.opacity = "1";
     if(acciones) acciones.style.opacity = "1";
     miniaturas.style.opacity = "1";
-
 }
 
 function ocultarUI(){
-
     interfazVisible = false;
-
     if(topBar) topBar.style.opacity = "0";
     if(acciones) acciones.style.opacity = "0";
     miniaturas.style.opacity = "0";
-
 }
 
 function reiniciarTemporizador(){
-
     if(window.innerWidth > 768) return;
 
     clearTimeout(temporizadorUI);
@@ -232,14 +284,15 @@ function reiniciarTemporizador(){
     mostrarUI();
 
     temporizadorUI = setTimeout(()=>{
-
         ocultarUI();
-
     },2500);
-
 }
 
-// Compartir
+
+
+// =========================
+// COMPARTIR
+// =========================
 const btnCompartir = document.getElementById("btnCompartir");
 
 btnCompartir.addEventListener("click", async () => {
@@ -261,7 +314,11 @@ btnCompartir.addEventListener("click", async () => {
     }
 });
 
-// Favoritos
+
+
+// =========================
+// FAVORITOS
+// =========================
 const btnFavorito = document.getElementById("btnFavorito");
 let favoritos = JSON.parse(localStorage.getItem("favoritos")) || [];
 
@@ -279,23 +336,16 @@ btnFavorito.addEventListener("click",()=>{
 
 
 
-
-
 // =========================
-// MUSICA AUTOMATICA DEPORTES
+// MÚSICA
 // =========================
-
 const music = document.getElementById("music");
 const toggleMusic = document.getElementById("toggleMusic");
 
-// Si la página NO tiene música, no hacer nada
 if(music && toggleMusic){
 
-    // Detectar si es móvil
     const esMovil = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
 
-    // En ordenador: sonido automático
-    // En móvil: autoplay pero muteado (obligatorio)
     if(esMovil){
         music.muted = true;
         music.play().catch(()=>{});
@@ -306,7 +356,6 @@ if(music && toggleMusic){
         toggleMusic.textContent = "🔇 Silenciar música";
     }
 
-    // Botón para activar/silenciar
     toggleMusic.addEventListener("click", ()=>{
         if(music.muted){
             music.muted = false;
