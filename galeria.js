@@ -12,14 +12,15 @@ function openFolder(folder){
 // =========================
 // CREAR GALERÍA AUTOMÁTICAMENTE (si existe "fotos")
 // =========================
-const gallery = document.querySelector(".gallery");
-
-if (gallery && typeof galeriaActual !== "undefined") {
+function crearGaleria(){
+    const gallery = document.querySelector(".gallery");
+    if(!gallery || typeof galeriaActual === "undefined"){
+        return;
+    }
 
     gallery.innerHTML = "";
 
-    galeriaActual.forEach((src, index) => {
-
+    galeriaActual.forEach((src,index)=>{
         const photo = document.createElement("div");
         photo.classList.add("photo");
 
@@ -30,8 +31,11 @@ if (gallery && typeof galeriaActual !== "undefined") {
 
         photo.appendChild(img);
         gallery.appendChild(photo);
+
     });
+
 }
+
 
 const tituloGaleria = document.querySelector(".hero h1");
 
@@ -73,7 +77,7 @@ window.addEventListener("DOMContentLoaded", () => {
 });
 
 function iniciarGaleria() {
-
+    crearGaleria();
     imagenes = document.querySelectorAll(".gallery img");
 
     if (imagenes.length === 0) {
