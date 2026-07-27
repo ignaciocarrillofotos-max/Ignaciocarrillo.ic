@@ -1,6 +1,6 @@
 // Primero declaras el array
 const nombreGaleria = "Deportes";
-
+const tipoGaleria = "fotos";
 const galeriaActual = [
 
     "../FOTOSVIDEOS/metaabrazo.JPG",
