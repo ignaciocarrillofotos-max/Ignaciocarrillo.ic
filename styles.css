@@ -487,7 +487,6 @@ transition:.45s cubic-bezier(.2,.8,.2,1);
     width: max-content;
     padding: 0;
     will-change: transform;
-    transition: all .3s ease-in-out; /* Añade una transición suave */
 }
 
 .services-wrapper {
@@ -504,7 +503,12 @@ transition:.45s cubic-bezier(.2,.8,.2,1);
     border-radius: 18px;
     user-select: none;
     -webkit-user-select: none;
-    transition: all .3s ease-in-out; /* Añade una transición suave */
+    transition:
+       transform .35s ease,
+       box-shadow .35s ease,
+       filter .35s ease;
+   box-shadow:
+    0 12px 35px rgba(0,0,0,.30);
 }
 
 .service-card::before {
@@ -524,25 +528,66 @@ transition:.45s cubic-bezier(.2,.8,.2,1);
     z-index: 1;
 }
 
+.service-card:hover{
+    transform:translateY(-6px);
+    box-shadow:
+        0 25px 60px rgba(0,0,0,.45);
+
+}
+
 .service-card:hover img,
 .service-card:hover video {
     transform: scale(1.08);
 }
 
-.service-card span {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 2;
-    color: #fff;
-    font-size: 1.15rem;
-    font-weight: 700;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    text-shadow: 0 3px 12px rgba(0,0,0,.95), 0 0 25px rgba(0,0,0,.6);
-    white-space: nowrap;
+.service-info{
+    position:absolute;
+    left:25px;
+    bottom:22px;
+    z-index:3;
+    transition:.35s;
+
 }
+
+.service-info h3{
+    font-size:1.45rem;
+    font-weight:700;
+    margin:0;
+    color:#fff;
+    letter-spacing:1px;
+    text-shadow:0 3px 12px rgba(0,0,0,.9);
+
+}
+
+.service-info p{
+    margin-top:6px;
+    font-size:.95rem;
+    color:rgba(255,255,255,.82);
+    letter-spacing:.5px;
+}
+
+.service-card:hover .service-info{
+    transform:translateY(-8px);
+}
+
+.service-info::before{
+
+    content:"";
+    display:block;
+    width:55px;
+    height:3px;
+    border-radius:20px;
+    background:#64c478;
+    margin-bottom:14px;
+    transition:.35s;
+
+}
+
+.service-card:hover .service-info::before{
+    width:90px;
+
+}
+
 
 .service-card img,
 .service-card video {
