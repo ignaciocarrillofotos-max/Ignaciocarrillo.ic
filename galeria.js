@@ -14,11 +14,11 @@ function openFolder(folder){
 // =========================
 const gallery = document.querySelector(".gallery");
 
-if (gallery && typeof fotos !== "undefined") {
+if (gallery && typeof galeriaActual !== "undefined") {
 
     gallery.innerHTML = "";
 
-    fotos.forEach((src, index) => {
+    galeriaActual.forEach((src, index) => {
 
         const photo = document.createElement("div");
         photo.classList.add("photo");
