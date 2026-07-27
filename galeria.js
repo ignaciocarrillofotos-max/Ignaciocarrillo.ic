@@ -32,12 +32,20 @@ const photo = document.createElement("div");
 photo.classList.add("photo");
 
 const img = document.createElement("img");
+
 img.src = src;
 img.loading = "lazy";
 img.dataset.index = index;
 
+
+const watermark = document.createElement("img");
+watermark.src = "../FOTOSVIDEOS/logos/mi_Firma_blanco_letras.png";
+watermark.classList.add("gallery-watermark");
+
 photo.appendChild(img);
+photo.appendChild(watermark);
 gallery.appendChild(photo);
+        
     });
 
 }
