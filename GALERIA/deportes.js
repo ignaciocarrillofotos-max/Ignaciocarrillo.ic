@@ -1,3 +1,17 @@
+const gallery = document.querySelector(".gallery");
+fotos.forEach((src, index) => {
+    const photo = document.createElement("div");
+    photo.classList.add("photo");
+    const img = document.createElement("img");
+    img.src = src;
+    img.dataset.index = index; // NECESARIO para el lightbox
+    photo.appendChild(img);
+    gallery.appendChild(photo);
+});
+
+
+
+
 const fotos = [
 
 "../FOTOSVIDEOS/metaabrazo.JPG",
