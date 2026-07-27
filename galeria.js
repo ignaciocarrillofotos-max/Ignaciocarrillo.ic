@@ -33,6 +33,11 @@ if (gallery && typeof galeriaActual !== "undefined") {
     });
 }
 
+const tituloGaleria = document.querySelector(".hero h1");
+
+if(tituloGaleria && typeof nombreGaleria !== "undefined"){
+    tituloGaleria.textContent = nombreGaleria;
+}
 
 
 // =========================
