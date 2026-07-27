@@ -37,7 +37,7 @@ img.loading = "lazy";
 img.dataset.index = index;
 
 const watermark = document.createElement("img");
-watermark.src = "../FOTOSVIDEOS/logos/mi_Firma_blanco_semientera.png";
+watermark.src = "../FOTOSVIDEOS/logos/mi_Firma_blanco_letras.png";
 watermark.className = "watermark";
 
 photo.appendChild(img);
