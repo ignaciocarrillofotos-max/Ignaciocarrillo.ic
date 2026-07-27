@@ -19,20 +19,19 @@ function crearGaleria(){
     }
 
     gallery.innerHTML = "";
+  galeriaActual.forEach((item,index)=>{
+    const photo = document.createElement("div");
+    photo.classList.add("photo");
 
-    galeriaActual.forEach((src,index)=>{
-        const photo = document.createElement("div");
-        photo.classList.add("photo");
+    const img = document.createElement("img");
+    img.src = item.src;
+    img.loading = "lazy";
+    img.dataset.index = index;
 
-        const img = document.createElement("img");
-        img.src = src;
-        img.loading = "lazy";
-        img.dataset.index = index;
+    photo.appendChild(img);
+    gallery.appendChild(photo);
 
-        photo.appendChild(img);
-        gallery.appendChild(photo);
-
-    });
+});
 
 }
 
