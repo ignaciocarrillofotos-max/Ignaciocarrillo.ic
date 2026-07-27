@@ -23,12 +23,29 @@ function crearGaleria(){
     const photo = document.createElement("div");
     photo.classList.add("photo");
 
-    const img = document.createElement("img");
-    img.src = item.src;
-    img.loading = "lazy";
-    img.dataset.index = index;
+let elemento;
 
-    photo.appendChild(img);
+
+if(item.tipo === "video"){
+
+    elemento = document.createElement("video");
+
+    elemento.src = item.src;
+    elemento.muted = true;
+    elemento.loop = true;
+    elemento.autoplay = true;
+    elemento.playsInline = true;
+
+    elemento.classList.add("thumb-video");
+
+}else{
+    elemento = document.createElement("img");
+    elemento.src = item.src;
+    elemento.loading = "lazy";
+}
+
+elemento.dataset.index = index;
+photo.appendChild(elemento);
     gallery.appendChild(photo);
 
 });
