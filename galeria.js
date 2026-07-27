@@ -5,6 +5,7 @@ function openFolder(folder){
 }
 
 let imagenes = document.querySelectorAll(".gallery img");
+imagenes = document.querySelectorAll(".gallery img");
 
 const lightbox = document.getElementById("lightbox");
 const lightboxImg = document.getElementById("lightbox-img");
