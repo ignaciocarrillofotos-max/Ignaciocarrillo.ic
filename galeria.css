@@ -655,25 +655,21 @@ footer p{
         position:relative;
 }
 
-.photo img{
-
+.photo > img:not(.gallery-watermark){
     width:100%;
     display:block;
-
     border-radius:20px;
-
     transition:.45s ease;
 
 }
 
 
-.photo:hover img{
-
+.photo:hover > img:not(.gallery-watermark){
     transform:scale(1.06);
     filter:brightness(1.05);
-
-
 }
+
+
 
 /* =========================
    FIRMA EN LAS MINIATURAS
