@@ -130,6 +130,22 @@ body{
 
 
 
+.separador{
+    width:70%;
+    height:1px;
+    margin:25px auto;
+    border:none;
+    background:linear-gradient(
+        to right,
+        transparent,
+        rgba(255,255,255,.45),
+        transparent
+    );
+}
+
+
+
+
 
 /* ÁLBUMES */
 
