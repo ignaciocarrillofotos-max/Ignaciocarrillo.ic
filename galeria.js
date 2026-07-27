@@ -92,7 +92,8 @@ window.addEventListener("DOMContentLoaded", () => {
 
 function iniciarGaleria() {
     crearGaleria();
-    imagenes = document.querySelectorAll(".gallery img");
+imagenes = document.querySelectorAll(".gallery img:not(.gallery-watermark)"
+);
 
     if (imagenes.length === 0) {
         console.warn("No se encontraron imágenes en la galería.");
@@ -314,49 +315,6 @@ function reiniciarTemporizador(){
 
 
 
-// =========================
-// COMPARTIR
-// =========================
-const btnCompartir = document.getElementById("btnCompartir");
-
-btnCompartir.addEventListener("click", async () => {
-    const url = "https://ignaciocarrillo.es/" + imagenes[indiceActual].getAttribute("src");
-
-    try {
-        if (navigator.share) {
-            await navigator.share({
-                title: "Ignacio Carrillo IC",
-                text: "Mira esta fotografía de mi galería.",
-                url: url
-            });
-        } else {
-            await navigator.clipboard.writeText(url);
-            alert("Enlace de la fotografía copiado.");
-        }
-    } catch (error) {
-        console.log(error);
-    }
-});
-
-
-
-// =========================
-// FAVORITOS
-// =========================
-const btnFavorito = document.getElementById("btnFavorito");
-let favoritos = JSON.parse(localStorage.getItem("favoritos")) || [];
-
-btnFavorito.addEventListener("click",()=>{
-    if(favoritos.includes(indiceActual)){
-        favoritos = favoritos.filter(i => i !== indiceActual);
-    } else {
-        favoritos.push(indiceActual);
-    }
-
-    localStorage.setItem("favoritos", JSON.stringify(favoritos));
-
-    abrirImagen(indiceActual);
-});
 
 
 
