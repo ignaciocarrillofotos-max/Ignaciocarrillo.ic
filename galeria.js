@@ -4,8 +4,30 @@ function openFolder(folder){
     if(folder === "paisajes") window.location.href = "FOTOSVIDEOS/paisajes/";
 }
 
+// =========================
+// CREAR GALERÍA AUTOMÁTICAMENTE
+// =========================
+
+const gallery = document.querySelector(".gallery");
+
+if (gallery && typeof fotos !== "undefined") {
+
+    gallery.innerHTML = "";
+
+    fotos.forEach(src => {
+
+        gallery.innerHTML += `
+            <div class="photo">
+                <img src="${src}" loading="lazy" alt="">
+            </div>
+        `;
+
+    });
+
+}
+
+// Ahora sí obtenemos las imágenes creadas
 let imagenes = document.querySelectorAll(".gallery img");
-imagenes = document.querySelectorAll(".gallery img");
 
 const lightbox = document.getElementById("lightbox");
 const lightboxImg = document.getElementById("lightbox-img");
@@ -34,26 +56,6 @@ imagenes.forEach((img, index) => {
     miniaturas.appendChild(mini);
 });
 
-
-// =========================
-// CREAR GALERÍA AUTOMÁTICAMENTE
-// =========================
-
-const gallery = document.querySelector(".gallery");
-
-if (gallery && typeof fotos !== "undefined") {
-
-    fotos.forEach(src => {
-
-        gallery.innerHTML += `
-            <div class="photo">
-                <img src="${src}" loading="lazy" alt="">
-            </div>
-        `;
-
-    });
-
-}
 
 
 
