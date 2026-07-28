@@ -142,17 +142,20 @@ function abrirVideo(index) {
 // ACTUALIZAR MINIATURAS
 // =========================
 
-function actualizarMiniaturas() {
+function actualizarMiniaturas(){
     const minis = miniaturas.querySelectorAll("video");
+    minis.forEach((mini, i)=>{
+        if(i === indiceActual){
+            mini.style.opacity = "1";
+            mini.style.transform = "scale(1.08)";
+            mini.classList.add("active");
 
-    minis.forEach((mini, i) => {
-        mini.style.opacity =
-            i === indiceActual ? "1" : ".45";
+        }else{
+            mini.style.opacity = ".45";
+            mini.style.transform = "scale(1)";
+            mini.classList.remove("active");
 
-        mini.style.transform =
-            i === indiceActual
-                ? "scale(1.08)"
-                : "scale(1)";
+        }
 
     });
 
