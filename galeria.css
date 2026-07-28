@@ -683,7 +683,7 @@ footer p{
     transform:translate(-50%,-50%);
     width:65% !important;
     height:auto !important;
-    opacity:.35;
+    opacity:.25;
     pointer-events:none;
     user-select:none;
     z-index:5;
@@ -834,7 +834,7 @@ overscroll-behavior:contain;
     transform:translate(-50%,-50%);
     width:min(65%,650px);
     height:auto;
-    opacity:.45;
+    opacity:.36;
     pointer-events:none;
     user-select:none;
     z-index:5;
