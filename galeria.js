@@ -128,6 +128,16 @@ function actualizarMiniaturas(){
     });
 }
 
+// Evitar que el swipe del lightbox actúe cuando se toca la zona de miniaturas
+miniaturas.addEventListener("touchstart", e => {
+    e.stopPropagation();
+});
+miniaturas.addEventListener("touchmove", e => {
+    e.stopPropagation();
+});
+miniaturas.addEventListener("touchend", e => {
+    e.stopPropagation();
+});
 
 
 // =========================
