@@ -57,9 +57,9 @@ if (gallery) {
 const videos = document.querySelectorAll(".gallery video");
 const lightbox = document.getElementById("lightbox-video");
 const player = document.getElementById("lightbox-player");
-const btnCerrar = document.querySelector(".close");
-const btnPrev = document.querySelector(".prev");
-const btnNext = document.querySelector(".next");
+const btnCerrar = document.querySelector("#lightbox-video .close");
+const btnPrev = document.querySelector("#lightbox-video .prev");
+const btnNext = document.querySelector("#lightbox-video .next");
 const contador = document.getElementById("contador");
 const miniaturas = document.getElementById("miniaturas-video");
 
