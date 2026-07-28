@@ -531,7 +531,7 @@ transition:.45s cubic-bezier(.2,.8,.2,1);
     overflow-y: hidden;
     width: 100vw;
     margin-left:calc(50% - 50vw);
-    padding: 0;
+    padding:0 10vw;
           -webkit-overflow-scrolling: touch; /* iPhone */
     scrollbar-width: none; /* Firefox */
 }
@@ -544,7 +544,7 @@ transition:.45s cubic-bezier(.2,.8,.2,1);
     display: flex;
     gap: 14px;
     width: max-content;
-    padding: 0;
+    padding:20px 0;
     will-change: transform;
 }
 
