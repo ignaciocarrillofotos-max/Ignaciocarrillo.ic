@@ -1260,11 +1260,12 @@ Movil, Galeria
 
     position:fixed;
     bottom:15px;
-    left:0;
+    left:50%;
     width:100vw;
     max-width:none;
     display:flex;
-    justify-content:flex-start;
+transform:translateX(-50%);
+justify-content:center;
     gap:10px;
     padding:0 15px;
     overflow-x:auto;
