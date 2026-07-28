@@ -683,7 +683,7 @@ footer p{
     transform:translate(-50%,-50%);
     width:65% !important;
     height:auto !important;
-    opacity:.22;
+    opacity:.18;
     pointer-events:none;
     user-select:none;
     z-index:5;
