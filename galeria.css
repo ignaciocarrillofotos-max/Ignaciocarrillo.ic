@@ -1073,6 +1073,15 @@ scale(1.15);
     opacity:1;
 }
 
+#miniaturas-video video.active{
+
+    opacity:1;
+    border:2px solid white;
+    transform:scale(1.12);
+    box-shadow:0 0 25px rgba(255,255,255,.4);
+
+}
+
 
 
 @keyframes fade{
