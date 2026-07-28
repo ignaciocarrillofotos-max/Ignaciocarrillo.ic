@@ -245,6 +245,8 @@ lightbox.addEventListener("touchstart", e => {
 });
 
 lightbox.addEventListener("touchend", e => {
+    if (escala > 1 || zoom) return;        // Si hay zoom, NO cambiar foto
+    
     touchEndX = e.changedTouches[0].screenX;
 
     if (touchEndX < touchStartX - 60) btnNext.click();
@@ -261,10 +263,14 @@ lightboxImg.addEventListener("dblclick", () => {
     zoom = !zoom;
 
     if (zoom) {
-        lightboxImg.style.transform = "scale(2)";
+        lightboxImg.style.transform = `scale(2) translate(${imgX}px, ${imgY}px)`;
         lightboxImg.style.cursor = "zoom-out";
     } else {
-        lightboxImg.style.transform = "scale(1)";
+        imgX = 0;
+        imgY = 0;
+        escala = 1;
+
+        lightboxImg.style.transform = `scale(1) translate(0px, 0px)`;
         lightboxImg.style.cursor = "zoom-in";
     }
 });
@@ -277,8 +283,31 @@ lightboxImg.addEventListener("wheel",(e)=>{
     if(escala < 1) escala = 1;
     if(escala > 4) escala = 4;
 
-    lightboxImg.style.transform = `scale(${escala})`;
+    lightboxImg.style.transform = `scale(${escala}) translate(${imgX}px, ${imgY}px)`;
 });
+
+let startX = 0;
+let startY = 0;
+let imgX = 0;
+let imgY = 0;
+
+lightboxImg.addEventListener("touchstart", e => {
+    if (escala <= 1) return;
+    const t = e.touches[0];
+    startX = t.clientX - imgX;
+    startY = t.clientY - imgY;
+});
+
+lightboxImg.addEventListener("touchmove", e => {
+    if (escala <= 1) return;
+    const t = e.touches[0];
+    imgX = t.clientX - startX;
+    imgY = t.clientY - startY;
+
+    lightboxImg.style.transform = `scale(${escala}) translate(${imgX}px, ${imgY}px)`;
+});
+
+
 
 
 
