@@ -111,20 +111,35 @@ body{
 
 .volver{
 
+    display:inline-block;
     padding:15px 38px;
     border-radius:60px;
-    border:1px solid rgba(255,255,255,.4);
-    background:rgba(255,255,255,.05);
+    border:1px solid rgba(255,255,255,.25);
+    background:linear-gradient(
+        135deg,
+        #07751e,
+        #0a8a24
+    );
+
+    color:white;
+    text-decoration:none;
     backdrop-filter:blur(10px);
-    transition:.35s;
+    box-shadow:
+    0 10px 30px rgba(0,0,0,.35);
+    transition:.35s ease;
+
 }
 
-
 .volver:hover{
+    background:linear-gradient(
+        135deg,
+        #0a8a24,
+        #0d9f2c
+    );
 
-    background:white;
-    color:#111;
-    transform:translateY(-3px);
+    transform:translateY(-4px);
+    box-shadow:
+    0 15px 40px rgba(0,0,0,.45);
 
 }
 
