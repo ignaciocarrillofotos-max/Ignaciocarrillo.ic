@@ -38,10 +38,16 @@ video.loop = true;
 video.preload = "metadata";
 video.src = src;
         video.dataset.index = index;
+photo.appendChild(video);
 
-        photo.appendChild(video);
-        gallery.appendChild(photo);
+// FIRMA SOBRE MINIATURA
+const firma = document.createElement("img");
+firma.src = "../FOTOSVIDEOS/logos/mi_Firma_blanco_letras.png";
+firma.classList.add("gallery-watermark");
+firma.alt = "";
+photo.appendChild(firma);
 
+gallery.appendChild(photo);
     });
 
 }
