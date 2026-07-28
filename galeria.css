@@ -775,7 +775,7 @@ overscroll-behavior:contain;
     backdrop-filter:blur(20px);
     display:none;
     justify-content:center;
-    align-items:column;
+    align-items:center;
     flex-direction:column;
     z-index:99999;
 }
@@ -785,6 +785,9 @@ overscroll-behavior:contain;
     max-height:80vh;
     border-radius:12px;
     box-shadow:0 30px 80px rgba(0,0,0,.65);
+        width:auto;
+    height:auto;
+    margin:auto;
 }
 
 
