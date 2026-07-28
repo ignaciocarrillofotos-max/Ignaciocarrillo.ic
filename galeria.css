@@ -790,6 +790,45 @@ overscroll-behavior:contain;
     margin:auto;
 }
 
+/* =========================
+   FIRMA EN VIDEO GRANDE
+========================= */
+
+.lightbox-video-container{
+    position:relative;
+    max-width:90%;
+    max-height:80vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+}
+
+.lightbox-video-container video{
+    max-width:100%;
+    max-height:80vh;
+
+}
+
+.lightbox-video-watermark{
+    position:absolute;
+    left:50%;
+    top:50%;
+    transform:translate(-50%,-50%);
+    width:min(60%,600px);
+    opacity:.25;
+    pointer-events:none;
+    user-select:none;
+    z-index:5;
+    filter:drop-shadow(
+        0 3px 12px rgba(0,0,0,.45)
+    );
+
+}
+
+
+
+
 
 
 .lightbox-top{
