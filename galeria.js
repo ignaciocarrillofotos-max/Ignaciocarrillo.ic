@@ -151,15 +151,6 @@ function abrirImagen(index){
     lightbox.style.display = "flex";
     lightboxImg.src = imagenes[index].src;
 
-    // Forzar reflow para que el watermark se centre desde el primer frame
-lightboxImg.onload = () => {
-    const wm = document.querySelector(".lightbox-watermark");
-    if (wm) {
-        wm.style.transform = "translate(-50%, -50%)";
-    }
-};
-
-
     escala = 1;
     zoom = false;
 
