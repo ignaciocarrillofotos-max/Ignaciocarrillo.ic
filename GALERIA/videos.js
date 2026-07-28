@@ -30,14 +30,13 @@ if (gallery) {
         const photo = document.createElement("div");
         photo.classList.add("photo");
 
-        const video = document.createElement("video");
-        video.classList.add("thumb-video");
-        video.muted = true;
-        video.playsInline = true;
-        video.autoplay = true;
-        video.loop = true;
-        video.preload = "metadata";
-        video.src = src;
+const video = document.createElement("video");
+video.classList.add("thumb-video");
+video.muted = true;
+video.playsInline = true;
+video.loop = true;
+video.preload = "metadata";
+video.src = src;
         video.dataset.index = index;
 
         photo.appendChild(video);
