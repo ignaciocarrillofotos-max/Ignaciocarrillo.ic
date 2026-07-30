@@ -1,4 +1,4 @@
-const nombreGaleria = "Bodas";
+const nombreGaleria = "Coches_Transportes";
 const tipoGaleria = "fotos";
 const galeriaActual = [
 
