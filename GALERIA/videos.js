@@ -10,7 +10,7 @@ const galeriaVideos = [
     "../FOTOSVIDEOS/videos/video_web1.mp4",
     "../FOTOSVIDEOS/videos/ó.mp4",
     "../FOTOSVIDEOS/videos/Fiesta40_Finca_Palomar_Mio.mp4",
-    "../FOTOSVIDEOS/videos/Volkswagen Golf V (Mk5) – Año 2004 – Acabado Sportline – Motor 2.0 TDI.mp4",
+    "../FOTOSVIDEOS/videos/Volkswagen_Golf_V_Año2004.mp4",
     "../FOTOSVIDEOS/videos/futbol_profesoresVSalumnos.mp4"
 
 ];
