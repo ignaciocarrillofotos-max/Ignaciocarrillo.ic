@@ -5,11 +5,13 @@
 
 const galeriaVideos = [
 
-    "../FOTOSVIDEOS/videos/video_boda1.mp4",
-
+    "../FOTOSVIDEOS/videos/videoboda.mp4",
     "../FOTOSVIDEOS/videos/yonadando.mp4",
-
-    "../FOTOSVIDEOS/videos/video_web1.mp4"
+    "../FOTOSVIDEOS/videos/video_web1.mp4",
+    "../FOTOSVIDEOS/videos/ó.mp4",
+    "../FOTOSVIDEOS/videos/",
+    "../FOTOSVIDEOS/videos/",
+    "../FOTOSVIDEOS/videos/"
 
 ];
 
