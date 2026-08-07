@@ -474,7 +474,7 @@ transition:.45s cubic-bezier(.2,.8,.2,1);
     gap:18px;
     overflow-x:auto;
     scrollbar-width:none;
-    padding:20px;
+    padding:0px;
 }
 
 .galeria-track::-webkit-scrollbar{
