@@ -534,7 +534,7 @@ transition:.45s cubic-bezier(.2,.8,.2,1);
 
 .galeria-item.galeria-destacada {
     grid-column: span 2;
-    grid-row: span 1;
+    grid-row: span 2;
 }
 
 
