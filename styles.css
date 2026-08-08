@@ -460,99 +460,135 @@ transition:.45s cubic-bezier(.2,.8,.2,1);
     box-shadow:0 25px 55px rgba(0,0,0,.45);
 }
 
+
 /* =========================================
-GALERÍA PREVIEW INDEX
-3 FILAS × N COLUMNAS / PÁGINAS HORIZONTALES
-========================================= */
+   GALERÍA PREVIEW INDEX
+   ========================================= */
 
 .galeria-preview {
-width: 100%;
-margin: 0;
-padding: 0;
-overflow-x: auto;
-overflow-y: hidden;
-scrollbar-width: none;
-scroll-behavior: smooth;
-scroll-snap-type: x mandatory;
--webkit-overflow-scrolling: touch;
-       cursor: grab;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scrollbar-width: none;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    cursor: grab;
 }
 
 .galeria-preview::-webkit-scrollbar {
-display: none;
+    display: none;
 }
+
 .galeria-preview.arrastrando {
     cursor: grabbing;
     scroll-behavior: auto;
 }
 
-/*
-Cada "página" ocupa exactamente
-el ancho disponible.
-*/
+
+/* =========================================
+   TRACK
+   ========================================= */
+
 .galeria-track {
-width: max-content;
-display: grid;
-grid-template-rows: repeat(3, 1fr);
-grid-auto-flow: column;
-grid-auto-columns: 33.333vw;
-gap: 4px;
-padding: 0;
-margin: 0;
+    display: flex;
+    width: max-content;
+    margin: 0;
+    padding: 0;
+
+    gap: 0;
 }
-
-/* Cada fotografía */
-.galeria-item {
-width: 100%;
-aspect-ratio: 1 / 1;
-overflow: hidden;
-position: relative;
-cursor: pointer;
-}
-
-/* Imagen */
-.galeria-item img {
-display: block;
-width: 100%;
-height: 100%;
-object-fit: cover;
-transition:
-transform .6s cubic-bezier(.2,.8,.2,1),
-filter .6s ease;
-}
-
-.galeria-item.galeria-destacada {
-    grid-row: span 2;
-    grid-column: span 2;
-}
-
-
-/* Efecto únicamente en ordenador */
-@media (hover: hover) and (pointer: fine) {
-
-.galeria-item:hover img {
-    transform: scale(1.06);
-    filter: brightness(.92);
-}
-
-}
-
 
 
 /* =========================================
-   INDICADORES DE GALERÍA
+   CADA GRUPO DE 9
+   ========================================= */
+
+.galeria-page {
+    flex: 0 0 100vw;
+    width: 100vw;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 4px;
+    scroll-snap-align: start;
+}
+
+
+/* =========================================
+   FOTOGRAFÍAS
+   ========================================= */
+
+.galeria-item {
+    min-width: 0;
+    min-height: 0;
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+}
+
+
+/* =========================================
+   FOTO
+   ========================================= */
+
+.galeria-item img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition:
+        transform .65s cubic-bezier(.2,.8,.2,1),
+        filter .65s ease;
+}
+
+
+/* =========================================
+   FOTO DESTACADA
+   OCUPA 2 × 2
+   ========================================= */
+
+.galeria-item.galeria-destacada {
+    grid-column: span 2;
+    grid-row: span 2;
+}
+
+
+/* =========================================
+   EFECTO PC
+   ========================================= */
+
+@media (hover: hover) and (pointer: fine) {
+
+    .galeria-item:hover img {
+        transform: scale(1.055);
+        filter: brightness(.92);
+    }
+
+}
+
+/* =========================================
+   INDICADORES
    ========================================= */
 
 .galeria-indicadores {
+
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 8px;
-    margin-top: 18px;
     min-height: 12px;
+    margin-top: 18px;
 }
 
+
 .galeria-punto {
+
     width: 7px;
     height: 7px;
     padding: 0;
@@ -566,14 +602,19 @@ filter .6s ease;
         opacity .3s ease;
 }
 
+
 .galeria-punto.activo {
+
     background: rgba(255,255,255,.95);
     transform: scale(1.35);
 }
 
+
 .galeria-punto:hover {
     background: rgba(255,255,255,.75);
+
 }
+
 
 
 
@@ -1414,19 +1455,21 @@ fadeHero 2s ease;
         font-size: .95rem;
     }
 
-.galeria-preview { 
-   width: 100vw;
-   margin-left: calc(50% - 50vw);
-   margin-right: calc(50% - 50vw);
-} 
-   .galeria-track {
-      grid-template-rows: repeat(3, 1fr);
-      grid-auto-columns: 33.333vw;
-      gap: 4px; 
-   }
-   .galeria-item {
-      aspect-ratio: 1 / 1; 
-   }
+    .galeria-preview {
+
+        width: 100vw;
+        margin-left: calc(50% - 50vw);
+        margin-right: calc(50% - 50vw);
+    }
+
+    .galeria-page {
+
+        width: 100vw;
+        flex-basis: 100vw;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+        gap: 4px;
+    }
 
 }
 
@@ -1442,6 +1485,9 @@ TABLET / PC
     grid-auto-columns: 25vw;
     gap: 8px;
 }
+.galeria-page {
+   gap: 7px;
+    }
 
 }
 
