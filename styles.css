@@ -1480,40 +1480,12 @@ TABLET / PC
 
 @media (min-width: 769px) {
 
-.galeria-track {
-    grid-template-rows: repeat(2, 1fr);
-    grid-auto-columns: 25vw;
-    gap: 8px;
-}
 .galeria-page {
    gap: 7px;
     }
 
 }
 
-/* =========================================
-ESCRITORIOS GRANDES
-========================================= */
-
-@media (min-width: 1200px) {
-
-.galeria-track {
-    grid-template-rows: repeat(2, 1fr);
-    grid-auto-columns: 20vw;
-    gap: 10px;
-}
-
-/* =========================================
-MÓVILES MUY PEQUEÑOS
-========================================= */
-
-@media (max-width: 380px) {
-
-.galeria-track {
-    gap: 3px;
-}
-
-}
 
 
    
