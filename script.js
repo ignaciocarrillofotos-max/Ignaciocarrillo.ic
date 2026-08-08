@@ -54,137 +54,239 @@ document.addEventListener("click", function(e){
 
 
 
-
 /* =========================================
-   GALERÍA PREVIEW
-   DESPLAZAMIENTO MANUAL + INDICADORES
+   GALERÍA PREVIEW INDEX
+   3 × 3
+   GRUPOS DE 9
+   DESPLAZAMIENTO MANUAL
+   INDICADORES
    ========================================= */
 
-const galeriaPreview = document.querySelector(".galeria-preview");
-const galeriaTrack = document.querySelector(".galeria-track");
-const galeriaIndicadores = document.querySelector(".galeria-indicadores");
+const galeriaPreview =
+    document.querySelector(".galeria-preview");
+const galeriaTrack =
+    document.querySelector(".galeria-track");
+const galeriaIndicadores =
+    document.querySelector(".galeria-indicadores");
 
-if (galeriaPreview && galeriaTrack && galeriaIndicadores) {
-    const fotos = Array.from(
-        galeriaTrack.querySelectorAll(".galeria-item")
-    );
+if (
+    galeriaPreview &&
+    galeriaTrack &&
+    galeriaIndicadores
+) {
 
-    const columnasPorPagina = 3;
-    const totalPaginas = Math.ceil(
-        fotos.length / (columnasPorPagina * 3)
-    );
+    /* =====================================
+       GUARDAR LAS FOTOS ORIGINALES
+       ===================================== */
 
-
-    /* -----------------------------------------
-       CREAR PUNTOS
-       ----------------------------------------- */
-
-    for (let i = 0; i < totalPaginas; i++) {
-        const punto = document.createElement("button");
-        punto.className = "galeria-punto";
-        punto.type = "button";
-        punto.setAttribute(
-            "aria-label",
-            `Mostrar grupo de fotografías ${i + 1}`
+    const fotos =
+        Array.from(
+            galeriaTrack.querySelectorAll(".galeria-item")
         );
 
-        if (i === 0) {
+
+    /* =====================================
+       CREAR GRUPOS DE 9
+       ===================================== */
+
+    const fotosPorPagina = 9;
+    const paginas = [];
+    for (
+        let i = 0;
+        i < fotos.length;
+        i += fotosPorPagina
+    ) {
+
+        const grupo =
+            fotos.slice(
+                i,
+                i + fotosPorPagina
+            );
+
+        paginas.push(grupo);
+    }
+
+
+    /* =====================================
+       LIMPIAR TRACK
+       ===================================== */
+
+    galeriaTrack.innerHTML = "";
+
+    /* =====================================
+       CREAR CADA PÁGINA
+       ===================================== */
+
+    paginas.forEach((grupo) => {
+        const pagina =
+            document.createElement("div");
+        pagina.className =
+            "galeria-page";
+
+        grupo.forEach((foto) => {
+            pagina.appendChild(foto);
+
+        });
+
+        galeriaTrack.appendChild(pagina);
+
+    });
+
+
+    /* =====================================
+       CREAR INDICADORES
+       ===================================== */
+
+    galeriaIndicadores.innerHTML = "";
+
+    paginas.forEach((_, index) => {
+        const punto =
+            document.createElement("button");
+        punto.type = "button";
+        punto.className =
+            "galeria-punto";
+        punto.setAttribute(
+            "aria-label",
+            `Mostrar grupo ${index + 1}`
+        );
+
+        if (index === 0) {
             punto.classList.add("activo");
         }
 
-        punto.addEventListener("click", () => {
-            const anchoPagina =
-                galeriaPreview.clientWidth;
-            galeriaPreview.scrollTo({
-                left: i * anchoPagina,
-                behavior: "smooth"
-            });
+        punto.addEventListener(
+            "click",
+            () => {
+                const ancho =
+                    galeriaPreview.clientWidth;
+                galeriaPreview.scrollTo({
+                    left:
+                        index * ancho,
+                    behavior:
+                        "smooth"
 
-        });
+                });
 
-        galeriaIndicadores.appendChild(punto);
-    }
+            }
+        );
+
+        galeriaIndicadores.appendChild(
+            punto
+        );
+
+    });
 
     const puntos =
         Array.from(
-            galeriaIndicadores.querySelectorAll(".galeria-punto")
+            galeriaIndicadores
+                .querySelectorAll(".galeria-punto")
         );
 
-
-    /* -----------------------------------------
+    /* =====================================
        ACTUALIZAR PUNTO ACTIVO
-       ----------------------------------------- */
+       ===================================== */
 
     function actualizarIndicador() {
-        const anchoPagina =
+        const ancho =
             galeriaPreview.clientWidth;
-        if (!anchoPagina) return;
-        const pagina = Math.round(
-            galeriaPreview.scrollLeft / anchoPagina
-        );
+        if (!ancho) return;
 
-        puntos.forEach((punto, index) => {
-            punto.classList.toggle(
-                "activo",
-                index === pagina
+        const pagina =
+            Math.round(
+                galeriaPreview.scrollLeft /
+                ancho
             );
 
-        });
+        puntos.forEach(
+            (punto, index) => {
+                punto.classList.toggle(
+                    "activo",
+                    index === pagina
+                );
+
+            }
+        );
+
     }
 
     galeriaPreview.addEventListener(
         "scroll",
         actualizarIndicador,
-        { passive: true }
+        {
+            passive: true
+        }
     );
 
-
-    /* -----------------------------------------
+    /* =====================================
        ARRASTRE CON RATÓN
-       ----------------------------------------- */
+       ===================================== */
 
     let arrastrando = false;
     let inicioX = 0;
     let scrollInicial = 0;
-    galeriaPreview.addEventListener("mousedown", (e) => {
-        arrastrando = true;
-        galeriaPreview.classList.add("arrastrando");
-        inicioX = e.pageX;
-        scrollInicial =
-            galeriaPreview.scrollLeft;
 
-    });
+    galeriaPreview.addEventListener(
+        "mousedown",
+        (e) => {
+            arrastrando = true;
+            galeriaPreview.classList.add(
+                "arrastrando"
+            );
 
+            inicioX = e.pageX;
+            scrollInicial =
+                galeriaPreview.scrollLeft;
 
-    galeriaPreview.addEventListener("mousemove", (e) => {
-        if (!arrastrando) return;
-        e.preventDefault();
-        const desplazamiento =
-            e.pageX - inicioX;
-        galeriaPreview.scrollLeft =
-            scrollInicial - desplazamiento;
+        }
+    );
 
-    });
+    galeriaPreview.addEventListener(
+        "mousemove",
+        (e) => {
+            if (!arrastrando) return;
+            e.preventDefault();
+
+            const desplazamiento =
+                e.pageX - inicioX;
+
+            galeriaPreview.scrollLeft =
+                scrollInicial -
+                desplazamiento;
+
+        }
+    );
 
 
     function terminarArrastre() {
         if (!arrastrando) return;
+
         arrastrando = false;
+
         galeriaPreview.classList.remove(
             "arrastrando"
         );
 
-        /* Ajustar a la página más cercana */
 
-        const anchoPagina =
+        /* -----------------------------
+           Ajustar a la página cercana
+           ----------------------------- */
+
+        const ancho =
             galeriaPreview.clientWidth;
-        const pagina = Math.round(
-            galeriaPreview.scrollLeft / anchoPagina
-        );
+        if (!ancho) return;
+        const pagina =
+            Math.round(
+                galeriaPreview.scrollLeft /
+                ancho
+            );
+
 
         galeriaPreview.scrollTo({
-            left: pagina * anchoPagina,
-            behavior: "smooth"
+            left:
+                pagina * ancho,
+            behavior:
+                "smooth"
+
         });
 
     }
@@ -195,13 +297,13 @@ if (galeriaPreview && galeriaTrack && galeriaIndicadores) {
         terminarArrastre
     );
 
+
     galeriaPreview.addEventListener(
         "mouseleave",
         terminarArrastre
     );
 
 }
-
 
 
 
