@@ -521,6 +521,12 @@ transform .6s cubic-bezier(.2,.8,.2,1),
 filter .6s ease;
 }
 
+.galeria-item.galeria-destacada {
+    grid-row: span 2;
+    grid-column: span 2;
+}
+
+
 /* Efecto únicamente en ordenador */
 @media (hover: hover) and (pointer: fine) {
 
@@ -530,6 +536,7 @@ filter .6s ease;
 }
 
 }
+
 
 
 /* =========================================
