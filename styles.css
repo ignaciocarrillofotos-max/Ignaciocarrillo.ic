@@ -457,69 +457,77 @@ transition:.45s cubic-bezier(.2,.8,.2,1);
     box-shadow:0 25px 55px rgba(0,0,0,.45);
 }
 
+/* =========================================
+GALERÍA PREVIEW — INDEX
+========================================= */
 
-
-
-/* =========================
-   GALERÍA PREVIEW INDEX
-========================= */
-
-.galeria-preview{
-    overflow:hidden;
-    width:100%;
+.galeria-preview {
+width: 100%;
+margin: 0;
+padding: 0;
+overflow: hidden;
 }
 
-.galeria-track{
-    display:flex;
-    gap:18px;
-    overflow-x:auto;
-    scrollbar-width:none;
-    padding:0px;
+.galeria-track {
+width: 100%;
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+gap: 8px;
+padding: 0;
+margin: 0;
+overflow: visible;
 }
 
-.galeria-track::-webkit-scrollbar{
-    display:none;
+.galeria-item {
+width: 100%;
+aspect-ratio: 1 / 1;
+overflow: hidden;
+border-radius: 0;
+position: relative;
+cursor: pointer;
 }
 
+.galeria-item img {
+display: block;
+width: 100%;
+height: 100%;
+object-fit: cover;
+transition:
+transform .6s cubic-bezier(.2,.8,.2,1),
+filter .6s ease;
+}
 
-.galeria-item{
+.galeria-item img {
+transform: scale(1.06);
+filter: brightness(.92);
+}
 
-    flex:0 0 220px;
-    height:220px;
-    border-radius:18px;
-    overflow:hidden;
+/* =========================================
+TABLET
+========================================= */
+
+@media (min-width: 769px) {
+
+.galeria-track {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+.galeria-item {
+    aspect-ratio: 1 / 1;
+}
 
 }
 
+/* =========================================
+ESCRITORIO GRANDE
+========================================= */
 
-.galeria-item img{
+@media (min-width: 1200px) {
 
-    width:100%;
-    height:100%;
-    object-fit:cover;
-    transition:.4s;
-
-}
-
-
-.galeria-item:hover img{
-    transform:scale(1.08);
-
-}
-
-
-
-@media(max-width:768px){
-
-.galeria-item{
-    flex:0 0 calc(33.333% - 12px);
-    height:120px;
-
-}
-
-.galeria-track{
-    gap:12px;
-
+.galeria-track {
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
 }
 
 }
@@ -756,6 +764,8 @@ box-shadow:
         padding .35s ease;
 
 }
+
+
 /* Hover (solo PC) */
 @media (min-width:900px){
     .price-card:hover{
@@ -1356,7 +1366,48 @@ fadeHero 2s ease;
     .pack-subtitle {
         font-size: .95rem;
     }
+
+.galeria-preview {
+    width: 100vw;
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
 }
+
+.galeria-track {
+    width: 100%;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 4px;
+    padding: 0;
+}
+
+.galeria-item {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    border-radius: 0;
+}
+
+.galeria-item img {
+    width: 100%;
+    height: 100%;
+}
+
+}
+
+/* =========================================
+MÓVILES MUY PEQUEÑOS
+========================================= */
+
+@media (max-width: 380px) {
+
+.galeria-track {
+    gap: 3px;
+}
+
+}
+
+
+   
+
 
 
 
