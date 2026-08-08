@@ -56,11 +56,93 @@ document.addEventListener("click", function(e){
 
 
 /* =========================================
-   GALERÍA PREVIEW — ARRASTRE MANUAL
+   GALERÍA PREVIEW
+   DESPLAZAMIENTO MANUAL + INDICADORES
    ========================================= */
 
 const galeriaPreview = document.querySelector(".galeria-preview");
-if (galeriaPreview) {
+const galeriaTrack = document.querySelector(".galeria-track");
+const galeriaIndicadores = document.querySelector(".galeria-indicadores");
+
+if (galeriaPreview && galeriaTrack && galeriaIndicadores) {
+    const fotos = Array.from(
+        galeriaTrack.querySelectorAll(".galeria-item")
+    );
+
+    const columnasPorPagina = 3;
+    const totalPaginas = Math.ceil(
+        fotos.length / (columnasPorPagina * 3)
+    );
+
+
+    /* -----------------------------------------
+       CREAR PUNTOS
+       ----------------------------------------- */
+
+    for (let i = 0; i < totalPaginas; i++) {
+        const punto = document.createElement("button");
+        punto.className = "galeria-punto";
+        punto.type = "button";
+        punto.setAttribute(
+            "aria-label",
+            `Mostrar grupo de fotografías ${i + 1}`
+        );
+
+        if (i === 0) {
+            punto.classList.add("activo");
+        }
+
+        punto.addEventListener("click", () => {
+            const anchoPagina =
+                galeriaPreview.clientWidth;
+            galeriaPreview.scrollTo({
+                left: i * anchoPagina,
+                behavior: "smooth"
+            });
+
+        });
+
+        galeriaIndicadores.appendChild(punto);
+    }
+
+    const puntos =
+        Array.from(
+            galeriaIndicadores.querySelectorAll(".galeria-punto")
+        );
+
+
+    /* -----------------------------------------
+       ACTUALIZAR PUNTO ACTIVO
+       ----------------------------------------- */
+
+    function actualizarIndicador() {
+        const anchoPagina =
+            galeriaPreview.clientWidth;
+        if (!anchoPagina) return;
+        const pagina = Math.round(
+            galeriaPreview.scrollLeft / anchoPagina
+        );
+
+        puntos.forEach((punto, index) => {
+            punto.classList.toggle(
+                "activo",
+                index === pagina
+            );
+
+        });
+    }
+
+    galeriaPreview.addEventListener(
+        "scroll",
+        actualizarIndicador,
+        { passive: true }
+    );
+
+
+    /* -----------------------------------------
+       ARRASTRE CON RATÓN
+       ----------------------------------------- */
+
     let arrastrando = false;
     let inicioX = 0;
     let scrollInicial = 0;
@@ -68,26 +150,55 @@ if (galeriaPreview) {
         arrastrando = true;
         galeriaPreview.classList.add("arrastrando");
         inicioX = e.pageX;
-        scrollInicial = galeriaPreview.scrollLeft;
+        scrollInicial =
+            galeriaPreview.scrollLeft;
+
     });
+
 
     galeriaPreview.addEventListener("mousemove", (e) => {
         if (!arrastrando) return;
         e.preventDefault();
-        const desplazamiento = e.pageX - inicioX;
+        const desplazamiento =
+            e.pageX - inicioX;
         galeriaPreview.scrollLeft =
             scrollInicial - desplazamiento;
+
     });
 
-    galeriaPreview.addEventListener("mouseup", () => {
-        arrastrando = false;
-        galeriaPreview.classList.remove("arrastrando");
-    });
 
-    galeriaPreview.addEventListener("mouseleave", () => {
+    function terminarArrastre() {
+        if (!arrastrando) return;
         arrastrando = false;
-        galeriaPreview.classList.remove("arrastrando");
-    });
+        galeriaPreview.classList.remove(
+            "arrastrando"
+        );
+
+        /* Ajustar a la página más cercana */
+
+        const anchoPagina =
+            galeriaPreview.clientWidth;
+        const pagina = Math.round(
+            galeriaPreview.scrollLeft / anchoPagina
+        );
+
+        galeriaPreview.scrollTo({
+            left: pagina * anchoPagina,
+            behavior: "smooth"
+        });
+
+    }
+
+
+    galeriaPreview.addEventListener(
+        "mouseup",
+        terminarArrastre
+    );
+
+    galeriaPreview.addEventListener(
+        "mouseleave",
+        terminarArrastre
+    );
 
 }
 
