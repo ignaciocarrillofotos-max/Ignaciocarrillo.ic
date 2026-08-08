@@ -458,35 +458,51 @@ transition:.45s cubic-bezier(.2,.8,.2,1);
 }
 
 /* =========================================
-GALERÍA PREVIEW — INDEX
+GALERÍA PREVIEW INDEX
+3 FILAS × N COLUMNAS / PÁGINAS HORIZONTALES
 ========================================= */
 
 .galeria-preview {
 width: 100%;
 margin: 0;
 padding: 0;
-overflow: hidden;
+overflow-x: auto;
+overflow-y: hidden;
+scrollbar-width: none;
+scroll-behavior: smooth;
+scroll-snap-type: x mandatory;
+-webkit-overflow-scrolling: touch;
 }
 
+.galeria-preview::-webkit-scrollbar {
+display: none;
+}
+
+/*
+Cada "página" ocupa exactamente
+el ancho disponible.
+*/
 .galeria-track {
-width: 100%;
+width: max-content;
 display: grid;
-grid-template-columns: repeat(3, 1fr);
-gap: 8px;
+grid-template-rows: repeat(3, 1fr);
+grid-auto-flow: column;
+grid-auto-columns: 33.333vw;
+gap: 4px;
 padding: 0;
 margin: 0;
-overflow: visible;
 }
 
+/* Cada fotografía */
 .galeria-item {
 width: 100%;
 aspect-ratio: 1 / 1;
 overflow: hidden;
-border-radius: 0;
 position: relative;
 cursor: pointer;
 }
 
+/* Imagen */
 .galeria-item img {
 display: block;
 width: 100%;
@@ -497,37 +513,12 @@ transform .6s cubic-bezier(.2,.8,.2,1),
 filter .6s ease;
 }
 
-.galeria-item img {
-transform: scale(1.06);
-filter: brightness(.92);
-}
+/* Efecto únicamente en ordenador */
+@media (hover: hover) and (pointer: fine) {
 
-/* =========================================
-TABLET
-========================================= */
-
-@media (min-width: 769px) {
-
-.galeria-track {
-    grid-template-columns: repeat(4, 1fr);
-    gap: 10px;
-}
-
-.galeria-item {
-    aspect-ratio: 1 / 1;
-}
-
-}
-
-/* =========================================
-ESCRITORIO GRANDE
-========================================= */
-
-@media (min-width: 1200px) {
-
-.galeria-track {
-    grid-template-columns: repeat(5, 1fr);
-    gap: 10px;
+.galeria-item:hover img {
+    transform: scale(1.06);
+    filter: brightness(.92);
 }
 
 }
@@ -1367,30 +1358,47 @@ fadeHero 2s ease;
         font-size: .95rem;
     }
 
-.galeria-preview {
-    width: 100vw;
-    margin-left: calc(50% - 50vw);
-    margin-right: calc(50% - 50vw);
+.galeria-preview { 
+   width: 100vw;
+   margin-left: calc(50% - 50vw);
+   margin-right: calc(50% - 50vw);
+} 
+   .galeria-track {
+      grid-template-rows: repeat(3, 1fr);
+      grid-auto-columns: 33.333vw;
+      gap: 4px; 
+   }
+   .galeria-item {
+      aspect-ratio: 1 / 1; 
+   }
+
 }
+
+
+/* =========================================
+TABLET / PC
+========================================= */
+
+@media (min-width: 769px) {
 
 .galeria-track {
-    width: 100%;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 4px;
-    padding: 0;
+    grid-template-rows: repeat(2, 1fr);
+    grid-auto-columns: 25vw;
+    gap: 8px;
 }
 
-.galeria-item {
-    width: 100%;
-    aspect-ratio: 1 / 1;
-    border-radius: 0;
 }
 
-.galeria-item img {
-    width: 100%;
-    height: 100%;
-}
+/* =========================================
+ESCRITORIOS GRANDES
+========================================= */
 
+@media (min-width: 1200px) {
+
+.galeria-track {
+    grid-template-rows: repeat(2, 1fr);
+    grid-auto-columns: 20vw;
+    gap: 10px;
 }
 
 /* =========================================
