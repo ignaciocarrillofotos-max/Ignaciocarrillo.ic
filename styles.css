@@ -1481,10 +1481,7 @@ TABLET / PC
 @media (min-width: 769px) {
 
     .galeria-page {
-        flex: 0 0 min(1100px, 100vw);
-        width: min(1100px, 100vw);
-        height: 650px;
-        margin: 0 auto;
+        height: 500px;
         gap: 7px;
     }
 
