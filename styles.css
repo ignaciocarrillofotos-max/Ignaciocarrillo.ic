@@ -512,7 +512,7 @@ transition:.45s cubic-bezier(.2,.8,.2,1);
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(3, 1fr);
-    gap: 4px;
+    gap: 6px;
     scroll-snap-align: start;
 }
 
@@ -1480,8 +1480,12 @@ TABLET / PC
 
 @media (min-width: 769px) {
 
-.galeria-page {
-   gap: 7px;
+    .galeria-page {
+        flex: 0 0 min(1100px, 100vw);
+        width: min(1100px, 100vw);
+        height: 650px;
+        margin: 0 auto;
+        gap: 7px;
     }
 
 }
