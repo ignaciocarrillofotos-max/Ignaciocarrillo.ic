@@ -55,6 +55,44 @@ document.addEventListener("click", function(e){
 
 
 
+/* =========================================
+   GALERÍA PREVIEW — ARRASTRE MANUAL
+   ========================================= */
+
+const galeriaPreview = document.querySelector(".galeria-preview");
+if (galeriaPreview) {
+    let arrastrando = false;
+    let inicioX = 0;
+    let scrollInicial = 0;
+    galeriaPreview.addEventListener("mousedown", (e) => {
+        arrastrando = true;
+        galeriaPreview.classList.add("arrastrando");
+        inicioX = e.pageX;
+        scrollInicial = galeriaPreview.scrollLeft;
+    });
+
+    galeriaPreview.addEventListener("mousemove", (e) => {
+        if (!arrastrando) return;
+        e.preventDefault();
+        const desplazamiento = e.pageX - inicioX;
+        galeriaPreview.scrollLeft =
+            scrollInicial - desplazamiento;
+    });
+
+    galeriaPreview.addEventListener("mouseup", () => {
+        arrastrando = false;
+        galeriaPreview.classList.remove("arrastrando");
+    });
+
+    galeriaPreview.addEventListener("mouseleave", () => {
+        arrastrando = false;
+        galeriaPreview.classList.remove("arrastrando");
+    });
+
+}
+
+
+
 
 
 
