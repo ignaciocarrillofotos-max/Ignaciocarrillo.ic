@@ -52,52 +52,6 @@ document.addEventListener("click", function(e){
 
 
 
-/* =========================
-   GALERÍA PREVIEW INDEX
-========================= */
-
-const galeriaPreview = document.querySelector(".galeria-track");
-if (galeriaPreview) {
-    galeriaPreview.innerHTML += galeriaPreview.innerHTML;
-    let posicion = 0;
-    let velocidad = 0.5;
-    let pausado = false;
-    function moverGaleria(){
-        if(!pausado){
-            posicion += velocidad;
-            if(posicion >= galeriaPreview.scrollWidth / 2){
-                posicion = 0;
-            }
-            galeriaPreview.style.transform =
-                `translateX(-${posicion}px)`;
-        }
-
-        requestAnimationFrame(moverGaleria);
-    }
-
-    galeriaPreview.addEventListener("mouseenter",()=>{
-        pausado = true;
-    });
-
-    galeriaPreview.addEventListener("mouseleave",()=>{
-        pausado = false;
-    });
-
-    galeriaPreview.addEventListener("touchstart",()=>{
-        pausado = true;
-    });
-
-
-    galeriaPreview.addEventListener("touchend",()=>{
-        setTimeout(()=>{
-            pausado = false;
-        },1500);
-    });
-
-    moverGaleria();
-
-}
-
 
 
 
