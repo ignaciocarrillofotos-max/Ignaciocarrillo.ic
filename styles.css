@@ -539,6 +539,32 @@ transition:.45s cubic-bezier(.2,.8,.2,1);
 
 
 /* =========================================
+   FIRMA / LOGO SOBRE LAS FOTOS
+========================================= */
+
+.galeria-item::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 42%;
+    height: 42%;
+
+    background-image: url("FOTOSVIDEOS/logos/mi_Firma_blanco_letras.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+
+    transform: translate(-50%, -50%);
+    opacity: .28;
+
+    pointer-events: none;
+    z-index: 2;
+}
+
+
+
+/* =========================================
    EFECTO PC
    ========================================= */
 
@@ -1493,6 +1519,12 @@ TABLET / PC
     .galeria-item.galeria-destacada {
         grid-column: span 2;
         grid-row: span 2;
+    }
+
+       .galeria-item::after {
+        width: 35%;
+        height: 35%;
+        opacity: .25;
     }
 
 }
