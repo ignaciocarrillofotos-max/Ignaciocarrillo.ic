@@ -556,7 +556,7 @@ transition:.45s cubic-bezier(.2,.8,.2,1);
     background-size: contain;
 
     transform: translate(-50%, -50%);
-    opacity: .28;
+    opacity: .35;
 
     pointer-events: none;
     z-index: 2;
@@ -1524,7 +1524,7 @@ TABLET / PC
        .galeria-item::after {
         width: 35%;
         height: 35%;
-        opacity: .25;
+        opacity: .35;
     }
 
 }
