@@ -547,8 +547,8 @@ transition:.45s cubic-bezier(.2,.8,.2,1);
     position: absolute;
     top: 50%;
     left: 50%;
-    width: 42%;
-    height: 42%;
+    width: 55%;
+    height: 55%;
 
     background-image: url("FOTOSVIDEOS/logos/mi_Firma_blanco_letras.png");
     background-repeat: no-repeat;
@@ -1522,8 +1522,8 @@ TABLET / PC
     }
 
        .galeria-item::after {
-        width: 35%;
-        height: 35%;
+        width: 45%;
+        height: 45%;
         opacity: .35;
     }
 
