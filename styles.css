@@ -1483,6 +1483,12 @@ TABLET / PC
         height: 100%;
     }
 
+       .galeria-item img {
+        object-fit: contain;
+        object-position: center center;
+        background: #000;
+    }
+
     /* ⭐ FOTO DESTACADA */
     .galeria-item.galeria-destacada {
         grid-column: span 2;
