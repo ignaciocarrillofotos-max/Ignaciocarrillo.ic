@@ -1101,11 +1101,20 @@ box-shadow:
 
 .pack-evento {
     text-align: center;
-    font-size: 0.95rem;
-    font-style: italic;
+    font-size: .9rem;
+    font-style: normal;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
     opacity: 0.85;
     margin: 18px 10px;
-    line-height: 1.5;
+    line-height: 1.6;
+    letter-spacing: .4px;
+       width: 100%;
+    text-align: center;
+    color: #b5b5b5;
+    margin: 18px 0;
+    padding: 0 10px;
+    opacity: .9;
 }
 
 
