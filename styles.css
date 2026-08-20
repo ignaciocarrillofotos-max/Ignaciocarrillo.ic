@@ -1095,6 +1095,21 @@ box-shadow:
     box-shadow:0 10px 25px rgba(100,196,120,.35);
 }
 
+
+
+
+
+.pack-evento {
+    text-align: center;
+    font-size: 0.95rem;
+    font-style: italic;
+    opacity: 0.85;
+    margin: 18px 10px;
+    line-height: 1.5;
+}
+
+
+
 /* =========================
    EFECTO APPLE PACKS
 ========================= */
