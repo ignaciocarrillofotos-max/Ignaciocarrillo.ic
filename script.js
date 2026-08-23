@@ -430,11 +430,13 @@ const cards = document.querySelectorAll(".price-card");
 const details = document.querySelectorAll(".pack-detail");
 
 cards.forEach(card => {
+
     card.addEventListener("click", () => {
+
         const packName = card.dataset.pack;
         const estabaActivo = card.classList.contains("active-pack");
 
-        /* CERRAR TODOS */
+        /* Cerrar todos */
         cards.forEach(c => {
             c.classList.remove("active-pack");
         });
@@ -443,15 +445,15 @@ cards.forEach(card => {
             detail.classList.remove("active-detail");
         });
 
-        /* SI YA ESTABA ABIERTO → CERRAR */
+        /* Si estaba abierto → cerrar */
         if (estabaActivo) {
             return;
         }
 
-        /* ACTIVAR PACK */
+        /* Activar pack */
         card.classList.add("active-pack");
 
-        /* ABRIR SU CONTENIDO */
+        /* Buscar su contenido */
         const detail = document.querySelector(
             `.pack-detail[data-detail="${packName}"]`
         );
