@@ -1605,9 +1605,7 @@ fadeHero 2s ease;
     .clientes-slider .card {
         flex: 0 0 82vw;
     }
-    .boton-contacto-pack {
-        flex-direction: column;
-    }
+
 
     .service-card img,
     .service-card video {
@@ -2118,8 +2116,6 @@ fadeHero 2s ease;
     transform:translateY(0);
    }
    
-
-}
    
 
 
