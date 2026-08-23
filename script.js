@@ -427,49 +427,42 @@ if (packs) {
 
 const cards = document.querySelectorAll(".price-card");
 const pricing = document.querySelector(".pricing");
+const details = document.querySelectorAll(".pack-detail");
 cards.forEach(card => {
-    card.addEventListener("click", (e) => {
-        if (e.target.closest(".boton-expandible")) return;
-
+    card.addEventListener("click", () => {
+        const pack = card.dataset.pack;
         const estabaActivo = card.classList.contains("active-pack");
 
-
-        /* =================================
-           QUITAR ACTIVO DE TODOS
-        ================================= */
-
+        // Cerrar todos
         cards.forEach(c => {
             c.classList.remove("active-pack");
         });
 
+        details.forEach(detail => {
+            detail.classList.remove("active-detail");
+        });
 
-        /* =================================
-           SI ESTABA ACTIVO → CERRAR
-        ================================= */
-
+        // Si ya estaba abierto → cerrar
         if (estabaActivo) {
-            if (pricing) {
-                pricing.classList.remove("mobile-pack-open");
-            }
-
+            pricing?.classList.remove("mobile-pack-open");
             return;
         }
 
-
-        /* =================================
-           MISMO TOQUE:
-           ABRIR + RESALTAR
-        ================================= */
-
+        // Abrir el seleccionado
         card.classList.add("active-pack");
-        if (pricing) {
-            pricing.classList.add("mobile-pack-open");
+        const detail = document.querySelector(
+            `.pack-detail[data-detail="${pack}"]`
+        );
+
+        if (detail) {
+            detail.classList.add("active-detail");
         }
+
+        pricing?.classList.add("mobile-pack-open");
 
     });
 
 });
-
 
 
 
