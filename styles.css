@@ -1620,324 +1620,507 @@ fadeHero 2s ease;
         display: block;
     }
 
+
+
+
 /* =========================================
    PACKS — MÓVIL
-   Tres packs visibles + detalle inferior
+   3 packs visibles + detalle estable
 ========================================= */
 
-@media(max-width:768px){
-
-    /* Los 3 packs siempre visibles */
-    .pricing{
-        position:relative;
-        display:flex;
-        width:100%;
-        gap:8px;
-        align-items:flex-start;
-        justify-content:space-between;
+.pricing.packs-slider{
+    display:grid;
 
-        overflow:visible;
-        padding:0 8px;
-
-        transition:
-            padding-bottom .45s ease;
-    }
+    grid-template-columns:repeat(3, minmax(0, 1fr));
 
-    /* Cada pack ocupa 1/3 */
-    .pricing .price-card{
-        position:static;
+    gap:6px;
 
-        flex:1 1 0;
-        min-width:0;
-        max-width:none;
+    width:100%;
 
-        min-height:150px;
-        padding:20px 7px 16px;
+    padding:0 8px 30px;
 
-        border-radius:16px;
+    box-sizing:border-box;
 
-        background:transparent;
-        border:1px solid transparent;
+    overflow:visible;
 
-        overflow:visible;
+    align-items:start;
 
-        transform:none;
-        opacity:.62;
-        filter:none;
+    position:relative;
+}
 
-        cursor:pointer;
 
-        transition:
-            transform .4s ease,
-            opacity .4s ease,
-            background .4s ease,
-            border-color .4s ease,
-            box-shadow .4s ease;
-    }
+/* =========================================
+   PACK INDIVIDUAL
+========================================= */
 
-    /* No queremos el efecto hover de PC en móvil */
-    .pricing:hover .price-card{
-        opacity:.62;
-        filter:none;
-        transform:none;
-    }
+.pricing.packs-slider .price-card{
 
-    .pricing:hover .price-card:hover{
-        opacity:1;
-        filter:none;
-        transform:none;
-    }
+    width:100%;
 
-    /* Pack seleccionado */
-    .pricing .price-card.active-pack{
-        opacity:1;
+    min-width:0;
+    max-width:none;
 
-        background:
-            linear-gradient(
-                180deg,
-                rgba(100,196,120,.08),
-                rgba(100,196,120,.025)
-            );
+    min-height:145px;
 
-        border-color:
-            rgba(100,196,120,.28);
+    padding:18px 6px 16px;
 
-        transform:
-            translateY(-4px);
+    box-sizing:border-box;
 
-        box-shadow:
-            0 15px 35px rgba(0,0,0,.25),
-            0 0 25px rgba(100,196,120,.08);
-    }
+    display:flex;
+    flex-direction:column;
 
-    /* Títulos */
-    .pricing .price-card h3{
-        font-size:.92rem;
-        line-height:1.15;
+    align-items:center;
 
-        letter-spacing:1.5px;
+    border-radius:16px;
 
-        white-space:normal;
+    background:transparent;
 
-        margin:0;
+    border:1px solid transparent;
 
-        transition:
-            color .4s ease,
-            letter-spacing .4s ease,
-            transform .4s ease;
-    }
+    overflow:hidden;
 
-    .pricing .price-card.active-pack h3{
-        color:#64c478;
+    opacity:.62;
 
-        letter-spacing:1.8px;
+    filter:none;
 
-        transform:scale(1.04);
-    }
+    transform:none;
 
-    /* Subtítulo */
-    .pricing .pack-subtitle{
-        margin:8px 0 14px;
+    box-shadow:none;
 
-        font-size:.68rem;
-        line-height:1.35;
+    cursor:pointer;
 
-        letter-spacing:.3px;
+    transition:
+        opacity .35s ease,
+        transform .35s ease,
+        background .35s ease,
+        border-color .35s ease,
+        box-shadow .35s ease;
+}
 
-        color:#888;
 
-        opacity:.8;
-    }
+/* =========================================
+   IMPORTANTE:
+   anulamos el efecto Apple de PC
+========================================= */
 
-    .pricing .price-card.active-pack .pack-subtitle{
-        color:#d0d0d0;
-        opacity:1;
-    }
+.pricing.packs-slider:hover .price-card{
+    opacity:.62;
 
-    /* Punto verde */
-    .pricing .pack-indicator{
-        width:8px;
-        height:8px;
+    filter:none;
 
-        margin:12px auto 4px;
+    transform:none;
 
-        opacity:.55;
+    box-shadow:none;
+}
 
-        transition:
-            transform .35s ease,
-            opacity .35s ease,
-            box-shadow .35s ease;
-    }
+.pricing.packs-slider:hover .price-card:hover{
+    opacity:.62;
 
-    .pricing .price-card.active-pack .pack-indicator{
-        transform:scale(1.45);
-        opacity:1;
+    filter:none;
 
-        box-shadow:
-            0 0 0 5px rgba(100,196,120,.08),
-            0 0 16px rgba(100,196,120,.35);
-    }
+    transform:none;
+}
 
 
-    /* =====================================
-         PACK
-       Aparece debajo de los tres
-    ===================================== */
+/* =========================================
+   PACK ACTIVO
+========================================= */
 
-    .pricing.mobile-pack-open{
-        padding-bottom:480px;
-    }
+.pricing.packs-slider .price-card.active-pack{
 
-    .pricing .price-card .price-content{
-        position:absolute;
+    opacity:1;
 
-        left:0;
-        right:0;
+    background:
+        linear-gradient(
+            180deg,
+            rgba(100,196,120,.09),
+            rgba(100,196,120,.025)
+        );
 
-        top:calc(100% + 22px);
+    border-color:
+        rgba(100,196,120,.30);
 
-        width:100%;
+    transform:translateY(-3px);
 
-        max-height:0;
+    box-shadow:
+        0 14px 30px rgba(0,0,0,.25),
+        0 0 24px rgba(100,196,120,.07);
 
-        padding:0 14px;
+    z-index:2;
+}
 
-        box-sizing:border-box;
 
-        overflow:hidden;
+/* =========================================
+   TITULO
+========================================= */
 
-        opacity:0;
+.pricing.packs-slider .price-card h3{
 
-        transform:
-            translateY(18px);
+    width:100%;
 
-        pointer-events:none;
+    margin:0;
 
-        z-index:5;
+    text-align:center;
 
-        transition:
-            max-height .55s ease,
-            opacity .35s ease,
-            transform .45s ease,
-            padding .35s ease;
-    }
+    font-size:.82rem;
 
-    /* Solo se muestra el contenido del activo */
-    .pricing .price-card.active-pack .price-content{
-        max-height:430px;
+    line-height:1.15;
 
-        padding:0 14px 20px;
+    letter-spacing:1.2px;
 
-        opacity:1;
+    white-space:normal;
 
-        transform:translateY(0);
+    color:#fff;
 
-        pointer-events:auto;
-    }
+    transform:none;
 
-    /* Caja interior */
-    .pricing .price-card.active-pack .price-content{
-        background:
-            linear-gradient(
-                145deg,
-                #202020,
-                #151515
-            );
+    transition:
+        color .35s ease,
+        letter-spacing .35s ease;
+}
 
-        border:
-            1px solid rgba(100,196,120,.18);
+.pricing.packs-slider .price-card.active-pack h3{
 
-        border-radius:20px;
+    color:#64c478;
 
-        box-shadow:
-            0 25px 60px rgba(0,0,0,.38),
-            0 0 35px rgba(100,196,120,.06);
-    }
+    letter-spacing:1.5px;
 
-    /* El contenido real */
-    .pricing .price-card.active-pack .price-content > *{
-        position:relative;
-    }
+    transform:none;
+}
 
-    /* Título INCLUYE */
-    .pricing .price-card.active-pack .titulo-pack{
-        margin-top:18px;
-        margin-bottom:12px;
 
-        font-size:.72rem;
+/* =========================================
+   SUBTITULO
+========================================= */
 
-        letter-spacing:1.8px;
-    }
+.pricing.packs-slider .pack-subtitle{
 
-    /* Lista */
-    .pricing .price-card.active-pack .price-content ol,
-    .pricing .price-card.active-pack .price-content ul{
-        max-height:145px;
+    width:100%;
 
-        padding-left:0;
+    margin:7px 0 10px;
 
-        overflow-y:auto;
+    text-align:center;
 
-        scrollbar-width:none;
-    }
+    font-size:.58rem;
 
-    .pricing .price-card.active-pack .price-content ol::-webkit-scrollbar,
-    .pricing .price-card.active-pack .price-content ul::-webkit-scrollbar{
-        display:none;
-    }
+    line-height:1.35;
 
-    .pricing .price-card.active-pack .price-content li{
-        max-width:100%;
+    letter-spacing:.2px;
 
-        padding:8px 0;
+    color:#8d8d8d;
 
-        font-size:.82rem;
+    opacity:.75;
+}
 
-        line-height:1.35;
+.pricing.packs-slider .price-card.active-pack .pack-subtitle{
 
-        gap:9px;
-    }
+    color:#d0d0d0;
 
-    .pricing .price-card.active-pack .price-content li::before{
-        width:19px;
-        height:19px;
+    opacity:1;
+}
 
-        font-size:.65rem;
-    }
 
-    /* Texto descriptivo */
-    .pricing .price-card.active-pack .price-content p{
-        font-size:.78rem;
+/* =========================================
+   PRECIO
+========================================= */
 
-        line-height:1.55;
+.pricing.packs-slider .pack-price{
 
-        color:#aaa;
+    display:flex;
 
-        text-align:center;
-    }
+    flex-direction:column;
 
-    /* Botones */
-    .pricing .price-card.active-pack .boton-contacto-pack{
-        display:flex;
+    align-items:center;
 
-        flex-direction:row;
+    gap:2px;
 
-        gap:8px;
+    margin:2px 0 5px;
+}
 
-        margin-top:15px;
-    }
+.pricing.packs-slider .price-label{
 
-    .pricing .price-card.active-pack .btn-pack{
-        min-width:0;
+    font-size:.48rem;
 
-        padding:10px 8px;
+    letter-spacing:1.4px;
+}
 
-        font-size:.78rem;
+.pricing.packs-slider .price-value{
 
-        border-radius:10px;
-    }
+    font-size:1.18rem;
+
+    letter-spacing:.5px;
+}
+
+
+/* =========================================
+   PUNTO
+========================================= */
+
+.pricing.packs-slider .pack-indicator{
+
+    width:7px;
+    height:7px;
+
+    margin:10px auto 0;
+
+    opacity:.45;
+
+    transition:
+        transform .3s ease,
+        opacity .3s ease,
+        box-shadow .3s ease;
+}
+
+.pricing.packs-slider .price-card.active-pack .pack-indicator{
+
+    transform:scale(1.45);
+
+    opacity:1;
+
+    box-shadow:
+        0 0 0 5px rgba(100,196,120,.07),
+        0 0 15px rgba(100,196,120,.30);
+}
+
+
+/* =========================================
+   CONTENIDO DEL PACK
+   YA NO ABSOLUTE
+========================================= */
+
+.pricing.packs-slider .price-content{
+
+    position:relative;
+
+    left:auto;
+    right:auto;
+    top:auto;
+
+    grid-column:auto;
+
+    width:100%;
+
+    box-sizing:border-box;
+
+    max-height:0;
+
+    margin:0;
+
+    padding:0;
+
+    overflow:hidden;
+
+    opacity:0;
+
+    transform:translateY(12px);
+
+    pointer-events:none;
+
+    background:
+        linear-gradient(
+            145deg,
+            #202020,
+            #151515
+        );
+
+    border:0 solid rgba(100,196,120,.18);
+
+    border-radius:20px;
+
+    box-shadow:none;
+
+    transition:
+        max-height .55s ease,
+        opacity .35s ease,
+        transform .45s ease,
+        margin .45s ease,
+        padding .45s ease,
+        border-width .35s ease;
+}
+
+
+/* =========================================
+   CONTENIDO DEL PACK ACTIVO
+
+   Lo hacemos ocupar las 3 columnas
+========================================= */
+
+.pricing.packs-slider .price-card.active-pack .price-content{
+
+    grid-column:1 / -1;
+
+    width:calc(300% + 12px);
+
+    max-height:650px;
+
+    margin-top:18px;
+
+    margin-left:calc(
+        -100% - 6px
+    );
+
+    padding:0 14px 20px;
+
+    opacity:1;
+
+    transform:translateY(0);
+
+    pointer-events:auto;
+
+    border-width:1px;
+
+    box-shadow:
+        0 25px 60px rgba(0,0,0,.38),
+        0 0 35px rgba(100,196,120,.06);
+}
+
+
+/* =========================================
+   PACK BOX
+========================================= */
+
+.pricing.packs-slider
+.price-card.active-pack
+.pack-box{
+
+    margin:18px 0;
+
+    padding:17px;
+
+    border-radius:16px;
+}
+
+
+/* =========================================
+   TITULO INCLUYE
+========================================= */
+
+.pricing.packs-slider
+.price-card.active-pack
+.titulo-pack{
+
+    margin:8px 0 12px;
+
+    font-size:.68rem;
+
+    letter-spacing:1.6px;
+}
+
+
+/* =========================================
+   LISTA
+========================================= */
+
+.pricing.packs-slider
+.price-card.active-pack
+.pack-box ol{
+
+    max-height:145px;
+
+    overflow-y:auto;
+
+    scrollbar-width:none;
+}
+
+.pricing.packs-slider
+.price-card.active-pack
+.pack-box ol::-webkit-scrollbar{
+
+    display:none;
+}
+
+
+.pricing.packs-slider
+.price-card.active-pack
+.price-content li{
+
+    max-width:100%;
+
+    padding:8px 0;
+
+    font-size:.76rem;
+
+    line-height:1.35;
+
+    gap:8px;
+}
+
+
+/* =========================================
+   TEXTO FINAL
+========================================= */
+
+.pricing.packs-slider
+.price-card.active-pack
+.pack-evento{
+
+    font-size:.72rem;
+
+    line-height:1.55;
+
+    margin:14px 0;
+
+    padding:0 6px;
+
+    color:#aaa;
+}
+
+
+/* =========================================
+   BOTONES
+========================================= */
+
+.pricing.packs-slider
+.price-card.active-pack
+.boton-contacto-pack{
+
+    display:flex;
+
+    flex-direction:row;
+
+    gap:8px;
+
+    margin-top:14px;
+}
+
+.pricing.packs-slider
+.price-card.active-pack
+.btn-pack{
+
+    min-width:0;
+
+    padding:10px 8px;
+
+    font-size:.74rem;
+
+    border-radius:10px;
+}
+
+
+/* =========================================
+   ANIMACIÓN DEL CONTENIDO
+========================================= */
+
+.pricing.packs-slider
+.price-card.active-pack
+.price-content p,
+
+.pricing.packs-slider
+.price-card.active-pack
+.price-content li,
+
+.pricing.packs-slider
+.price-card.active-pack
+.boton-contacto-pack{
+
+    opacity:1;
+
+    transform:translateY(0);
+   }
+   
 
 }
+   
 
 
 .galeria-preview {
