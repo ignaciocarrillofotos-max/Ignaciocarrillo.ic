@@ -1062,7 +1062,7 @@ box-shadow:
 
 /* Último elemento sin línea */
 
-.price-content li:last-child{
+.pack-detail li:last-child{
     border-bottom:none;
 }
 
