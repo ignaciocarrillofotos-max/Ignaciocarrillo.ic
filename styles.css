@@ -1620,30 +1620,33 @@ fadeHero 2s ease;
 
 
 
+   
 
 /* =========================================
    PACKS — MÓVIL
-   3 packs visibles + detalle estable
 ========================================= */
 
 .pricing.packs-slider{
-    display:grid;
+    width:100%;
+    display:flex;
+    flex-direction:column;
+    gap:0;
+    padding:0 8px 30px;
+    box-sizing:border-box;
+}
 
-    grid-template-columns:repeat(3, minmax(0, 1fr));
 
-    gap:6px;
+/* =========================================
+   FILA DE LOS 3 PACKS
+========================================= */
+
+.packs-row{
 
     width:100%;
-
-    padding:0 8px 30px;
-
-    box-sizing:border-box;
-
-    overflow:visible;
-
+    display:grid;
+    grid-template-columns:repeat(3, minmax(0, 1fr));
+    gap:6px;
     align-items:start;
-
-    position:relative;
 }
 
 
@@ -1652,9 +1655,9 @@ fadeHero 2s ease;
 ========================================= */
 
 .pricing.packs-slider .price-card{
+
     width:100%;
     min-width:0;
-    max-width:none;
     min-height:145px;
     padding:18px 6px 16px;
     box-sizing:border-box;
@@ -1664,34 +1667,30 @@ fadeHero 2s ease;
     border-radius:16px;
     background:transparent;
     border:1px solid transparent;
-    overflow:visible;
-    position:static; /* IMPORTANTE */
     opacity:.62;
-    filter:none;
-    transform:none;
-    box-shadow:none;
     cursor:pointer;
+    transition:
+        opacity .35s ease,
+        transform .35s ease,
+        background .35s ease,
+        border-color .35s ease,
+        box-shadow .35s ease;
+
 }
 
+
 /* =========================================
-   IMPORTANTE:
-   anulamos el efecto Apple de PC
+   NO EFECTO APPLE EN MÓVIL
 ========================================= */
 
 .pricing.packs-slider:hover .price-card{
+
     opacity:.62;
-    filter:none;
     transform:none;
+    filter:none;
     box-shadow:none;
 }
 
-.pricing.packs-slider:hover .price-card.active-pack{
-    opacity:1;
-    transform:translateY(-3px);
-    box-shadow:
-        0 14px 30px rgba(0,0,0,.25),
-        0 0 24px rgba(100,196,120,.07);
-}
 
 /* =========================================
    PACK ACTIVO
@@ -1717,77 +1716,58 @@ fadeHero 2s ease;
         0 14px 30px rgba(0,0,0,.25),
         0 0 24px rgba(100,196,120,.07);
 
-    z-index:2;
 }
 
 
 /* =========================================
-   TITULO
+   TÍTULO
 ========================================= */
 
 .pricing.packs-slider .price-card h3{
 
     width:100%;
-
     margin:0;
-
     text-align:center;
-
     font-size:.82rem;
-
     line-height:1.15;
-
     letter-spacing:1.2px;
-
-    white-space:normal;
-
     color:#fff;
-
-    transform:none;
-
     transition:
         color .35s ease,
         letter-spacing .35s ease;
 }
 
+
 .pricing.packs-slider .price-card.active-pack h3{
 
     color:#64c478;
-
     letter-spacing:1.5px;
 
-    transform:none;
 }
 
 
 /* =========================================
-   SUBTITULO
+   SUBTÍTULO
 ========================================= */
 
 .pricing.packs-slider .pack-subtitle{
 
     width:100%;
-
     margin:7px 0 10px;
-
     text-align:center;
-
     font-size:.58rem;
-
     line-height:1.35;
-
     letter-spacing:.2px;
-
     color:#8d8d8d;
-
     opacity:.75;
 }
+
 
 .pricing.packs-slider .price-card.active-pack .pack-subtitle{
 
     color:#d0d0d0;
-
     opacity:1;
+
 }
 
 
@@ -1798,89 +1778,90 @@ fadeHero 2s ease;
 .pricing.packs-slider .pack-price{
 
     display:flex;
-
     flex-direction:column;
-
     align-items:center;
-
     gap:2px;
-
     margin:2px 0 5px;
 }
+
 
 .pricing.packs-slider .price-label{
 
     font-size:.48rem;
-
     letter-spacing:1.4px;
 }
+
 
 .pricing.packs-slider .price-value{
 
     font-size:1.18rem;
-
     letter-spacing:.5px;
 }
 
 
 /* =========================================
-   PUNTO
+   PUNTO VERDE
 ========================================= */
 
 .pricing.packs-slider .pack-indicator{
 
     width:7px;
     height:7px;
-
     margin:10px auto 0;
-
     opacity:.45;
-
     transition:
         transform .3s ease,
         opacity .3s ease,
         box-shadow .3s ease;
 }
 
+
 .pricing.packs-slider .price-card.active-pack .pack-indicator{
 
     transform:scale(1.45);
-
     opacity:1;
 
     box-shadow:
         0 0 0 5px rgba(100,196,120,.07),
         0 0 15px rgba(100,196,120,.30);
+
 }
 
 
 /* =========================================
-   CONTENIDO DEL PACK
-   CERRADO
+   CONTENEDOR DE INFORMACIÓN
 ========================================= */
 
-.pricing.packs-slider .price-card .price-content {
+.pack-details{
 
-    position: relative;
+    width:100%;
+    margin-top:18px;
+    box-sizing:border-box;
 
-    width: calc(300% + 12px);
+}
 
-    max-height: 0;
 
-    margin: 0;
+/* =========================================
+   INFORMACIÓN CERRADA
+========================================= */
 
-    padding: 0;
+.pack-detail{
 
-    overflow: hidden;
+    display:none;
+    width:100%;
+    box-sizing:border-box;
 
-    opacity: 0;
+}
 
-    transform: translateY(12px);
 
-    pointer-events: none;
+/* =========================================
+   INFORMACIÓN ABIERTA
+========================================= */
 
-    box-sizing: border-box;
+.pack-detail.active-detail{
 
+    display:block;
+    padding:0 14px 20px;
     background:
         linear-gradient(
             145deg,
@@ -1888,97 +1869,39 @@ fadeHero 2s ease;
             #151515
         );
 
-    border: 0 solid rgba(100,196,120,.18);
-
-    border-radius: 20px;
-
-    box-shadow: none;
-
-    transition:
-        max-height .55s ease,
-        opacity .35s ease,
-        transform .45s ease,
-        margin .45s ease,
-        padding .45s ease,
-        border-width .35s ease;
-}
-
-
-/* =========================================
-   CONTENIDO ABIERTO
-   SIEMPRE CENTRADO BAJO LOS 3 PACKS
-========================================= */
-
-.pricing.packs-slider .price-card.active-pack .price-content {
-
-    position: absolute;
-
-    top: calc(100% + 18px);
-
-    left: 50%;
-
-    width: calc(300% + 12px);
-
-    max-height: 650px;
-
-    margin: 0;
-
-    padding: 0 14px 20px;
-
-    box-sizing: border-box;
-
-    opacity: 1;
-
-    transform: translateX(-50%) translateY(0);
-
-    pointer-events: auto;
-
-    background:
-        linear-gradient(
-            145deg,
-            #202020,
-            #151515
-        );
-
-    border: 1px solid rgba(100,196,120,.18);
-
-    border-radius: 20px;
-
+    border:1px solid rgba(100,196,120,.18);
+    border-radius:20px;
     box-shadow:
         0 25px 60px rgba(0,0,0,.38),
         0 0 35px rgba(100,196,120,.06);
-
-    z-index: 10;
+    animation:
+        packDetailIn .45s ease;
 }
+
+
 /* =========================================
    PACK BOX
 ========================================= */
 
-.pricing.packs-slider
-.price-card.active-pack
-.pack-box{
+.pack-detail .pack-box{
 
     margin:18px 0;
-
     padding:17px;
-
     border-radius:16px;
+
 }
 
 
 /* =========================================
-   TITULO INCLUYE
+   TÍTULO INCLUYE
 ========================================= */
 
-.pricing.packs-slider
-.price-card.active-pack
-.titulo-pack{
+.pack-detail .titulo-pack{
 
     margin:8px 0 12px;
-
     font-size:.68rem;
-
     letter-spacing:1.6px;
+
 }
 
 
@@ -1986,38 +1909,31 @@ fadeHero 2s ease;
    LISTA
 ========================================= */
 
-.pricing.packs-slider
-.price-card.active-pack
-.pack-box ol{
+.pack-detail .pack-box ol{
 
     max-height:145px;
-
     overflow-y:auto;
-
     scrollbar-width:none;
+
 }
 
-.pricing.packs-slider
-.price-card.active-pack
-.pack-box ol::-webkit-scrollbar{
+
+.pack-detail .pack-box ol::-webkit-scrollbar{
 
     display:none;
+
 }
 
 
-.pricing.packs-slider
-.price-card.active-pack
-.price-content li{
+.pack-detail .price-content li,
+.pack-detail li{
 
     max-width:100%;
-
     padding:8px 0;
-
     font-size:.76rem;
-
     line-height:1.35;
-
     gap:8px;
+
 }
 
 
@@ -2025,19 +1941,14 @@ fadeHero 2s ease;
    TEXTO FINAL
 ========================================= */
 
-.pricing.packs-slider
-.price-card.active-pack
-.pack-evento{
+.pack-detail .pack-evento{
 
     font-size:.72rem;
-
     line-height:1.55;
-
     margin:14px 0;
-
     padding:0 6px;
-
     color:#aaa;
+
 }
 
 
@@ -2045,53 +1956,42 @@ fadeHero 2s ease;
    BOTONES
 ========================================= */
 
-.pricing.packs-slider
-.price-card.active-pack
-.boton-contacto-pack{
+.pack-detail .boton-contacto-pack{
 
     display:flex;
-
     flex-direction:row;
-
     gap:8px;
-
     margin-top:14px;
+
 }
 
-.pricing.packs-slider
-.price-card.active-pack
-.btn-pack{
+
+.pack-detail .btn-pack{
 
     min-width:0;
-
     padding:10px 8px;
-
     font-size:.74rem;
-
     border-radius:10px;
+
 }
 
 
 /* =========================================
-   ANIMACIÓN DEL CONTENIDO
+   ANIMACIÓN
 ========================================= */
 
-.pricing.packs-slider
-.price-card.active-pack
-.price-content p,
+@keyframes packDetailIn{
+    from{
+        opacity:0;
+        transform:translateY(12px);
+    }
 
-.pricing.packs-slider
-.price-card.active-pack
-.price-content li,
+    to{
+        opacity:1;
+        transform:translateY(0);
 
-.pricing.packs-slider
-.price-card.active-pack
-.boton-contacto-pack{
-
-    opacity:1;
-
-    transform:translateY(0);
-   }
+    }
+}
    
    
 
