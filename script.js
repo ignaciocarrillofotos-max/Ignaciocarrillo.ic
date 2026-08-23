@@ -430,11 +430,22 @@ const pricing = document.querySelector(".pricing");
 cards.forEach(card => {
     card.addEventListener("click", (e) => {
         if (e.target.closest(".boton-expandible")) return;
-        const estabaActivo =
-            card.classList.contains("active-pack");
+
+        const estabaActivo = card.classList.contains("active-pack");
+
+
+        /* =================================
+           QUITAR ACTIVO DE TODOS
+        ================================= */
+
         cards.forEach(c => {
             c.classList.remove("active-pack");
         });
+
+
+        /* =================================
+           SI ESTABA ACTIVO → CERRAR
+        ================================= */
 
         if (estabaActivo) {
             if (pricing) {
@@ -444,6 +455,12 @@ cards.forEach(card => {
             return;
         }
 
+
+        /* =================================
+           MISMO TOQUE:
+           ABRIR + RESALTAR
+        ================================= */
+
         card.classList.add("active-pack");
         if (pricing) {
             pricing.classList.add("mobile-pack-open");
@@ -452,7 +469,6 @@ cards.forEach(card => {
     });
 
 });
-
 
 
 
