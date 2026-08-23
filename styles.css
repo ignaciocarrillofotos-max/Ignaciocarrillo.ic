@@ -1912,29 +1912,44 @@ fadeHero 2s ease;
 
 
 /* =========================================
-   CONTENIDO DEL PACK ACTIVO
-   OCUPA LAS 3 COLUMNAS
+   CONTENIDO ABIERTO
+   SIEMPRE CENTRADO BAJO LOS 3 PACKS
 ========================================= */
 
 .pricing.packs-slider .price-card.active-pack .price-content {
+
+    position: absolute;
+
+    top: calc(100% + 18px);
+
+    left: 50%;
 
     width: calc(300% + 12px);
 
     max-height: 650px;
 
-    margin-top: 18px;
-
-    margin-left: calc(-100% - 6px);
+    margin: 0;
 
     padding: 0 14px 20px;
 
+    box-sizing: border-box;
+
     opacity: 1;
 
-    transform: translateY(0);
+    transform: translateX(-50%) translateY(0);
 
     pointer-events: auto;
 
-    border-width: 1px;
+    background:
+        linear-gradient(
+            145deg,
+            #202020,
+            #151515
+        );
+
+    border: 1px solid rgba(100,196,120,.18);
+
+    border-radius: 20px;
 
     box-shadow:
         0 25px 60px rgba(0,0,0,.38),
@@ -1942,7 +1957,6 @@ fadeHero 2s ease;
 
     z-index: 10;
 }
-
 
 /* =========================================
    PACK BOX
