@@ -1457,6 +1457,59 @@ box-shadow:
 
 
 /* =========================================
+   ETIQUETA POPULAR — HALF PACK
+========================================= */
+
+.pack-badge{
+    display:table;
+    margin:6px auto 2px;
+
+    padding:4px 11px;
+
+    border-radius:20px;
+
+    font-size:.58rem;
+    font-weight:600;
+    letter-spacing:1.3px;
+    text-transform:uppercase;
+
+    color:#64c478;
+
+    background:rgba(100,196,120,.08);
+
+    border:1px solid rgba(100,196,120,.25);
+
+    opacity:.85;
+
+    transition:
+        opacity .35s ease,
+        transform .35s ease,
+        background .35s ease,
+        box-shadow .35s ease;
+}
+
+
+/* PC */
+@media (min-width:900px){
+
+    .price-card:hover .pack-badge,
+    .price-card.active-pack .pack-badge{
+
+        opacity:1;
+        transform:translateY(-2px);
+
+        background:rgba(100,196,120,.12);
+
+        box-shadow:
+            0 0 18px rgba(100,196,120,.10);
+    }
+
+}
+
+
+
+
+/* =========================================
    DETALLE
    SIEMPRE CENTRADO DEBAJO DE LOS 3
 ========================================= */
@@ -1611,6 +1664,10 @@ box-shadow:
 
     }
 }
+
+
+
+
 
 
 
