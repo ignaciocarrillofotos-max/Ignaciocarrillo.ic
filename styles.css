@@ -2286,9 +2286,23 @@ fadeHero 2s ease;
     }
 }
    
+/* POPULAR — MÓVIL */
+.pricing.packs-slider .pack-badge{
+
+    margin:5px auto 1px;
+    padding:3px 8px;
+    font-size:.48rem;
+    letter-spacing:1px;
+    opacity:.7;
+}
+.pricing.packs-slider .price-card.active-pack .pack-badge{
+    opacity:1;
+    background:rgba(100,196,120,.10);
+}
    
 
 
+   
 .galeria-preview {
     width: 100vw;
     margin-left: calc(50% - 50vw);
