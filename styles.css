@@ -1857,25 +1857,156 @@ fadeHero 2s ease;
 
 @media(max-width:768px) {
     /* Estilos específicos para dispositivos móviles */
-    nav {
-        display: none;
+
+nav {
+    display:none;
+}
+
+nav.show {
+    display:flex;
+    flex-direction:column;
+
+    position:absolute;
+    top:82px;
+    right:14px;
+
+    width:calc(100vw - 28px);
+    max-width:360px;
+
+    padding:10px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(28,28,28,.98),
+            rgba(12,12,12,.98)
+        );
+
+    border:1px solid rgba(255,255,255,.10);
+    border-radius:20px;
+
+    box-shadow:
+        0 25px 60px rgba(0,0,0,.55),
+        0 0 35px rgba(0,0,0,.35);
+
+    backdrop-filter:blur(20px);
+    -webkit-backdrop-filter:blur(20px);
+
+    z-index:9999;
+
+    animation:menuMobileIn .28s ease;
+}
+
+
+/* ENLACES */
+
+nav.show a {
+
+    display:flex;
+    align-items:center;
+
+    min-height:52px;
+
+    padding:0 18px;
+
+    color:#fff;
+    text-decoration:none;
+
+    font-family:'Montserrat', sans-serif;
+    font-size:.88rem;
+    font-weight:500;
+
+    letter-spacing:.6px;
+
+    border-radius:13px;
+
+    transition:
+        background .25s ease,
+        color .25s ease,
+        padding-left .25s ease,
+        transform .25s ease;
+}
+
+
+/* Separación visual */
+
+nav.show a + a {
+    border-top:1px solid rgba(255,255,255,.045);
+}
+
+
+/* Al tocar/pasar */
+
+nav.show a:hover,
+nav.show a:active {
+
+    color:#64c478;
+
+    background:
+        rgba(100,196,120,.08);
+
+    padding-left:23px;
+
+}
+
+
+/* HAMBURGUESA */
+
+.hamburger {
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    width:46px;
+    height:46px;
+
+    font-size:25px;
+
+    color:#fff;
+
+    cursor:pointer;
+
+    border-radius:14px;
+
+    background:rgba(255,255,255,.06);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    transition:
+        background .25s ease,
+        transform .25s ease,
+        border-color .25s ease;
+}
+
+
+.hamburger:active {
+
+    transform:scale(.94);
+
+    background:rgba(100,196,120,.10);
+
+    border-color:rgba(100,196,120,.25);
+
+}
+
+
+/* ANIMACIÓN */
+
+@keyframes menuMobileIn {
+
+    from {
+        opacity:0;
+        transform:translateY(-10px) scale(.98);
     }
 
-    nav.show {
-        display: flex;
-        flex-direction: column;
-        position: absolute;
-        top: 90px;
-        right: 20px;
-        background: black;
-        padding: 15px;
-        width: 220px;
-        z-index: 9999;
+    to {
+        opacity:1;
+        transform:translateY(0) scale(1);
     }
 
-    .hamburger {
-        display: block;
-    }
+}
 
     .hero h1 {
         font-size: 2rem;
