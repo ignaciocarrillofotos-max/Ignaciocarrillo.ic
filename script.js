@@ -426,21 +426,33 @@ if (packs) {
 
 
 const cards = document.querySelectorAll(".price-card");
+const pricing = document.querySelector(".pricing");
 
 cards.forEach(card => {
- card.addEventListener("click",(e)=>{
-    if(e.target.closest(".boton-expandible")) return;
-    if(card.classList.contains("active-pack")){
-        card.classList.remove("active-pack");
-    }else{
-        cards.forEach(c=>c.classList.remove("active-pack"));
-        card.classList.add("active-pack");
+    card.addEventListener("click", (e) => {
+        if(e.target.closest(".boton-expandible")) return;
+        const estabaActivo = card.classList.contains("active-pack");
+        
+        /* Cerrar todos */
+        cards.forEach(c => {
+            c.classList.remove("active-pack");
+        });
 
-    }
+        /* Si no estaba activo, abrirlo */
+        if(!estabaActivo){
+            card.classList.add("active-pack");
+            if(pricing){
+                pricing.classList.add("mobile-pack-open");
+            }
 
+        }else{
+            if(pricing){
+                pricing.classList.remove("mobile-pack-open");
+            }
+        }
+
+    });
 });
-});
-
 
 
 
