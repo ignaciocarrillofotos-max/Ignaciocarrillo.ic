@@ -1513,6 +1513,107 @@ box-shadow:
 }
 
 
+/* =========================================
+   PC — DETALLE DENTRO DEL PACK
+========================================= */
+
+@media (min-width:900px) {
+
+    .packs-row .price-card {
+        overflow:visible;
+        transition:
+            flex .45s ease,
+            transform .45s ease,
+            opacity .45s ease,
+            filter .45s ease,
+            box-shadow .45s ease;
+    }
+
+
+    /* Detalle cerrado */
+    .packs-row .price-card .pack-detail {
+        display:none;
+    }
+
+
+    /* Detalle abierto */
+    .packs-row .price-card .pack-detail.active-detail {
+        display:block;
+        width:100%;
+        max-width:none;
+        margin-top:25px;
+        padding:0;
+        box-sizing:border-box;
+        background:
+            linear-gradient(
+                145deg,
+                #202020,
+                #151515
+            );
+
+        border:1px solid rgba(100,196,120,.18);
+        border-radius:18px;
+        box-shadow:
+            0 20px 50px rgba(0,0,0,.35),
+            0 0 30px rgba(100,196,120,.05);
+        animation:packDetailIn .45s ease;
+    }
+
+
+    /* El contenido interior */
+    .packs-row .price-card .pack-detail.active-detail .pack-box {
+
+        margin:18px 0;
+        padding:18px;
+
+    }
+
+
+    /* Texto algo más compacto en PC */
+    .packs-row .price-card .pack-detail.active-detail li {
+
+        max-width:100%;
+        font-size:.82rem;
+        line-height:1.4;
+    }
+
+    .packs-row .price-card .pack-detail.active-detail .pack-evento {
+
+        font-size:.78rem;
+        line-height:1.5;
+    }
+
+    /* Botón */
+    .packs-row .price-card .pack-detail.active-detail
+    .boton-contacto-pack {
+
+        margin-top:16px;
+
+    }
+
+    /* Cuando un pack está abierto,
+       los otros se hacen más pequeños */
+    .packs-row:has(.price-card.active-pack) .price-card:not(.active-pack) {
+
+        opacity:.4;
+        filter:blur(1px) brightness(.7);
+        transform:scale(.90);
+    }
+
+    /* El activo mantiene toda la atención */
+    .packs-row .price-card.active-pack {
+
+        flex:2.2;
+        opacity:1;
+        filter:none;
+        transform:scale(1.02) translateY(-6px);
+        z-index:10;
+
+    }
+}
+
+
+
 
 
 
