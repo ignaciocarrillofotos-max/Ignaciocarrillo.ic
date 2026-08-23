@@ -1302,23 +1302,6 @@ box-shadow:
 
 
 
-/* =========================
-   EFECTO APPLE PACKS
-========================= */
-
-.pricing:hover .price-card{
-
-    opacity:.45;
-    filter:blur(2px) brightness(.75);
-    transform:scale(.94);
-}
-
-.pricing:hover .price-card:hover{
-
-    opacity:1;
-    filter:none;
-    transform:scale(1.03) translateY(-8px);
-}
 
 /* Animación de aparición del contenido */
 .price-content p,
@@ -1371,45 +1354,163 @@ box-shadow:
 
 
 /* =========================================
-   ESTRUCTURA PACKS
-   3 PACKS ARRIBA + DETALLE CENTRADO ABAJO
+   ESTRUCTURA PACKS — PC
+   3 PACKS + DETALLE CENTRADO
 ========================================= */
+
 .pricing.packs-slider {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    gap: 25px;
+    position:relative;
+    display:flex;
+    flex-direction:column;
+    width:100%;
+    gap:18px;
+    overflow:visible;
 }
 
 .packs-row {
-    width: 100%;
-    display: flex;
-    gap: 18px;
-    align-items: stretch;
+    width:100%;
+    display:flex;
+    gap:18px;
+    align-items:stretch;
+    overflow:visible;
 }
 
 .packs-row .price-card {
-    flex: 1;
+    flex:1;
+    min-width:0;
 }
 
+
+/* =========================================
+   EFECTO PC
+   El pack seleccionado/hover crece
+========================================= */
+
+@media (min-width:900px) {
+
+    .packs-row {
+        overflow:visible;
+    }
+
+    .packs-row .price-card {
+        transition:
+            flex .45s ease,
+            transform .45s ease,
+            opacity .45s ease,
+            filter .45s ease,
+            box-shadow .45s ease;
+    }
+
+    /* Los otros se hacen ligeramente pequeños */
+    .packs-row:hover .price-card {
+        opacity:.45;
+        filter:blur(1px) brightness(.75);
+        transform:scale(.94);
+    }
+
+    /* El que estás mirando crece */
+    .packs-row:hover .price-card:hover,
+    .packs-row .price-card.active-pack {
+        flex:2.2;
+        opacity:1;
+        filter:none;
+        transform:scale(1.03) translateY(-8px);
+
+        background:
+            linear-gradient(
+                145deg,
+                #222,
+                #171717
+            );
+
+        border:1px solid rgba(100,196,120,.25);
+
+        box-shadow:
+            0 30px 70px rgba(0,0,0,.45),
+            0 0 40px rgba(100,196,120,.18);
+
+        z-index:5;
+    }
+
+    /* Título */
+    .packs-row .price-card:hover h3,
+    .packs-row .price-card.active-pack h3 {
+        color:#64c478;
+        letter-spacing:4px;
+        transform:scale(1.05);
+    }
+
+    /* Precio */
+    .packs-row .price-card:hover .price-value,
+    .packs-row .price-card.active-pack .price-value {
+        color:#64c478;
+        transform:translateY(-1px);
+    }
+
+    /* Punto */
+    .packs-row .price-card:hover .pack-indicator,
+    .packs-row .price-card.active-pack .pack-indicator {
+        transform:scale(1.3);
+        opacity:1;
+    }
+}
+
+
+/* =========================================
+   DETALLE
+   SIEMPRE CENTRADO DEBAJO DE LOS 3
+========================================= */
+
 .pack-details {
-    width: 100%;
-    display: flex;
-    justify-content: center;
+    width:100%;
+    display:flex;
+    justify-content:center;
+    align-items:flex-start;
+    box-sizing:border-box;
 }
 
 .pack-detail {
-    display: none;
-    width: 100%;
-    max-width: 900px;
-    box-sizing: border-box;
+    display:none;
+    width:100%;
+    max-width:900px;
+    box-sizing:border-box;
 }
 
 .pack-detail.active-detail {
-    display: block;
+    display:block;
 }
 
 
+/* =========================================
+   ANIMACIÓN DEL DETALLE EN PC
+========================================= */
+
+@media (min-width:900px) {
+
+    .pack-detail.active-detail {
+        animation:packDetailIn .45s ease;
+    }
+
+}
+
+
+/* =========================================
+   ANIMACIÓN
+========================================= */
+
+@keyframes packDetailIn {
+
+    from {
+        opacity:0;
+        transform:translateY(15px);
+    }
+
+    to {
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
 
 
 
