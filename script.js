@@ -425,15 +425,16 @@ if (packs) {
 
 
 
+
 const cards = document.querySelectorAll(".price-card");
-const pricing = document.querySelector(".pricing");
 const details = document.querySelectorAll(".pack-detail");
+
 cards.forEach(card => {
     card.addEventListener("click", () => {
-        const pack = card.dataset.pack;
+        const packName = card.dataset.pack;
         const estabaActivo = card.classList.contains("active-pack");
 
-        // Cerrar todos
+        /* CERRAR TODOS */
         cards.forEach(c => {
             c.classList.remove("active-pack");
         });
@@ -442,28 +443,26 @@ cards.forEach(card => {
             detail.classList.remove("active-detail");
         });
 
-        // Si ya estaba abierto → cerrar
+        /* SI YA ESTABA ABIERTO → CERRAR */
         if (estabaActivo) {
-            pricing?.classList.remove("mobile-pack-open");
             return;
         }
 
-        // Abrir el seleccionado
+        /* ACTIVAR PACK */
         card.classList.add("active-pack");
+
+        /* ABRIR SU CONTENIDO */
         const detail = document.querySelector(
-            `.pack-detail[data-detail="${pack}"]`
+            `.pack-detail[data-detail="${packName}"]`
         );
 
         if (detail) {
             detail.classList.add("active-detail");
         }
 
-        pricing?.classList.add("mobile-pack-open");
-
     });
 
 });
-
 
 
 
