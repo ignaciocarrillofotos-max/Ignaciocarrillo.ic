@@ -426,7 +426,9 @@ if (packs) {
 
 
 
+
 const cards = document.querySelectorAll(".price-card");
+const detailsContainer = document.querySelector(".pack-details");
 const details = document.querySelectorAll(".pack-detail");
 
 cards.forEach(card => {
@@ -436,7 +438,10 @@ cards.forEach(card => {
         const packName = card.dataset.pack;
         const estabaActivo = card.classList.contains("active-pack");
 
-        /* Cerrar todos */
+        /* =========================================
+           CERRAR TODO
+        ========================================= */
+
         cards.forEach(c => {
             c.classList.remove("active-pack");
         });
@@ -445,21 +450,71 @@ cards.forEach(card => {
             detail.classList.remove("active-detail");
         });
 
-        /* Si estaba abierto → cerrar */
+
+        /* =========================================
+           SI YA ESTABA ABIERTO → CERRAR
+        ========================================= */
+
         if (estabaActivo) {
+
+            /* Si estamos en PC, devolver el detalle
+               a su sitio original */
+            if (window.innerWidth >= 900) {
+
+                const detail = document.querySelector(
+                    `.pack-detail[data-detail="${packName}"]`
+                );
+
+                if (detail && detailsContainer) {
+                    detailsContainer.appendChild(detail);
+                }
+
+            }
+
             return;
         }
 
-        /* Activar pack */
+
+        /* =========================================
+           ACTIVAR PACK
+        ========================================= */
+
         card.classList.add("active-pack");
 
-        /* Buscar su contenido */
+
         const detail = document.querySelector(
             `.pack-detail[data-detail="${packName}"]`
         );
 
-        if (detail) {
+        if (!detail) return;
+
+
+        /* =========================================
+           PC
+           EL DETALLE VA DENTRO DEL PACK
+        ========================================= */
+
+        if (window.innerWidth >= 900) {
+
+            card.appendChild(detail);
+
             detail.classList.add("active-detail");
+
+        }
+
+        /* =========================================
+           MÓVIL
+           EL DETALLE SE QUEDA DEBAJO
+        ========================================= */
+
+        else {
+
+            if (detailsContainer) {
+                detailsContainer.appendChild(detail);
+            }
+
+            detail.classList.add("active-detail");
+
         }
 
     });
