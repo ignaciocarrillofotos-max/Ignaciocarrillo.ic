@@ -1050,21 +1050,13 @@ box-shadow:
 
 /* Separación elegante entre elementos */
 
-.price-content li{
+.pack-detail li {
     display:flex;
     align-items:center;
-
     gap:12px;
-
     padding:10px 0;
-
     border-bottom:1px solid rgba(255,255,255,.05);
-
     max-width:90%;
-
-    transition:
-        color .3s ease,
-        border-color .3s ease;
 }
 
 
@@ -1077,7 +1069,7 @@ box-shadow:
 
 /* Check */
 
-.price-content li::before{
+.pack-detail li::before {
     content:"✓";
 
     width:22px;
@@ -1090,7 +1082,6 @@ box-shadow:
     border-radius:50%;
 
     background:rgba(100,196,120,.10);
-
     color:#64c478;
 
     font-size:.75rem;
@@ -1105,8 +1096,8 @@ box-shadow:
         transform .3s ease;
 }
 
-.price-card:hover .price-content li::before,
-.active-pack .price-content li::before{
+.price-card:hover + .pack-details .pack-detail li::before,
+.pack-detail.active-detail li::before {
     background:rgba(100,196,120,.15);
 }
 
