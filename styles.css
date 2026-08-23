@@ -1652,41 +1652,25 @@ fadeHero 2s ease;
 ========================================= */
 
 .pricing.packs-slider .price-card{
-
     width:100%;
-
     min-width:0;
     max-width:none;
-
     min-height:145px;
-
     padding:18px 6px 16px;
-
     box-sizing:border-box;
-
     display:flex;
     flex-direction:column;
-
     align-items:center;
-
     border-radius:16px;
-
     background:transparent;
-
     border:1px solid transparent;
-
-    overflow:hidden;
-
+    overflow:visible; /* IMPORTANTE */
     opacity:.62;
-
     filter:none;
-
     transform:none;
-
     box-shadow:none;
-
     cursor:pointer;
-
+    position:relative;
     transition:
         opacity .35s ease,
         transform .35s ease,
