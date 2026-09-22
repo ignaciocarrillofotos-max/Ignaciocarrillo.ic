@@ -1,6 +1,6 @@
 const nombreGaleria = "paisajes";
 const tipoGaleria = "fotos";
-const galeriaActual = [
+window.galeriaActual = [
 
     "../FOTOSVIDEOS/paisajes/paisajes-01.jpg",
     "../FOTOSVIDEOS/paisajes/paisajes-02.jpg",
