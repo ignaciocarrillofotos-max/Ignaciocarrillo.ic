@@ -1,7 +1,7 @@
 // Primero declaras el array
 const nombreGaleria = "Deportes";
 const tipoGaleria = "fotos";
-const galeriaActual = [
+window.galeriaActual = [
 
     "../FOTOSVIDEOS/deportes/deportes-01.jpg",
     "../FOTOSVIDEOS/deportes/deportes-02.jpg",
