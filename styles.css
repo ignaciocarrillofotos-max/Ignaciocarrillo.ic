@@ -113,6 +113,7 @@ p {
     justify-content: space-between;
     min-height: 82px;
     gap: 20px;
+    position: relative;
 }
 
 .brand {
@@ -154,6 +155,8 @@ p {
     width: 46px;
     height: 46px;
     cursor: pointer;
+    font-size: 18px;
+    z-index: 101;
 }
 
 /* =========================
@@ -684,7 +687,7 @@ p {
 .contact-box p {
     color: rgba(255,255,255,0.82);
     font-size: 1.05rem;
-_margin-bottom: 18px;
+    margin-bottom: 18px;
 }
 
 .contact-row {
@@ -751,7 +754,7 @@ _margin-bottom: 18px;
     }
 }
 
-@media (max-width: 760px) {
+@media (max-width: 768px) {
     .menu-toggle {
         display: inline-flex;
         align-items: center;
@@ -759,22 +762,36 @@ _margin-bottom: 18px;
     }
 
     .navlinks {
-        position: absolute;
-        top: 100%;
-        left: 16px;
-        right: 16px;
-        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
         flex-direction: column;
-        align-items: flex-start;
-        gap: 12px;
-        padding: 18px 16px;
-        background: rgba(10,10,10,0.96);
-        border: 1px solid var(--line);
-        border-radius: 14px;
+        gap: 0;
+        padding: 0;
+        background: rgba(10,10,10,0.98);
+        border: none;
+        border-radius: 0;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+        z-index: 99;
     }
 
     .navlinks.show {
-        display: flex;
+        max-height: 500px;
+        border-bottom: 1px solid rgba(255,255,255,0.06);
+        padding-top: 70px;
+    }
+
+    .navlinks a {
+        padding: 14px 20px;
+        border-bottom: 1px solid rgba(255,255,255,0.05);
+        font-size: 0.85rem;
+    }
+
+    .topbar-inner {
+        padding: 0 16px;
     }
 
     .brand img {
@@ -841,5 +858,17 @@ _margin-bottom: 18px;
     .galeria-item.galeria-destacada {
         grid-column: auto;
         grid-row: auto;
+    }
+
+    .section-head {
+        margin-bottom: 32px;
+    }
+
+    .pricing {
+        gap: 16px;
+    }
+
+    .price-card {
+        padding: 24px 16px;
     }
 }
