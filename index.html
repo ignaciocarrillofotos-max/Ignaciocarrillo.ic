@@ -3,19 +3,19 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <meta name="description" content="Ignacio G. Carrillo | Fotógrafo y videógrafo profesional para eventos, bodas, reportajes y retratos.">
+    <meta name="description" content="Ignacio G. Carrillo | Fotógrafo y videógrafo profesional para bodas, eventos, retratos y reportajes.">
     <meta name="keywords" content="fotógrafo, videógrafo, bodas, eventos, reportajes, Ignacio G. Carrillo">
     <meta name="theme-color" content="#0b0b0b">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="format-detection" content="telephone=no">
     <meta property="og:title" content="Ignacio G. Carrillo | Fotógrafo y Videógrafo">
-    <meta property="og:description" content="Fotografía y videografía para eventos, bodas y reportajes.">
+    <meta property="og:description" content="Fotografía y videografía para bodas, eventos y reportajes.">
     <meta property="og:type" content="website">
     <meta property="og:image" content="FOTOSVIDEOS/logos/mi_Firma_blanco_entera.png">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Ignacio G. Carrillo">
-    <meta name="twitter:description" content="Fotógrafo y videógrafo profesional.">
+    <meta name="twitter:description" content="Fotógrafo y videógrafo profesional para bodas, eventos y reportajes.">
     <link rel="icon" href="FOTOSVIDEOS/logos/mi_Firma_blanco_entera.png" type="image/png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -25,10 +25,11 @@
 </head>
 <body>
     <header class="topbar">
-        <div class="container nav">
-            <a class="brand" href="index.html" aria-label="Ir a inicio">
+        <div class="topbar-inner container">
+            <a class="brand" href="index.html" aria-label="Inicio">
                 <img src="FOTOSVIDEOS/logos/mi_Firma_blanco_entera.png" alt="Ignacio G. Carrillo">
             </a>
+
             <nav class="navlinks" aria-label="Navegación principal">
                 <a href="#about">IG-C</a>
                 <a href="#colaboraciones">Clientes</a>
@@ -37,19 +38,21 @@
                 <a href="#packs">Packs</a>
                 <a href="#contacto">Contacto</a>
             </nav>
-            <button class="menu-toggle" type="button" aria-label="Abrir menú" aria-controls="mobile-menu">☰</button>
+
+            <button class="menu-toggle" type="button" aria-label="Abrir menú">☰</button>
         </div>
     </header>
 
     <header class="hero">
-        <video class="hero-bg" autoplay muted loop playsinline preload="metadata" aria-label="Video de fondo de eventos">
+        <video class="hero-bg" autoplay muted loop playsinline preload="metadata" aria-label="Video de fondo portada">
             <source src="FOTOSVIDEOS/videos/Fiesta40_Finca_Palomar_Mio.mp4" type="video/mp4">
         </video>
+
         <div class="hero-overlay">
-            <div class="hero-texto">
-                <p class="eyebrow">Fotografía & videografía</p>
+            <div class="hero-content">
+                <div class="eyebrow">Fotografía & videografía</div>
                 <h1>Ignacio G. Carrillo</h1>
-                <p>Capturamos momentos reales, auténticos y con una mirada cinematográfica para bodas, eventos y reportajes.</p>
+                <p>Momentos auténticos, visuales elegantes y recuerdos que se quedan contigo para siempre.</p>
                 <div class="hero-actions">
                     <a href="#contacto" class="btn">Consultar</a>
                     <a href="galeria.html" class="btn btn-secondary">Ver galería</a>
@@ -59,7 +62,7 @@
     </header>
 
     <main>
-        <section id="about">
+        <section id="about" class="section">
             <div class="container">
                 <div class="section-head">
                     <div>
@@ -68,26 +71,27 @@
                     </div>
                     <p class="muted">Fotógrafo & Videógrafo</p>
                 </div>
+
                 <div class="about-grid">
                     <div class="about-text">
-                        <p>Con más de 10 años de experiencia, trabajo con una estética natural, elegante y emocional, capturando cada detalle que convierte un momento en recuerdo.</p>
-                        <p>Desde bodas y eventos hasta retratos y campañas, cada proyecto se desarrolla con atención personalizada, creatividad y una mirada documental.</p>
+                        <p>Con una mirada natural, elegante y emocional, capturo bodas, eventos, retratos y reportajes con la intención de contar historias reales y duraderas.</p>
+                        <p>Cada proyecto se desarrolla con una atención total al detalle, creatividad y una estética visual que deja huella sin forzar la escena.</p>
                     </div>
-                    <div class="about-card">
+                    <div class="about-panel">
                         <img src="FOTOSVIDEOS/logos/mi_Firma_blanco_entera.png" alt="Firma Ignacio G. Carrillo" class="signature-logo">
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="colaboraciones">
+        <section id="colaboraciones" class="section">
             <div class="container">
                 <div class="section-head">
                     <div>
                         <div class="eyebrow">02 / Colaboraciones</div>
                         <h2>Clientes que han confiado en mí</h2>
                     </div>
-                    <p class="muted">Cada proyecto tiene una historia que merece ser contada.</p>
+                    <p class="muted">Cada proyecto tiene una historia que merece ser narrada.</p>
                 </div>
 
                 <div class="clientes-slider" aria-label="Clientes destacados">
@@ -115,17 +119,17 @@
             </div>
         </section>
 
-        <section id="galeria">
+        <section id="galeria" class="section">
             <div class="container">
                 <div class="section-head">
                     <div>
                         <div class="eyebrow">03 / Portafolio</div>
                         <h2>Galería</h2>
                     </div>
-                    <p class="muted">Una selección de algunos momentos capturados con luz, detalle y emoción.</p>
+                    <p class="muted">Una selección de momentos capturados con luz, detalle y emoción.</p>
                 </div>
 
-                <div class="galeria-preview" aria-label="Vista previa de la galería">
+                <div class="galeria-preview" aria-label="Vista previa de imagenes">
                     <div class="galeria-track">
                         <article class="galeria-item galeria-destacada">
                             <img src="FOTOSVIDEOS/galeria/1.jpg" alt="Fotografía 1">
@@ -158,34 +162,36 @@
                 </div>
 
                 <div class="galeria-indicadores" aria-label="Indicadores de galería"></div>
-                <a href="galeria.html" class="btn-galeria">Ver más fotografías</a>
+                <div class="cta-row">
+                    <a href="galeria.html" class="btn-galeria">Ver más fotografías</a>
+                </div>
             </div>
         </section>
 
-        <section id="servicios">
+        <section id="servicios" class="section">
             <div class="container">
                 <div class="section-head">
                     <div>
                         <div class="eyebrow">04 / Servicios</div>
                         <h2>Servicios</h2>
                     </div>
-                    <p class="muted">Cobertura profesional para distintos tipos de proyectos y eventos.</p>
+                    <p class="muted">Cobertura profesional para distintos tipos de proyectos.</p>
                 </div>
 
-                <div class="services" aria-label="Servicios ofrecidos">
+                <div class="services" aria-label="Servicios">
                     <div class="services-track">
                         <article class="service-card">
-                            <img src="FOTOSVIDEOS/servicios/bodas.jpg" alt="Bodas y eventos">
+                            <img src="FOTOSVIDEOS/servicios/bodas.jpg" alt="Bodas">
                             <div class="service-info">
                                 <h3>Bodas</h3>
-                                <p>Documentación emocional y elegante.</p>
+                                <p>Memorias emocionales y visuales.</p>
                             </div>
                         </article>
                         <article class="service-card">
-                            <img src="FOTOSVIDEOS/servicios/eventos.jpg" alt="Eventos corporativos">
+                            <img src="FOTOSVIDEOS/servicios/eventos.jpg" alt="Eventos">
                             <div class="service-info">
                                 <h3>Eventos</h3>
-                                <p>Cobertura visual con atención al detalle.</p>
+                                <p>Una cobertura elegante y precisa.</p>
                             </div>
                         </article>
                         <article class="service-card">
@@ -199,7 +205,7 @@
                             <img src="FOTOSVIDEOS/servicios/reportajes.jpg" alt="Reportajes">
                             <div class="service-info">
                                 <h3>Reportajes</h3>
-                                <p>Historias visuales con mirada editorial.</p>
+                                <p>Historias visuales con sello editorial.</p>
                             </div>
                         </article>
                     </div>
@@ -207,14 +213,14 @@
             </div>
         </section>
 
-        <section id="packs">
+        <section id="packs" class="section">
             <div class="container">
                 <div class="section-head">
                     <div>
                         <div class="eyebrow">05 / Packs</div>
                         <h2>Packs</h2>
                     </div>
-                    <p class="muted">Opciones de cobertura según el tipo de evento o proyecto.</p>
+                    <p class="muted">Opciones de cobertura según el tipo de evento y tus necesidades.</p>
                 </div>
 
                 <div class="pricing">
@@ -266,7 +272,7 @@
             </div>
         </section>
 
-        <section id="contacto">
+        <section id="contacto" class="section">
             <div class="container">
                 <div class="section-head">
                     <div>
@@ -275,8 +281,9 @@
                     </div>
                     <p class="muted">Y la hacemos realidad.</p>
                 </div>
+
                 <div class="contact-box">
-                    <p>Estoy disponible para bodas, eventos, reportajes y proyectos creativos.</p>
+                    <p>Estoy disponible para bodas, eventos, reportajes y proyectos creativos. Si tienes una idea, hablamos y la convierto en imágenes memorables.</p>
                     <div class="contact-row">
                         <a href="mailto:hola@ignaciocarrillo.es" class="btn">Escríbeme</a>
                         <a href="https://wa.me/34600000000" class="btn btn-secondary" target="_blank" rel="noreferrer">WhatsApp</a>
@@ -287,26 +294,29 @@
     </main>
 
     <footer class="footer">
-        <div class="container">
-            <div class="footer-grid">
-                <div>
-                    <img src="FOTOSVIDEOS/logos/mi_Firma_blanco_entera.png" alt="Ignacio G. Carrillo. IG-C" class="footer-logo">
-                    <p>Fotógrafo & Videógrafo</p>
-                </div>
-                <div>
-                    <h3>Enlaces</h3>
-                    <a href="#about">Sobre mí</a>
-                    <a href="#galeria">Galería</a>
-                    <a href="#servicios">Servicios</a>
-                </div>
-                <div>
-                    <h3>Contacto</h3>
-                    <a href="mailto:hola@ignaciocarrillo.es">hola@ignaciocarrillo.es</a>
-                    <a href="https://wa.me/34600000000">WhatsApp</a>
-                </div>
+        <div class="container footer-grid">
+            <div>
+                <img src="FOTOSVIDEOS/logos/mi_Firma_blanco_entera.png" alt="Ignacio G. Carrillo" class="footer-logo">
+                <p>Fotógrafo & Videógrafo</p>
             </div>
-            <div class="footer-bottom">© 2026 Ignacio G. Carrillo</div>
+
+            <div>
+                <h3>Enlaces</h3>
+                <a href="#about">Sobre mí</a>
+                <a href="#galeria">Galería</a>
+                <a href="#servicios">Servicios</a>
+                <a href="#packs">Packs</a>
+            </div>
+
+            <div>
+                <h3>Contacto</h3>
+                <a href="mailto:hola@ignaciocarrillo.es">hola@ignaciocarrillo.es</a>
+                <a href="https://wa.me/34600000000" target="_blank" rel="noreferrer">WhatsApp</a>
+                <a href="galeria.html">Galería</a>
+            </div>
         </div>
+
+        <div class="footer-bottom">© 2026 Ignacio G. Carrillo</div>
     </footer>
 
     <script src="script.js"></script>
